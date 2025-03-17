@@ -1,0 +1,1057 @@
+  Verifying        : graphite2-1.3.14-9.el9.x86_64                                                            2/749 
+  Verifying        : attr-2.5.1-3.el9.x86_64                                                                  3/749 
+  Verifying        : freetype-2.10.4-9.el9.x86_64                                                             4/749 
+  Verifying        : libpng-2:1.6.37-12.el9.x86_64                                                            5/749 
+  Verifying        : keyutils-1.6.3-1.el9.x86_64                                                              6/749 
+  Verifying        : grub2-tools-extra-1:2.06-93.el9_5.x86_64                                                 7/749 
+  Verifying        : grub2-tools-efi-1:2.06-93.el9_5.x86_64                                                   8/749 
+  Verifying        : jq-1.6-17.el9.x86_64                                                                     9/749 
+  Verifying        : oniguruma-6.9.6-1.el9.6.x86_64                                                          10/749 
+  Verifying        : kernel-modules-core-5.14.0-503.31.1.el9_5.x86_64                                        11/749 
+  Verifying        : kernel-modules-5.14.0-503.31.1.el9_5.x86_64                                             12/749 
+  Verifying        : kernel-core-5.14.0-503.31.1.el9_5.x86_64                                                13/749 
+  Verifying        : kernel-5.14.0-503.31.1.el9_5.x86_64                                                     14/749 
+  Verifying        : kernel-devel-5.14.0-503.31.1.el9_5.x86_64                                               15/749 
+  Verifying        : yum-4.14.0-17.el9.noarch                                                                16/749 
+  Verifying        : yum-4.14.0-8.el9.noarch                                                                 17/749 
+  Verifying        : python3-dnf-4.14.0-17.el9.noarch                                                        18/749 
+  Verifying        : python3-dnf-4.14.0-8.el9.noarch                                                         19/749 
+  Verifying        : dnf-data-4.14.0-17.el9.noarch                                                           20/749 
+  Verifying        : dnf-data-4.14.0-8.el9.noarch                                                            21/749 
+  Verifying        : dnf-4.14.0-17.el9.noarch                                                                22/749 
+  Verifying        : dnf-4.14.0-8.el9.noarch                                                                 23/749 
+  Verifying        : hwdata-0.348-9.15.el9.noarch                                                            24/749 
+  Verifying        : hwdata-0.348-9.11.el9.noarch                                                            25/749 
+  Verifying        : basesystem-11-13.el9.0.1.noarch                                                         26/749 
+  Verifying        : basesystem-11-13.el9.noarch                                                             27/749 
+  Verifying        : setup-2.13.7-10.el9.noarch                                                              28/749 
+  Verifying        : setup-2.13.7-9.el9.noarch                                                               29/749 
+  Verifying        : selinux-policy-targeted-38.1.45-3.el9_5.noarch                                          30/749 
+  Verifying        : selinux-policy-targeted-38.1.23-1.el9.noarch                                            31/749 
+  Verifying        : selinux-policy-38.1.45-3.el9_5.noarch                                                   32/749 
+  Verifying        : selinux-policy-38.1.23-1.el9.noarch                                                     33/749 
+  Verifying        : python3-linux-procfs-0.7.3-1.el9.noarch                                                 34/749 
+  Verifying        : python3-linux-procfs-0.7.1-1.el9.noarch                                                 35/749 
+  Verifying        : libacl-2.3.1-4.el9.x86_64                                                               36/749 
+  Verifying        : libacl-2.3.1-3.el9.x86_64                                                               37/749 
+  Verifying        : acl-2.3.1-4.el9.x86_64                                                                  38/749 
+  Verifying        : acl-2.3.1-3.el9.x86_64                                                                  39/749 
+  Verifying        : crypto-policies-scripts-20240828-2.git626aa59.el9_5.noarch                              40/749 
+  Verifying        : crypto-policies-scripts-20230731-1.git94f0e2c.el9_3.1.noarch                            41/749 
+  Verifying        : crypto-policies-20240828-2.git626aa59.el9_5.noarch                                      42/749 
+  Verifying        : crypto-policies-20230731-1.git94f0e2c.el9_3.1.noarch                                    43/749 
+  Verifying        : bash-completion-1:2.11-5.el9.noarch                                                     44/749 
+  Verifying        : bash-completion-1:2.11-4.el9.noarch                                                     45/749 
+  Verifying        : python3-firewall-1.3.4-9.el9_5.noarch                                                   46/749 
+  Verifying        : python3-firewall-1.2.5-2.el9_3.noarch                                                   47/749 
+  Verifying        : firewalld-filesystem-1.3.4-9.el9_5.noarch                                               48/749 
+  Verifying        : firewalld-filesystem-1.2.5-2.el9_3.noarch                                               49/749 
+  Verifying        : firewalld-1.3.4-9.el9_5.noarch                                                          50/749 
+  Verifying        : firewalld-1.2.5-2.el9_3.noarch                                                          51/749 
+  Verifying        : c-ares-1.19.1-2.el9_4.x86_64                                                            52/749 
+  Verifying        : c-ares-1.19.1-1.el9.x86_64                                                              53/749 
+  Verifying        : expat-2.5.0-3.el9_5.1.x86_64                                                            54/749 
+  Verifying        : expat-2.5.0-1.el9.x86_64                                                                55/749 
+  Verifying        : libbrotli-1.0.9-7.el9_5.x86_64                                                          56/749 
+  Verifying        : libbrotli-1.0.9-6.el9.x86_64                                                            57/749 
+  Verifying        : glib2-2.68.4-14.el9_4.1.x86_64                                                          58/749 
+  Verifying        : glib2-2.68.4-11.el9.x86_64                                                              59/749 
+  Verifying        : bzip2-libs-1.0.8-10.el9_5.x86_64                                                        60/749 
+  Verifying        : bzip2-libs-1.0.8-8.el9.x86_64                                                           61/749 
+  Verifying        : bzip2-1.0.8-10.el9_5.x86_64                                                             62/749 
+  Verifying        : bzip2-1.0.8-8.el9.x86_64                                                                63/749 
+  Verifying        : file-libs-5.39-16.el9.x86_64                                                            64/749 
+  Verifying        : file-libs-5.39-14.el9.x86_64                                                            65/749 
+  Verifying        : file-5.39-16.el9.x86_64                                                                 66/749 
+  Verifying        : file-5.39-14.el9.x86_64                                                                 67/749 
+  Verifying        : avahi-libs-0.8-21.el9.x86_64                                                            68/749 
+  Verifying        : avahi-libs-0.8-15.el9.x86_64                                                            69/749 
+  Verifying        : binutils-gold-2.35.2-54.el9.x86_64                                                      70/749 
+  Verifying        : binutils-gold-2.35.2-42.el9.x86_64                                                      71/749 
+  Verifying        : binutils-2.35.2-54.el9.x86_64                                                           72/749 
+  Verifying        : binutils-2.35.2-42.el9.x86_64                                                           73/749 
+  Verifying        : audit-libs-3.1.5-1.el9.x86_64                                                           74/749 
+  Verifying        : audit-libs-3.0.7-104.el9.x86_64                                                         75/749 
+  Verifying        : audit-3.1.5-1.el9.x86_64                                                                76/749 
+  Verifying        : audit-3.0.7-104.el9.x86_64                                                              77/749 
+  Verifying        : alternatives-1.24-1.el9_5.1.x86_64                                                      78/749 
+  Verifying        : alternatives-1.24-1.el9.x86_64                                                          79/749 
+  Verifying        : iptables-nft-1.8.10-11.el9_5.x86_64                                                     80/749 
+  Verifying        : iptables-nft-1.8.8-6.el9_1.x86_64                                                       81/749 
+  Verifying        : iptables-libs-1.8.10-11.el9_5.x86_64                                                    82/749 
+  Verifying        : iptables-libs-1.8.8-6.el9_1.x86_64                                                      83/749 
+  Verifying        : kbd-misc-2.4.0-10.el9.noarch                                                            84/749 
+  Verifying        : kbd-misc-2.4.0-9.el9.noarch                                                             85/749 
+  Verifying        : kbd-2.4.0-10.el9.x86_64                                                                 86/749 
+  Verifying        : kbd-2.4.0-9.el9.x86_64                                                                  87/749 
+  Verifying        : libarchive-3.5.3-4.el9.0.1.x86_64                                                       88/749 
+  Verifying        : libarchive-3.5.3-4.el9.x86_64                                                           89/749 
+  Verifying        : libxml2-2.9.13-6.el9_5.2.x86_64                                                         90/749 
+  Verifying        : libxml2-2.9.13-5.el9_3.x86_64                                                           91/749 
+  Verifying        : libdb-5.3.28-54.el9.x86_64                                                              92/749 
+  Verifying        : libdb-5.3.28-53.el9.x86_64                                                              93/749 
+  Verifying        : policycoreutils-3.6-2.1.el9.x86_64                                                      94/749 
+  Verifying        : policycoreutils-3.5-3.el9_3.x86_64                                                      95/749 
+  Verifying        : libibverbs-51.0-1.el9.x86_64                                                            96/749 
+  Verifying        : libibverbs-46.0-1.el9.x86_64                                                            97/749 
+  Verifying        : python3-pip-wheel-21.3.1-1.el9.noarch                                                   98/749 
+  Verifying        : python3-pip-wheel-21.2.3-7.el9.noarch                                                   99/749 
+  Verifying        : rpm-sign-libs-4.16.1.3-34.el9.0.1.x86_64                                               100/749 
+  Verifying        : rpm-sign-libs-4.16.1.3-25.el9.x86_64                                                   101/749 
+  Verifying        : rpm-plugin-selinux-4.16.1.3-34.el9.0.1.x86_64                                          102/749 
+  Verifying        : rpm-plugin-selinux-4.16.1.3-25.el9.x86_64                                              103/749 
+  Verifying        : rpm-plugin-audit-4.16.1.3-34.el9.0.1.x86_64                                            104/749 
+  Verifying        : rpm-plugin-audit-4.16.1.3-25.el9.x86_64                                                105/749 
+  Verifying        : rpm-libs-4.16.1.3-34.el9.0.1.x86_64                                                    106/749 
+  Verifying        : rpm-libs-4.16.1.3-25.el9.x86_64                                                        107/749 
+  Verifying        : rpm-build-libs-4.16.1.3-34.el9.0.1.x86_64                                              108/749 
+  Verifying        : rpm-build-libs-4.16.1.3-25.el9.x86_64                                                  109/749 
+  Verifying        : rpm-4.16.1.3-34.el9.0.1.x86_64                                                         110/749 
+  Verifying        : rpm-4.16.1.3-25.el9.x86_64                                                             111/749 
+  Verifying        : python3-rpm-4.16.1.3-34.el9.0.1.x86_64                                                 112/749 
+  Verifying        : python3-rpm-4.16.1.3-25.el9.x86_64                                                     113/749 
+  Verifying        : openssl-libs-1:3.2.2-6.el9_5.1.x86_64                                                  114/749 
+  Verifying        : openssl-libs-1:3.0.7-24.el9.x86_64                                                     115/749 
+  Verifying        : openssl-1:3.2.2-6.el9_5.1.x86_64                                                       116/749 
+  Verifying        : openssl-1:3.0.7-24.el9.x86_64                                                          117/749 
+  Verifying        : pcre2-syntax-10.40-6.el9.noarch                                                        118/749 
+  Verifying        : pcre2-syntax-10.40-2.el9.noarch                                                        119/749 
+  Verifying        : pcre2-10.40-6.el9.x86_64                                                               120/749 
+  Verifying        : pcre2-10.40-2.el9.x86_64                                                               121/749 
+  Verifying        : grubby-8.40-64.el9.x86_64                                                              122/749 
+  Verifying        : grubby-8.40-63.el9.x86_64                                                              123/749 
+  Verifying        : libnftnl-1.2.6-4.el9_4.x86_64                                                          124/749 
+  Verifying        : libnftnl-1.2.2-1.el9.x86_64                                                            125/749 
+  Verifying        : yum-utils-4.3.0-16.el9.noarch                                                          126/749 
+  Verifying        : yum-utils-4.3.0-11.el9_3.noarch                                                        127/749 
+  Verifying        : python3-dnf-plugins-core-4.3.0-16.el9.noarch                                           128/749 
+  Verifying        : python3-dnf-plugins-core-4.3.0-11.el9_3.noarch                                         129/749 
+  Verifying        : dnf-plugins-core-4.3.0-16.el9.noarch                                                   130/749 
+  Verifying        : dnf-plugins-core-4.3.0-11.el9_3.noarch                                                 131/749 
+  Verifying        : dmidecode-1:3.6-1.el9.x86_64                                                           132/749 
+  Verifying        : dmidecode-1:3.5-1.el9.x86_64                                                           133/749 
+  Verifying        : libtirpc-1.3.3-9.el9.x86_64                                                            134/749 
+  Verifying        : libtirpc-1.3.3-2.el9.x86_64                                                            135/749 
+  Verifying        : python3-setuptools-wheel-53.0.0-13.el9.noarch                                          136/749 
+  Verifying        : python3-setuptools-wheel-53.0.0-12.el9.noarch                                          137/749 
+  Verifying        : libbpf-2:1.4.0-1.el9.x86_64                                                            138/749 
+  Verifying        : libbpf-2:1.2.0-1.el9.x86_64                                                            139/749 
+  Verifying        : bash-5.1.8-9.el9.x86_64                                                                140/749 
+  Verifying        : bash-5.1.8-6.el9_1.x86_64                                                              141/749 
+  Verifying        : tzdata-2025a-1.el9.noarch                                                              142/749 
+  Verifying        : tzdata-2023d-1.el9.noarch                                                              143/749 
+  Verifying        : initscripts-service-10.11.7-1.el9.noarch                                               144/749 
+  Verifying        : initscripts-service-10.11.5-1.el9.noarch                                               145/749 
+  Verifying        : libfido2-1.13.0-2.el9.x86_64                                                           146/749 
+  Verifying        : libfido2-1.13.0-1.el9.x86_64                                                           147/749 
+  Verifying        : libndp-1.9-1.el9.x86_64                                                                148/749 
+  Verifying        : libndp-1.8-4.el9.x86_64                                                                149/749 
+  Verifying        : fuse-libs-2.9.9-16.el9.x86_64                                                          150/749 
+  Verifying        : fuse-libs-2.9.9-15.el9.x86_64                                                          151/749 
+  Verifying        : irqbalance-2:1.9.4-1.el9.x86_64                                                        152/749 
+  Verifying        : irqbalance-2:1.9.2-3.el9.x86_64                                                        153/749 
+  Verifying        : cryptsetup-libs-2.7.2-3.el9_5.x86_64                                                   154/749 
+  Verifying        : cryptsetup-libs-2.6.0-3.el9.x86_64                                                     155/749 
+  Verifying        : shadow-utils-2:4.9-10.el9_5.x86_64                                                     156/749 
+  Verifying        : shadow-utils-2:4.9-8.el9.x86_64                                                        157/749 
+  Verifying        : device-mapper-persistent-data-1.0.9-3.el9_4.x86_64                                     158/749 
+  Verifying        : device-mapper-persistent-data-1.0.6-3.el9_3.x86_64                                     159/749 
+  Verifying        : os-prober-1.77-12.el9_5.x86_64                                                         160/749 
+  Verifying        : os-prober-1.77-10.el9.x86_64                                                           161/749 
+  Verifying        : kmod-libs-28-10.el9.x86_64                                                             162/749 
+  Verifying        : kmod-libs-28-9.el9.x86_64                                                              163/749 
+  Verifying        : kmod-28-10.el9.x86_64                                                                  164/749 
+  Verifying        : kmod-28-9.el9.x86_64                                                                   165/749 
+  Verifying        : virt-what-1.25-10.el9.x86_64                                                           166/749 
+  Verifying        : virt-what-1.25-5.el9.x86_64                                                            167/749 
+  Verifying        : iproute-tc-6.2.0-6.el9_4.x86_64                                                        168/749 
+  Verifying        : iproute-tc-6.2.0-5.el9.x86_64                                                          169/749 
+  Verifying        : iproute-6.2.0-6.el9_4.x86_64                                                           170/749 
+  Verifying        : iproute-6.2.0-5.el9.x86_64                                                             171/749 
+  Verifying        : libnfnetlink-1.0.1-23.el9_5.x86_64                                                     172/749 
+  Verifying        : libnfnetlink-1.0.1-21.el9.x86_64                                                       173/749 
+  Verifying        : libmnl-1.0.4-16.el9_4.x86_64                                                           174/749 
+  Verifying        : libmnl-1.0.4-15.el9.x86_64                                                             175/749 
+  Verifying        : squashfs-tools-4.4-10.git1.el9.x86_64                                                  176/749 
+  Verifying        : squashfs-tools-4.4-8.git1.el9.x86_64                                                   177/749 
+  Verifying        : procps-ng-3.3.17-14.el9.x86_64                                                         178/749 
+  Verifying        : procps-ng-3.3.17-13.el9.x86_64                                                         179/749 
+  Verifying        : libnghttp2-1.43.0-6.el9.x86_64                                                         180/749 
+  Verifying        : libnghttp2-1.43.0-5.el9_3.1.x86_64                                                     181/749 
+  Verifying        : less-590-5.el9.x86_64                                                                  182/749 
+  Verifying        : less-590-2.el9_2.x86_64                                                                183/749 
+  Verifying        : sqlite-libs-3.34.1-7.el9_3.x86_64                                                      184/749 
+  Verifying        : sqlite-libs-3.34.1-6.el9_1.x86_64                                                      185/749 
+  Verifying        : linux-firmware-whence-20250114-146.3.el9_5.noarch                                      186/749 
+  Verifying        : linux-firmware-whence-20230814-140.el9_3.noarch                                        187/749 
+  Verifying        : linux-firmware-20250114-146.3.el9_5.noarch                                             188/749 
+  Verifying        : linux-firmware-20230814-140.el9_3.noarch                                               189/749 
+  Verifying        : libksba-1.5.1-7.el9.x86_64                                                             190/749 
+  Verifying        : libksba-1.5.1-6.el9_1.x86_64                                                           191/749 
+  Verifying        : unzip-6.0-57.el9.x86_64                                                                192/749 
+  Verifying        : unzip-6.0-56.el9.x86_64                                                                193/749 
+  Verifying        : filesystem-3.16-5.el9.x86_64                                                           194/749 
+  Verifying        : filesystem-3.16-2.el9.x86_64                                                           195/749 
+  Verifying        : gdbm-libs-1:1.23-1.el9.x86_64                                                          196/749 
+  Verifying        : gdbm-libs-1:1.19-4.el9.x86_64                                                          197/749 
+  Verifying        : findutils-1:4.8.0-7.el9.x86_64                                                         198/749 
+  Verifying        : findutils-1:4.8.0-6.el9.x86_64                                                         199/749 
+  Verifying        : python3-systemd-234-19.el9.x86_64                                                      200/749 
+  Verifying        : python3-systemd-234-18.el9.x86_64                                                      201/749 
+  Verifying        : net-tools-2.0-0.64.20160912git.el9.x86_64                                              202/749 
+  Verifying        : net-tools-2.0-0.62.20160912git.el9.x86_64                                              203/749 
+  Verifying        : kexec-tools-2.0.27-16.el9_5.1.x86_64                                                   204/749 
+  Verifying        : kexec-tools-2.0.26-8.el9.x86_64                                                        205/749 
+  Verifying        : coreutils-common-8.32-36.el9.x86_64                                                    206/749 
+  Verifying        : coreutils-common-8.32-34.el9.x86_64                                                    207/749 
+  Verifying        : coreutils-8.32-36.el9.x86_64                                                           208/749 
+  Verifying        : coreutils-8.32-34.el9.x86_64                                                           209/749 
+  Verifying        : python3-libs-3.9.21-1.el9_5.x86_64                                                     210/749 
+  Verifying        : python3-libs-3.9.18-1.el9_3.x86_64                                                     211/749 
+  Verifying        : python3-3.9.21-1.el9_5.x86_64                                                          212/749 
+  Verifying        : python3-3.9.18-1.el9_3.x86_64                                                          213/749 
+  Verifying        : gnutls-3.8.3-4.el9_4.x86_64                                                            214/749 
+  Verifying        : gnutls-3.7.6-23.el9.x86_64                                                             215/749 
+  Verifying        : iputils-20210202-10.el9_5.x86_64                                                       216/749 
+  Verifying        : iputils-20210202-9.el9.x86_64                                                          217/749 
+  Verifying        : tuned-2.24.0-2.el9_5.noarch                                                            218/749 
+  Verifying        : tuned-2.21.0-1.el9_3.noarch                                                            219/749 
+  Verifying        : libgcrypt-1.10.0-11.el9.x86_64                                                         220/749 
+  Verifying        : libgcrypt-1.10.0-10.el9_2.x86_64                                                       221/749 
+  Verifying        : libsolv-0.7.24-3.el9.x86_64                                                            222/749 
+  Verifying        : libsolv-0.7.24-2.el9.x86_64                                                            223/749 
+  Verifying        : libsepol-3.6-1.el9.x86_64                                                              224/749 
+  Verifying        : libsepol-3.5-1.el9.x86_64                                                              225/749 
+  Verifying        : ca-certificates-2024.2.69_v8.0.303-91.4.el9_4.noarch                                   226/749 
+  Verifying        : ca-certificates-2023.2.60_v7.0.306-90.1.el9_2.noarch                                   227/749 
+  Verifying        : libss-1.46.5-5.el9.x86_64                                                              228/749 
+  Verifying        : libss-1.46.5-3.el9.x86_64                                                              229/749 
+  Verifying        : libcom_err-1.46.5-5.el9.x86_64                                                         230/749 
+  Verifying        : libcom_err-1.46.5-3.el9.x86_64                                                         231/749 
+  Verifying        : e2fsprogs-libs-1.46.5-5.el9.x86_64                                                     232/749 
+  Verifying        : e2fsprogs-libs-1.46.5-3.el9.x86_64                                                     233/749 
+  Verifying        : e2fsprogs-1.46.5-5.el9.x86_64                                                          234/749 
+  Verifying        : e2fsprogs-1.46.5-3.el9.x86_64                                                          235/749 
+  Verifying        : libnl3-cli-3.9.0-1.el9.x86_64                                                          236/749 
+  Verifying        : libnl3-cli-3.7.0-1.el9.x86_64                                                          237/749 
+  Verifying        : libnl3-3.9.0-1.el9.x86_64                                                              238/749 
+  Verifying        : libnl3-3.7.0-1.el9.x86_64                                                              239/749 
+  Verifying        : libsemanage-3.6-2.1.el9_5.x86_64                                                       240/749 
+  Verifying        : libsemanage-3.5-2.el9.x86_64                                                           241/749 
+  Verifying        : libselinux-utils-3.6-1.el9.x86_64                                                      242/749 
+  Verifying        : libselinux-utils-3.5-1.el9.x86_64                                                      243/749 
+  Verifying        : libselinux-3.6-1.el9.x86_64                                                            244/749 
+  Verifying        : libselinux-3.5-1.el9.x86_64                                                            245/749 
+  Verifying        : ipset-libs-7.11-11.el9_5.x86_64                                                        246/749 
+  Verifying        : ipset-libs-7.11-8.el9.x86_64                                                           247/749 
+  Verifying        : ipset-7.11-11.el9_5.x86_64                                                             248/749 
+  Verifying        : ipset-7.11-8.el9.x86_64                                                                249/749 
+  Verifying        : dracut-squash-057-70.git20240819.el9.x86_64                                            250/749 
+  Verifying        : dracut-squash-057-44.git20230822.el9.x86_64                                            251/749 
+  Verifying        : dracut-network-057-70.git20240819.el9.x86_64                                           252/749 
+  Verifying        : dracut-network-057-44.git20230822.el9.x86_64                                           253/749 
+  Verifying        : dracut-config-rescue-057-70.git20240819.el9.x86_64                                     254/749 
+  Verifying        : dracut-config-rescue-057-44.git20230822.el9.x86_64                                     255/749 
+  Verifying        : dracut-057-70.git20240819.el9.x86_64                                                   256/749 
+  Verifying        : dracut-057-44.git20230822.el9.x86_64                                                   257/749 
+  Verifying        : chrony-4.5-3.el9.x86_64                                                                258/749 
+  Verifying        : chrony-4.3-1.el9.x86_64                                                                259/749 
+  Verifying        : libevent-2.1.12-8.el9_4.x86_64                                                         260/749 
+  Verifying        : libevent-2.1.12-6.el9.x86_64                                                           261/749 
+  Verifying        : ima-evm-utils-1.5-2.el9.0.1.x86_64                                                     262/749 
+  Verifying        : ima-evm-utils-1.4-4.el9.x86_64                                                         263/749 
+  Verifying        : numactl-libs-2.0.18-2.el9.x86_64                                                       264/749 
+  Verifying        : numactl-libs-2.0.16-1.el9.x86_64                                                       265/749 
+  Verifying        : nettle-3.9.1-1.el9.x86_64                                                              266/749 
+  Verifying        : nettle-3.8-3.el9_0.x86_64                                                              267/749 
+  Verifying        : pcre-8.44-4.el9.x86_64                                                                 268/749 
+  Verifying        : pcre-8.44-3.el9.3.x86_64                                                               269/749 
+  Verifying        : tpm2-tss-3.2.3-1.el9.x86_64                                                            270/749 
+  Verifying        : tpm2-tss-3.2.2-2.el9.x86_64                                                            271/749 
+  Verifying        : openssh-server-8.7p1-43.el9.x86_64                                                     272/749 
+  Verifying        : openssh-server-8.7p1-34.el9.x86_64                                                     273/749 
+  Verifying        : openssh-clients-8.7p1-43.el9.x86_64                                                    274/749 
+  Verifying        : openssh-clients-8.7p1-34.el9.x86_64                                                    275/749 
+  Verifying        : openssh-8.7p1-43.el9.x86_64                                                            276/749 
+  Verifying        : openssh-8.7p1-34.el9.x86_64                                                            277/749 
+  Verifying        : python3-nftables-1:1.0.9-3.el9.x86_64                                                  278/749 
+  Verifying        : python3-nftables-1:1.0.4-11.el9_3.x86_64                                               279/749 
+  Verifying        : nftables-1:1.0.9-3.el9.x86_64                                                          280/749 
+  Verifying        : nftables-1:1.0.4-11.el9_3.x86_64                                                       281/749 
+  Verifying        : librepo-1.14.5-2.el9.x86_64                                                            282/749 
+  Verifying        : librepo-1.14.5-1.el9.x86_64                                                            283/749 
+  Verifying        : cronie-anacron-1.5.7-12.el9_5.x86_64                                                   284/749 
+  Verifying        : cronie-anacron-1.5.7-8.el9.x86_64                                                      285/749 
+  Verifying        : cronie-1.5.7-12.el9_5.x86_64                                                           286/749 
+  Verifying        : cronie-1.5.7-8.el9.x86_64                                                              287/749 
+  Verifying        : libtdb-1.4.10-1.el9.x86_64                                                             288/749 
+  Verifying        : libtdb-1.4.8-2.el9.x86_64                                                              289/749 
+  Verifying        : sssd-kcm-2.9.5-4.el9_5.4.x86_64                                                        290/749 
+  Verifying        : sssd-kcm-2.9.1-4.el9_3.1.x86_64                                                        291/749 
+  Verifying        : sssd-common-2.9.5-4.el9_5.4.x86_64                                                     292/749 
+  Verifying        : sssd-common-2.9.1-4.el9_3.1.x86_64                                                     293/749 
+  Verifying        : sssd-client-2.9.5-4.el9_5.4.x86_64                                                     294/749 
+  Verifying        : sssd-client-2.9.1-4.el9_3.1.x86_64                                                     295/749 
+  Verifying        : libsss_sudo-2.9.5-4.el9_5.4.x86_64                                                     296/749 
+  Verifying        : libsss_sudo-2.9.1-4.el9_3.1.x86_64                                                     297/749 
+  Verifying        : libsss_nss_idmap-2.9.5-4.el9_5.4.x86_64                                                298/749 
+  Verifying        : libsss_nss_idmap-2.9.1-4.el9_3.1.x86_64                                                299/749 
+  Verifying        : libsss_idmap-2.9.5-4.el9_5.4.x86_64                                                    300/749 
+  Verifying        : libsss_idmap-2.9.1-4.el9_3.1.x86_64                                                    301/749 
+  Verifying        : libsss_certmap-2.9.5-4.el9_5.4.x86_64                                                  302/749 
+  Verifying        : libsss_certmap-2.9.1-4.el9_3.1.x86_64                                                  303/749 
+  Verifying        : polkit-libs-0.117-13.el9.x86_64                                                        304/749 
+  Verifying        : polkit-libs-0.117-11.el9.x86_64                                                        305/749 
+  Verifying        : polkit-0.117-13.el9.x86_64                                                             306/749 
+  Verifying        : polkit-0.117-11.el9.x86_64                                                             307/749 
+  Verifying        : p11-kit-trust-0.25.3-3.el9_5.x86_64                                                    308/749 
+  Verifying        : p11-kit-trust-0.24.1-2.el9.x86_64                                                      309/749 
+  Verifying        : p11-kit-0.25.3-3.el9_5.x86_64                                                          310/749 
+  Verifying        : p11-kit-0.24.1-2.el9.x86_64                                                            311/749 
+  Verifying        : systemd-udev-252-46.el9_5.2.0.1.x86_64                                                 312/749 
+  Verifying        : systemd-udev-252-18.el9.x86_64                                                         313/749 
+  Verifying        : systemd-rpm-macros-252-46.el9_5.2.0.1.noarch                                           314/749 
+  Verifying        : systemd-rpm-macros-252-18.el9.noarch                                                   315/749 
+  Verifying        : systemd-pam-252-46.el9_5.2.0.1.x86_64                                                  316/749 
+  Verifying        : systemd-pam-252-18.el9.x86_64                                                          317/749 
+  Verifying        : systemd-libs-252-46.el9_5.2.0.1.x86_64                                                 318/749 
+  Verifying        : systemd-libs-252-18.el9.x86_64                                                         319/749 
+  Verifying        : systemd-252-46.el9_5.2.0.1.x86_64                                                      320/749 
+  Verifying        : systemd-252-18.el9.x86_64                                                              321/749 
+  Verifying        : elfutils-libs-0.191-4.el9.x86_64                                                       322/749 
+  Verifying        : elfutils-libs-0.189-3.el9.x86_64                                                       323/749 
+  Verifying        : elfutils-libelf-0.191-4.el9.x86_64                                                     324/749 
+  Verifying        : elfutils-libelf-0.189-3.el9.x86_64                                                     325/749 
+  Verifying        : elfutils-debuginfod-client-0.191-4.el9.x86_64                                          326/749 
+  Verifying        : elfutils-debuginfod-client-0.189-3.el9.x86_64                                          327/749 
+  Verifying        : elfutils-default-yama-scope-0.191-4.el9.noarch                                         328/749 
+  Verifying        : elfutils-default-yama-scope-0.189-3.el9.noarch                                         329/749 
+  Verifying        : libkcapi-hmaccalc-1.4.0-2.el9.x86_64                                                   330/749 
+  Verifying        : libkcapi-hmaccalc-1.3.1-3.el9.x86_64                                                   331/749 
+  Verifying        : libkcapi-1.4.0-2.el9.x86_64                                                            332/749 
+  Verifying        : libkcapi-1.3.1-3.el9.x86_64                                                            333/749 
+  Verifying        : libcurl-7.76.1-31.el9.x86_64                                                           334/749 
+  Verifying        : libcurl-7.76.1-26.el9_3.2.0.1.x86_64                                                   335/749 
+  Verifying        : curl-7.76.1-31.el9.x86_64                                                              336/749 
+  Verifying        : curl-7.76.1-26.el9_3.2.0.1.x86_64                                                      337/749 
+  Verifying        : libtevent-0.16.1-1.el9.x86_64                                                          338/749 
+  Verifying        : libtevent-0.14.1-2.el9.x86_64                                                          339/749 
+  Verifying        : libtalloc-2.4.2-1.el9.x86_64                                                           340/749 
+  Verifying        : libtalloc-2.4.0-2.el9.x86_64                                                           341/749 
+  Verifying        : libldb-2.9.1-2.el9.x86_64                                                              342/749 
+  Verifying        : libldb-2.7.2-2.el9.x86_64                                                              343/749 
+  Verifying        : openldap-2.6.6-3.el9.x86_64                                                            344/749 
+  Verifying        : openldap-2.6.3-1.el9.x86_64                                                            345/749 
+  Verifying        : libuser-0.63-15.el9.x86_64                                                             346/749 
+  Verifying        : libuser-0.63-13.el9.x86_64                                                             347/749 
+  Verifying        : libssh-config-0.10.4-13.el9.noarch                                                     348/749 
+  Verifying        : libssh-config-0.10.4-11.el9.noarch                                                     349/749 
+  Verifying        : libssh-0.10.4-13.el9.x86_64                                                            350/749 
+  Verifying        : libssh-0.10.4-11.el9.x86_64                                                            351/749 
+  Verifying        : sudo-1.9.5p2-10.el9_3.x86_64                                                           352/749 
+  Verifying        : sudo-1.9.5p2-9.el9.x86_64                                                              353/749 
+  Verifying        : python3-dbus-1.2.18-2.el9.0.1.x86_64                                                   354/749 
+  Verifying        : python3-dbus-1.2.18-2.el9.x86_64                                                       355/749 
+  Verifying        : initscripts-rename-device-10.11.7-1.el9.x86_64                                         356/749 
+  Verifying        : initscripts-rename-device-10.11.5-1.el9.x86_64                                         357/749 
+  Verifying        : make-1:4.3-8.el9.x86_64                                                                358/749 
+  Verifying        : make-1:4.3-7.el9.x86_64                                                                359/749 
+  Verifying        : snappy-1.1.8-8.el9.0.1.x86_64                                                          360/749 
+  Verifying        : snappy-1.1.8-8.el9.x86_64                                                              361/749 
+  Verifying        : krb5-libs-1.21.1-4.el9_5.x86_64                                                        362/749 
+  Verifying        : krb5-libs-1.21.1-1.el9.x86_64                                                          363/749 
+  Verifying        : kpartx-0.8.7-32.el9.x86_64                                                             364/749 
+  Verifying        : kpartx-0.8.7-22.el9.x86_64                                                             365/749 
+  Verifying        : pam-1.5.1-22.el9_5.x86_64                                                              366/749 
+  Verifying        : pam-1.5.1-15.el9.x86_64                                                                367/749 
+  Verifying        : tar-2:1.34-7.el9.x86_64                                                                368/749 
+  Verifying        : tar-2:1.34-6.el9_1.x86_64                                                              369/749 
+  Verifying        : vim-minimal-2:8.2.2637-21.el9.x86_64                                                   370/749 
+  Verifying        : vim-minimal-2:8.2.2637-20.el9_1.x86_64                                                 371/749 
+  Verifying        : vim-filesystem-2:8.2.2637-21.el9.noarch                                                372/749 
+  Verifying        : vim-filesystem-2:8.2.2637-20.el9_1.noarch                                              373/749 
+  Verifying        : libstdc++-11.5.0-5.el9_5.x86_64                                                        374/749 
+  Verifying        : libstdc++-11.4.1-2.1.el9.x86_64                                                        375/749 
+  Verifying        : libgomp-11.5.0-5.el9_5.x86_64                                                          376/749 
+  Verifying        : libgomp-11.4.1-2.1.el9.x86_64                                                          377/749 
+  Verifying        : libgcc-11.5.0-5.el9_5.x86_64                                                           378/749 
+  Verifying        : libgcc-11.4.1-2.1.el9.x86_64                                                           379/749 
+  Verifying        : glibc-langpack-en-2.34-125.el9_5.3.x86_64                                              380/749 
+  Verifying        : glibc-langpack-en-2.34-83.el9.7.x86_64                                                 381/749 
+  Verifying        : glibc-gconv-extra-2.34-125.el9_5.3.x86_64                                              382/749 
+  Verifying        : glibc-gconv-extra-2.34-83.el9.7.x86_64                                                 383/749 
+  Verifying        : glibc-common-2.34-125.el9_5.3.x86_64                                                   384/749 
+  Verifying        : glibc-common-2.34-83.el9.7.x86_64                                                      385/749 
+  Verifying        : glibc-2.34-125.el9_5.3.x86_64                                                          386/749 
+  Verifying        : glibc-2.34-83.el9.7.x86_64                                                             387/749 
+  Verifying        : util-linux-core-2.37.4-20.el9.x86_64                                                   388/749 
+  Verifying        : util-linux-core-2.37.4-15.el9.x86_64                                                   389/749 
+  Verifying        : util-linux-2.37.4-20.el9.x86_64                                                        390/749 
+  Verifying        : util-linux-2.37.4-15.el9.x86_64                                                        391/749 
+  Verifying        : libuuid-2.37.4-20.el9.x86_64                                                           392/749 
+  Verifying        : libuuid-2.37.4-15.el9.x86_64                                                           393/749 
+  Verifying        : libsmartcols-2.37.4-20.el9.x86_64                                                      394/749 
+  Verifying        : libsmartcols-2.37.4-15.el9.x86_64                                                      395/749 
+  Verifying        : libmount-2.37.4-20.el9.x86_64                                                          396/749 
+  Verifying        : libmount-2.37.4-15.el9.x86_64                                                          397/749 
+  Verifying        : libfdisk-2.37.4-20.el9.x86_64                                                          398/749 
+  Verifying        : libfdisk-2.37.4-15.el9.x86_64                                                          399/749 
+  Verifying        : libblkid-2.37.4-20.el9.x86_64                                                          400/749 
+  Verifying        : libblkid-2.37.4-15.el9.x86_64                                                          401/749 
+  Verifying        : xfsprogs-6.4.0-4.el9.x86_64                                                            402/749 
+  Verifying        : xfsprogs-5.19.0-4.el9.x86_64                                                           403/749 
+  Verifying        : python3-libdnf-0.69.0-12.el9.x86_64                                                    404/749 
+  Verifying        : python3-libdnf-0.69.0-6.el9_3.x86_64                                                   405/749 
+  Verifying        : python3-hawkey-0.69.0-12.el9.x86_64                                                    406/749 
+  Verifying        : python3-hawkey-0.69.0-6.el9_3.x86_64                                                   407/749 
+  Verifying        : libdnf-0.69.0-12.el9.x86_64                                                            408/749 
+  Verifying        : libdnf-0.69.0-6.el9_3.x86_64                                                           409/749 
+  Verifying        : libeconf-0.4.1-4.el9.x86_64                                                            410/749 
+  Verifying        : libeconf-0.4.1-3.el9_2.x86_64                                                          411/749 
+  Verifying        : lvm2-libs-9:2.03.24-2.el9.x86_64                                                       412/749 
+  Verifying        : lvm2-libs-9:2.03.21-3.el9.x86_64                                                       413/749 
+  Verifying        : lvm2-9:2.03.24-2.el9.x86_64                                                            414/749 
+  Verifying        : lvm2-9:2.03.21-3.el9.x86_64                                                            415/749 
+  Verifying        : device-mapper-libs-9:1.02.198-2.el9.x86_64                                             416/749 
+  Verifying        : device-mapper-libs-9:1.02.195-3.el9.x86_64                                             417/749 
+  Verifying        : device-mapper-event-libs-9:1.02.198-2.el9.x86_64                                       418/749 
+  Verifying        : device-mapper-event-libs-9:1.02.195-3.el9.x86_64                                       419/749 
+  Verifying        : device-mapper-event-9:1.02.198-2.el9.x86_64                                            420/749 
+  Verifying        : device-mapper-event-9:1.02.195-3.el9.x86_64                                            421/749 
+  Verifying        : device-mapper-9:1.02.198-2.el9.x86_64                                                  422/749 
+  Verifying        : device-mapper-9:1.02.195-3.el9.x86_64                                                  423/749 
+  Verifying        : kbd-legacy-2.4.0-10.el9.noarch                                                         424/749 
+  Verifying        : kbd-legacy-2.4.0-9.el9.noarch                                                          425/749 
+  Verifying        : grub2-tools-minimal-1:2.06-93.el9_5.x86_64                                             426/749 
+  Verifying        : grub2-tools-minimal-1:2.06-70.el9_3.1.rocky.0.2.x86_64                                 427/749 
+  Verifying        : grub2-tools-1:2.06-93.el9_5.x86_64                                                     428/749 
+  Verifying        : grub2-tools-1:2.06-70.el9_3.1.rocky.0.2.x86_64                                         429/749 
+  Verifying        : grub2-pc-1:2.06-93.el9_5.x86_64                                                        430/749 
+  Verifying        : grub2-pc-1:2.06-70.el9_3.1.rocky.0.2.x86_64                                            431/749 
+  Verifying        : grub2-pc-modules-1:2.06-93.el9_5.noarch                                                432/749 
+  Verifying        : grub2-pc-modules-1:2.06-70.el9_3.1.rocky.0.2.noarch                                    433/749 
+  Verifying        : grub2-common-1:2.06-93.el9_5.noarch                                                    434/749 
+  Verifying        : grub2-common-1:2.06-70.el9_3.1.rocky.0.2.noarch                                        435/749 
+  Verifying        : python3-perf-5.14.0-503.31.1.el9_5.x86_64                                              436/749 
+  Verifying        : python3-perf-5.14.0-362.13.1.el9_3.x86_64                                              437/749 
+  Verifying        : kernel-tools-libs-5.14.0-503.31.1.el9_5.x86_64                                         438/749 
+  Verifying        : kernel-tools-libs-5.14.0-362.13.1.el9_3.x86_64                                         439/749 
+  Verifying        : kernel-tools-5.14.0-503.31.1.el9_5.x86_64                                              440/749 
+  Verifying        : kernel-tools-5.14.0-362.13.1.el9_3.x86_64                                              441/749 
+  Verifying        : rocky-repos-9.5-1.2.el9.noarch                                                         442/749 
+  Verifying        : rocky-repos-9.3-1.2.el9.noarch                                                         443/749 
+  Verifying        : rocky-release-9.5-1.2.el9.noarch                                                       444/749 
+  Verifying        : rocky-release-9.3-1.2.el9.noarch                                                       445/749 
+  Verifying        : rocky-gpg-keys-9.5-1.2.el9.noarch                                                      446/749 
+  Verifying        : rocky-gpg-keys-9.3-1.2.el9.noarch                                                      447/749 
+  Verifying        : rsync-3.2.3-20.el9_5.1.x86_64                                                          448/749 
+  Verifying        : rsync-3.2.3-19.el9.x86_64                                                              449/749 
+  Verifying        : NetworkManager-tui-1:1.48.10-5.el9_5.x86_64                                            450/749 
+  Verifying        : NetworkManager-tui-1:1.44.0-3.el9.x86_64                                               451/749 
+  Verifying        : NetworkManager-team-1:1.48.10-5.el9_5.x86_64                                           452/749 
+  Verifying        : NetworkManager-team-1:1.44.0-3.el9.x86_64                                              453/749 
+  Verifying        : NetworkManager-libnm-1:1.48.10-5.el9_5.x86_64                                          454/749 
+  Verifying        : NetworkManager-libnm-1:1.44.0-3.el9.x86_64                                             455/749 
+  Verifying        : NetworkManager-1:1.48.10-5.el9_5.x86_64                                                456/749 
+  Verifying        : NetworkManager-1:1.44.0-3.el9.x86_64                                                   457/749 
+  Verifying        : python-srpm-macros-3.9-54.el9.noarch                                                   458/749 
+  Verifying        : python-srpm-macros-3.9-52.el9.noarch                                                   459/749 
+  Verifying        : autoconf-2.69-39.el9.noarch                                                            460/749 
+  Verifying        : autoconf-2.69-38.el9.noarch                                                            461/749 
+  Verifying        : go-srpm-macros-3.6.0-3.el9.noarch                                                      462/749 
+  Verifying        : go-srpm-macros-3.2.0-2.el9.noarch                                                      463/749 
+  Verifying        : libX11-common-1.7.0-9.el9.noarch                                                       464/749 
+  Verifying        : libX11-common-1.7.0-8.el9.noarch                                                       465/749 
+  Verifying        : libtool-2.4.6-46.el9.x86_64                                                            466/749 
+  Verifying        : libtool-2.4.6-45.el9.x86_64                                                            467/749 
+  Verifying        : llvm-libs-18.1.8-3.el9.x86_64                                                          468/749 
+  Verifying        : llvm-libs-16.0.6-4.el9.x86_64                                                          469/749 
+  Verifying        : perl-HTTP-Tiny-0.076-462.el9.noarch                                                    470/749 
+  Verifying        : perl-HTTP-Tiny-0.076-461.el9.noarch                                                    471/749 
+  Verifying        : redhat-rpm-config-208-1.el9.noarch                                                     472/749 
+  Verifying        : redhat-rpm-config-201-1.el9.noarch                                                     473/749 
+  Verifying        : perl-Scalar-List-Utils-4:1.56-462.el9.x86_64                                           474/749 
+  Verifying        : perl-Scalar-List-Utils-4:1.56-461.el9.x86_64                                           475/749 
+  Verifying        : rpm-plugin-systemd-inhibit-4.16.1.3-34.el9.0.1.x86_64                                  476/749 
+  Verifying        : rpm-plugin-systemd-inhibit-4.16.1.3-25.el9.x86_64                                      477/749 
+  Verifying        : perl-IO-Socket-SSL-2.073-2.el9.noarch                                                  478/749 
+  Verifying        : perl-IO-Socket-SSL-2.073-1.el9.noarch                                                  479/749 
+  Verifying        : openssl-devel-1:3.2.2-6.el9_5.1.x86_64                                                 480/749 
+  Verifying        : openssl-devel-1:3.0.7-24.el9.x86_64                                                    481/749 
+  Verifying        : sysstat-12.5.4-9.el9.x86_64                                                            482/749 
+  Verifying        : sysstat-12.5.4-7.el9.x86_64                                                            483/749 
+  Verifying        : python-unversioned-command-3.9.21-1.el9_5.noarch                                       484/749 
+  Verifying        : python-unversioned-command-3.9.18-1.el9_3.noarch                                       485/749 
+  Verifying        : cmake-rpm-macros-3.26.5-2.el9.noarch                                                   486/749 
+  Verifying        : cmake-rpm-macros-3.20.2-9.el9_3.noarch                                                 487/749 
+  Verifying        : cmake-filesystem-3.26.5-2.el9.x86_64                                                   488/749 
+  Verifying        : cmake-filesystem-3.20.2-9.el9_3.x86_64                                                 489/749 
+  Verifying        : cmake-data-3.26.5-2.el9.noarch                                                         490/749 
+  Verifying        : cmake-data-3.20.2-9.el9_3.noarch                                                       491/749 
+  Verifying        : cmake-3.26.5-2.el9.x86_64                                                              492/749 
+  Verifying        : cmake-3.20.2-9.el9_3.x86_64                                                            493/749 
+  Verifying        : annobin-12.65-1.el9.x86_64                                                             494/749 
+  Verifying        : annobin-12.12-1.el9.x86_64                                                             495/749 
+  Verifying        : bind-utils-32:9.16.23-24.el9_5.3.x86_64                                                496/749 
+  Verifying        : bind-utils-32:9.16.23-14.el9_3.0.1.x86_64                                              497/749 
+  Verifying        : bind-libs-32:9.16.23-24.el9_5.3.x86_64                                                 498/749 
+  Verifying        : bind-libs-32:9.16.23-14.el9_3.0.1.x86_64                                               499/749 
+  Verifying        : bind-license-32:9.16.23-24.el9_5.3.noarch                                              500/749 
+  Verifying        : bind-license-32:9.16.23-14.el9_3.0.1.noarch                                            501/749 
+  Verifying        : libuv-1:1.42.0-2.el9_4.x86_64                                                          502/749 
+  Verifying        : libuv-1:1.42.0-1.el9.x86_64                                                            503/749 
+  Verifying        : python3-libselinux-3.6-1.el9.x86_64                                                    504/749 
+  Verifying        : python3-libselinux-3.5-1.el9.x86_64                                                    505/749 
+  Verifying        : libmaxminddb-1.5.2-4.el9.x86_64                                                        506/749 
+  Verifying        : libmaxminddb-1.5.2-3.el9.x86_64                                                        507/749 
+  Verifying        : wget-1.21.1-8.el9_4.x86_64                                                             508/749 
+  Verifying        : wget-1.21.1-7.el9.x86_64                                                               509/749 
+  Verifying        : perl-ph-5.32.1-481.el9.x86_64                                                          510/749 
+  Verifying        : perl-ph-5.32.1-480.el9.x86_64                                                          511/749 
+  Verifying        : perl-mro-1.23-481.el9.x86_64                                                           512/749 
+  Verifying        : perl-mro-1.23-480.el9.x86_64                                                           513/749 
+  Verifying        : perl-libs-4:5.32.1-481.el9.x86_64                                                      514/749 
+  Verifying        : perl-libs-4:5.32.1-480.el9.x86_64                                                      515/749 
+  Verifying        : perl-lib-0.65-481.el9.x86_64                                                           516/749 
+  Verifying        : perl-lib-0.65-480.el9.x86_64                                                           517/749 
+  Verifying        : perl-interpreter-4:5.32.1-481.el9.x86_64                                               518/749 
+  Verifying        : perl-interpreter-4:5.32.1-480.el9.x86_64                                               519/749 
+  Verifying        : perl-devel-4:5.32.1-481.el9.x86_64                                                     520/749 
+  Verifying        : perl-devel-4:5.32.1-480.el9.x86_64                                                     521/749 
+  Verifying        : perl-Time-Piece-1.3401-481.el9.x86_64                                                  522/749 
+  Verifying        : perl-Time-Piece-1.3401-480.el9.x86_64                                                  523/749 
+  Verifying        : perl-Sys-Hostname-1.23-481.el9.x86_64                                                  524/749 
+  Verifying        : perl-Sys-Hostname-1.23-480.el9.x86_64                                                  525/749 
+  Verifying        : perl-POSIX-1.94-481.el9.x86_64                                                         526/749 
+  Verifying        : perl-POSIX-1.94-480.el9.x86_64                                                         527/749 
+  Verifying        : perl-Opcode-1.48-481.el9.x86_64                                                        528/749 
+  Verifying        : perl-Opcode-1.48-480.el9.x86_64                                                        529/749 
+  Verifying        : perl-ODBM_File-1.16-481.el9.x86_64                                                     530/749 
+  Verifying        : perl-ODBM_File-1.16-480.el9.x86_64                                                     531/749 
+  Verifying        : perl-NDBM_File-1.15-481.el9.x86_64                                                     532/749 
+  Verifying        : perl-NDBM_File-1.15-480.el9.x86_64                                                     533/749 
+  Verifying        : perl-IO-1.43-481.el9.x86_64                                                            534/749 
+  Verifying        : perl-IO-1.43-480.el9.x86_64                                                            535/749 
+  Verifying        : perl-I18N-Langinfo-0.19-481.el9.x86_64                                                 536/749 
+  Verifying        : perl-I18N-Langinfo-0.19-480.el9.x86_64                                                 537/749 
+  Verifying        : perl-Hash-Util-FieldHash-1.20-481.el9.x86_64                                           538/749 
+  Verifying        : perl-Hash-Util-FieldHash-1.20-480.el9.x86_64                                           539/749 
+  Verifying        : perl-Hash-Util-0.23-481.el9.x86_64                                                     540/749 
+  Verifying        : perl-Hash-Util-0.23-480.el9.x86_64                                                     541/749 
+  Verifying        : perl-GDBM_File-1.18-481.el9.x86_64                                                     542/749 
+  Verifying        : perl-GDBM_File-1.18-480.el9.x86_64                                                     543/749 
+  Verifying        : perl-File-DosGlob-1.12-481.el9.x86_64                                                  544/749 
+  Verifying        : perl-File-DosGlob-1.12-480.el9.x86_64                                                  545/749 
+  Verifying        : perl-Fcntl-1.13-481.el9.x86_64                                                         546/749 
+  Verifying        : perl-Fcntl-1.13-480.el9.x86_64                                                         547/749 
+  Verifying        : perl-Errno-1.30-481.el9.x86_64                                                         548/749 
+  Verifying        : perl-Errno-1.30-480.el9.x86_64                                                         549/749 
+  Verifying        : perl-DynaLoader-1.47-481.el9.x86_64                                                    550/749 
+  Verifying        : perl-DynaLoader-1.47-480.el9.x86_64                                                    551/749 
+  Verifying        : perl-Devel-Peek-1.28-481.el9.x86_64                                                    552/749 
+  Verifying        : perl-Devel-Peek-1.28-480.el9.x86_64                                                    553/749 
+  Verifying        : perl-B-1.80-481.el9.x86_64                                                             554/749 
+  Verifying        : perl-B-1.80-480.el9.x86_64                                                             555/749 
+  Verifying        : perl-4:5.32.1-481.el9.x86_64                                                           556/749 
+  Verifying        : perl-4:5.32.1-480.el9.x86_64                                                           557/749 
+  Verifying        : perl-vmsish-1.04-481.el9.noarch                                                        558/749 
+  Verifying        : perl-vmsish-1.04-480.el9.noarch                                                        559/749 
+  Verifying        : perl-vars-1.05-481.el9.noarch                                                          560/749 
+  Verifying        : perl-vars-1.05-480.el9.noarch                                                          561/749 
+  Verifying        : perl-utils-5.32.1-481.el9.noarch                                                       562/749 
+  Verifying        : perl-utils-5.32.1-480.el9.noarch                                                       563/749 
+  Verifying        : perl-subs-1.03-481.el9.noarch                                                          564/749 
+  Verifying        : perl-subs-1.03-480.el9.noarch                                                          565/749 
+  Verifying        : perl-sort-2.04-481.el9.noarch                                                          566/749 
+  Verifying        : perl-sort-2.04-480.el9.noarch                                                          567/749 
+  Verifying        : perl-sigtrap-1.09-481.el9.noarch                                                       568/749 
+  Verifying        : perl-sigtrap-1.09-480.el9.noarch                                                       569/749 
+  Verifying        : perl-overloading-0.02-481.el9.noarch                                                   570/749 
+  Verifying        : perl-overloading-0.02-480.el9.noarch                                                   571/749 
+  Verifying        : perl-overload-1.31-481.el9.noarch                                                      572/749 
+  Verifying        : perl-overload-1.31-480.el9.noarch                                                      573/749 
+  Verifying        : perl-open-1.12-481.el9.noarch                                                          574/749 
+  Verifying        : perl-open-1.12-480.el9.noarch                                                          575/749 
+  Verifying        : perl-meta-notation-5.32.1-481.el9.noarch                                               576/749 
+  Verifying        : perl-meta-notation-5.32.1-480.el9.noarch                                               577/749 
+  Verifying        : perl-macros-4:5.32.1-481.el9.noarch                                                    578/749 
+  Verifying        : perl-macros-4:5.32.1-480.el9.noarch                                                    579/749 
+  Verifying        : perl-locale-1.09-481.el9.noarch                                                        580/749 
+  Verifying        : perl-locale-1.09-480.el9.noarch                                                        581/749 
+  Verifying        : perl-libnetcfg-4:5.32.1-481.el9.noarch                                                 582/749 
+  Verifying        : perl-libnetcfg-4:5.32.1-480.el9.noarch                                                 583/749 
+  Verifying        : perl-less-0.03-481.el9.noarch                                                          584/749 
+  Verifying        : perl-less-0.03-480.el9.noarch                                                          585/749 
+  Verifying        : perl-if-0.60.800-481.el9.noarch                                                        586/749 
+  Verifying        : perl-if-0.60.800-480.el9.noarch                                                        587/749 
+  Verifying        : perl-filetest-1.03-481.el9.noarch                                                      588/749 
+  Verifying        : perl-filetest-1.03-480.el9.noarch                                                      589/749 
+  Verifying        : perl-fields-2.27-481.el9.noarch                                                        590/749 
+  Verifying        : perl-fields-2.27-480.el9.noarch                                                        591/749 
+  Verifying        : perl-encoding-warnings-0.13-481.el9.noarch                                             592/749 
+  Verifying        : perl-encoding-warnings-0.13-480.el9.noarch                                             593/749 
+  Verifying        : perl-doc-5.32.1-481.el9.noarch                                                         594/749 
+  Verifying        : perl-doc-5.32.1-480.el9.noarch                                                         595/749 
+  Verifying        : perl-diagnostics-1.37-481.el9.noarch                                                   596/749 
+  Verifying        : perl-diagnostics-1.37-480.el9.noarch                                                   597/749 
+  Verifying        : perl-deprecate-0.04-481.el9.noarch                                                     598/749 
+  Verifying        : perl-deprecate-0.04-480.el9.noarch                                                     599/749 
+  Verifying        : perl-debugger-1.56-481.el9.noarch                                                      600/749 
+  Verifying        : perl-debugger-1.56-480.el9.noarch                                                      601/749 
+  Verifying        : perl-blib-1.07-481.el9.noarch                                                          602/749 
+  Verifying        : perl-blib-1.07-480.el9.noarch                                                          603/749 
+  Verifying        : perl-base-2.27-481.el9.noarch                                                          604/749 
+  Verifying        : perl-base-2.27-480.el9.noarch                                                          605/749 
+  Verifying        : perl-autouse-1.11-481.el9.noarch                                                       606/749 
+  Verifying        : perl-autouse-1.11-480.el9.noarch                                                       607/749 
+  Verifying        : perl-User-pwent-1.03-481.el9.noarch                                                    608/749 
+  Verifying        : perl-User-pwent-1.03-480.el9.noarch                                                    609/749 
+  Verifying        : perl-Unicode-UCD-0.75-481.el9.noarch                                                   610/749 
+  Verifying        : perl-Unicode-UCD-0.75-480.el9.noarch                                                   611/749 
+  Verifying        : perl-Time-1.03-481.el9.noarch                                                          612/749 
+  Verifying        : perl-Time-1.03-480.el9.noarch                                                          613/749 
+  Verifying        : perl-Tie-Memoize-1.1-481.el9.noarch                                                    614/749 
+  Verifying        : perl-Tie-Memoize-1.1-480.el9.noarch                                                    615/749 
+  Verifying        : perl-Tie-File-1.06-481.el9.noarch                                                      616/749 
+  Verifying        : perl-Tie-File-1.06-480.el9.noarch                                                      617/749 
+  Verifying        : perl-Tie-4.6-481.el9.noarch                                                            618/749 
+  Verifying        : perl-Tie-4.6-480.el9.noarch                                                            619/749 
+  Verifying        : perl-Thread-Semaphore-2.13-481.el9.noarch                                              620/749 
+  Verifying        : perl-Thread-Semaphore-2.13-480.el9.noarch                                              621/749 
+  Verifying        : perl-Thread-3.05-481.el9.noarch                                                        622/749 
+  Verifying        : perl-Thread-3.05-480.el9.noarch                                                        623/749 
+  Verifying        : perl-Text-Abbrev-1.02-481.el9.noarch                                                   624/749 
+  Verifying        : perl-Text-Abbrev-1.02-480.el9.noarch                                                   625/749 
+  Verifying        : perl-Test-1.31-481.el9.noarch                                                          626/749 
+  Verifying        : perl-Test-1.31-480.el9.noarch                                                          627/749 
+  Verifying        : perl-Term-ReadLine-1.17-481.el9.noarch                                                 628/749 
+  Verifying        : perl-Term-ReadLine-1.17-480.el9.noarch                                                 629/749 
+  Verifying        : perl-Term-Complete-1.403-481.el9.noarch                                                630/749 
+  Verifying        : perl-Term-Complete-1.403-480.el9.noarch                                                631/749 
+  Verifying        : perl-Symbol-1.08-481.el9.noarch                                                        632/749 
+  Verifying        : perl-Symbol-1.08-480.el9.noarch                                                        633/749 
+  Verifying        : perl-SelfLoader-1.26-481.el9.noarch                                                    634/749 
+  Verifying        : perl-SelfLoader-1.26-480.el9.noarch                                                    635/749 
+  Verifying        : perl-SelectSaver-1.02-481.el9.noarch                                                   636/749 
+  Verifying        : perl-SelectSaver-1.02-480.el9.noarch                                                   637/749 
+  Verifying        : perl-Search-Dict-1.07-481.el9.noarch                                                   638/749 
+  Verifying        : perl-Search-Dict-1.07-480.el9.noarch                                                   639/749 
+  Verifying        : perl-Safe-2.41-481.el9.noarch                                                          640/749 
+  Verifying        : perl-Safe-2.41-480.el9.noarch                                                          641/749 
+  Verifying        : perl-Pod-Html-1.25-481.el9.noarch                                                      642/749 
+  Verifying        : perl-Pod-Html-1.25-480.el9.noarch                                                      643/749 
+  Verifying        : perl-Pod-Functions-1.13-481.el9.noarch                                                 644/749 
+  Verifying        : perl-Pod-Functions-1.13-480.el9.noarch                                                 645/749 
+  Verifying        : perl-Net-1.02-481.el9.noarch                                                           646/749 
+  Verifying        : perl-Net-1.02-480.el9.noarch                                                           647/749 
+  Verifying        : perl-NEXT-0.67-481.el9.noarch                                                          648/749 
+  Verifying        : perl-NEXT-0.67-480.el9.noarch                                                          649/749 
+  Verifying        : perl-Module-Loaded-1:0.08-481.el9.noarch                                               650/749 
+  Verifying        : perl-Module-Loaded-1:0.08-480.el9.noarch                                               651/749 
+  Verifying        : perl-Memoize-1.03-481.el9.noarch                                                       652/749 
+  Verifying        : perl-Memoize-1.03-480.el9.noarch                                                       653/749 
+  Verifying        : perl-Math-Complex-1.59-481.el9.noarch                                                  654/749 
+  Verifying        : perl-Math-Complex-1.59-480.el9.noarch                                                  655/749 
+  Verifying        : perl-Locale-Maketext-Simple-1:0.21-481.el9.noarch                                      656/749 
+  Verifying        : perl-Locale-Maketext-Simple-1:0.21-480.el9.noarch                                      657/749 
+  Verifying        : perl-IPC-Open3-1.21-481.el9.noarch                                                     658/749 
+  Verifying        : perl-IPC-Open3-1.21-480.el9.noarch                                                     659/749 
+  Verifying        : perl-I18N-LangTags-0.44-481.el9.noarch                                                 660/749 
+  Verifying        : perl-I18N-LangTags-0.44-480.el9.noarch                                                 661/749 
+  Verifying        : perl-I18N-Collate-1.02-481.el9.noarch                                                  662/749 
+  Verifying        : perl-I18N-Collate-1.02-480.el9.noarch                                                  663/749 
+  Verifying        : perl-Getopt-Std-1.12-481.el9.noarch                                                    664/749 
+  Verifying        : perl-Getopt-Std-1.12-480.el9.noarch                                                    665/749 
+  Verifying        : perl-FindBin-1.51-481.el9.noarch                                                       666/749 
+  Verifying        : perl-FindBin-1.51-480.el9.noarch                                                       667/749 
+  Verifying        : perl-FileHandle-2.03-481.el9.noarch                                                    668/749 
+  Verifying        : perl-FileHandle-2.03-480.el9.noarch                                                    669/749 
+  Verifying        : perl-FileCache-1.10-481.el9.noarch                                                     670/749 
+  Verifying        : perl-FileCache-1.10-480.el9.noarch                                                     671/749 
+  Verifying        : perl-File-stat-1.09-481.el9.noarch                                                     672/749 
+  Verifying        : perl-File-stat-1.09-480.el9.noarch                                                     673/749 
+  Verifying        : perl-File-Find-1.37-481.el9.noarch                                                     674/749 
+  Verifying        : perl-File-Find-1.37-480.el9.noarch                                                     675/749 
+  Verifying        : perl-File-Copy-2.34-481.el9.noarch                                                     676/749 
+  Verifying        : perl-File-Copy-2.34-480.el9.noarch                                                     677/749 
+  Verifying        : perl-File-Compare-1.100.600-481.el9.noarch                                             678/749 
+  Verifying        : perl-File-Compare-1.100.600-480.el9.noarch                                             679/749 
+  Verifying        : perl-File-Basename-2.85-481.el9.noarch                                                 680/749 
+  Verifying        : perl-File-Basename-2.85-480.el9.noarch                                                 681/749 
+  Verifying        : perl-ExtUtils-Miniperl-1.09-481.el9.noarch                                             682/749 
+  Verifying        : perl-ExtUtils-Miniperl-1.09-480.el9.noarch                                             683/749 
+  Verifying        : perl-ExtUtils-Embed-1.35-481.el9.noarch                                                684/749 
+  Verifying        : perl-ExtUtils-Embed-1.35-480.el9.noarch                                                685/749 
+  Verifying        : perl-ExtUtils-Constant-0.25-481.el9.noarch                                             686/749 
+  Verifying        : perl-ExtUtils-Constant-0.25-480.el9.noarch                                             687/749 
+  Verifying        : perl-English-1.11-481.el9.noarch                                                       688/749 
+  Verifying        : perl-English-1.11-480.el9.noarch                                                       689/749 
+  Verifying        : perl-Dumpvalue-2.27-481.el9.noarch                                                     690/749 
+  Verifying        : perl-Dumpvalue-2.27-480.el9.noarch                                                     691/749 
+  Verifying        : perl-DirHandle-1.05-481.el9.noarch                                                     692/749 
+  Verifying        : perl-DirHandle-1.05-480.el9.noarch                                                     693/749 
+  Verifying        : perl-Devel-SelfStubber-1.06-481.el9.noarch                                             694/749 
+  Verifying        : perl-Devel-SelfStubber-1.06-480.el9.noarch                                             695/749 
+  Verifying        : perl-DBM_Filter-0.06-481.el9.noarch                                                    696/749 
+  Verifying        : perl-DBM_Filter-0.06-480.el9.noarch                                                    697/749 
+  Verifying        : perl-Config-Extensions-0.03-481.el9.noarch                                             698/749 
+  Verifying        : perl-Config-Extensions-0.03-480.el9.noarch                                             699/749 
+  Verifying        : perl-Class-Struct-0.66-481.el9.noarch                                                  700/749 
+  Verifying        : perl-Class-Struct-0.66-480.el9.noarch                                                  701/749 
+  Verifying        : perl-Benchmark-1.23-481.el9.noarch                                                     702/749 
+  Verifying        : perl-Benchmark-1.23-480.el9.noarch                                                     703/749 
+  Verifying        : perl-AutoSplit-5.74-481.el9.noarch                                                     704/749 
+  Verifying        : perl-AutoSplit-5.74-480.el9.noarch                                                     705/749 
+  Verifying        : perl-AutoLoader-5.74-481.el9.noarch                                                    706/749 
+  Verifying        : perl-AutoLoader-5.74-480.el9.noarch                                                    707/749 
+  Verifying        : perl-Attribute-Handlers-1.01-481.el9.noarch                                            708/749 
+  Verifying        : perl-Attribute-Handlers-1.01-480.el9.noarch                                            709/749 
+  Verifying        : rsyslog-logrotate-8.2310.0-4.el9.x86_64                                                710/749 
+  Verifying        : rsyslog-logrotate-8.2102.0-117.el9.x86_64                                              711/749 
+  Verifying        : rsyslog-8.2310.0-4.el9.x86_64                                                          712/749 
+  Verifying        : rsyslog-8.2102.0-117.el9.x86_64                                                        713/749 
+  Verifying        : elfutils-libelf-devel-0.191-4.el9.x86_64                                               714/749 
+  Verifying        : elfutils-libelf-devel-0.189-3.el9.x86_64                                               715/749 
+  Verifying        : perl-Net-SSLeay-1.94-1.el9.x86_64                                                      716/749 
+  Verifying        : perl-Net-SSLeay-1.92-2.el9.x86_64                                                      717/749 
+  Verifying        : emacs-filesystem-1:27.2-11.el9_5.1.noarch                                              718/749 
+  Verifying        : emacs-filesystem-1:27.2-9.el9.noarch                                                   719/749 
+  Verifying        : pcp-libs-6.2.2-7.el9_5.x86_64                                                          720/749 
+  Verifying        : pcp-libs-6.0.5-4.el9.x86_64                                                            721/749 
+  Verifying        : pcp-conf-6.2.2-7.el9_5.x86_64                                                          722/749 
+  Verifying        : pcp-conf-6.0.5-4.el9.x86_64                                                            723/749 
+  Verifying        : systemtap-sdt-devel-5.1-4.el9_5.x86_64                                                 724/749 
+  Verifying        : systemtap-sdt-devel-4.9-3.el9.x86_64                                                   725/749 
+  Verifying        : libX11-1.7.0-9.el9.x86_64                                                              726/749 
+  Verifying        : libX11-1.7.0-8.el9.x86_64                                                              727/749 
+  Verifying        : vim-enhanced-2:8.2.2637-21.el9.x86_64                                                  728/749 
+  Verifying        : vim-enhanced-2:8.2.2637-20.el9_1.x86_64                                                729/749 
+  Verifying        : vim-common-2:8.2.2637-21.el9.x86_64                                                    730/749 
+  Verifying        : vim-common-2:8.2.2637-20.el9_1.x86_64                                                  731/749 
+  Verifying        : libstdc++-devel-11.5.0-5.el9_5.x86_64                                                  732/749 
+  Verifying        : libstdc++-devel-11.4.1-2.1.el9.x86_64                                                  733/749 
+  Verifying        : gcc-plugin-annobin-11.5.0-5.el9_5.x86_64                                               734/749 
+  Verifying        : gcc-plugin-annobin-11.4.1-2.1.el9.x86_64                                               735/749 
+  Verifying        : gcc-c++-11.5.0-5.el9_5.x86_64                                                          736/749 
+  Verifying        : gcc-c++-11.4.1-2.1.el9.x86_64                                                          737/749 
+  Verifying        : gcc-11.5.0-5.el9_5.x86_64                                                              738/749 
+  Verifying        : gcc-11.4.1-2.1.el9.x86_64                                                              739/749 
+  Verifying        : cpp-11.5.0-5.el9_5.x86_64                                                              740/749 
+  Verifying        : cpp-11.4.1-2.1.el9.x86_64                                                              741/749 
+  Verifying        : glibc-headers-2.34-125.el9_5.3.x86_64                                                  742/749 
+  Verifying        : glibc-headers-2.34-83.el9.7.x86_64                                                     743/749 
+  Verifying        : glibc-devel-2.34-125.el9_5.3.x86_64                                                    744/749 
+  Verifying        : glibc-devel-2.34-83.el9.7.x86_64                                                       745/749 
+  Verifying        : pyproject-srpm-macros-1.12.0-1.el9.noarch                                              746/749 
+  Verifying        : pyproject-srpm-macros-1.9.0-1.el9.noarch                                               747/749 
+  Verifying        : kernel-headers-5.14.0-503.31.1.el9_5.x86_64                                            748/749 
+  Verifying        : kernel-headers-5.14.0-362.13.1.el9_3.x86_64                                            749/749 
+
+Upgraded:
+  NetworkManager-1:1.48.10-5.el9_5.x86_64                      NetworkManager-libnm-1:1.48.10-5.el9_5.x86_64       
+  NetworkManager-team-1:1.48.10-5.el9_5.x86_64                 NetworkManager-tui-1:1.48.10-5.el9_5.x86_64         
+  acl-2.3.1-4.el9.x86_64                                       alternatives-1.24-1.el9_5.1.x86_64                  
+  annobin-12.65-1.el9.x86_64                                   audit-3.1.5-1.el9.x86_64                            
+  audit-libs-3.1.5-1.el9.x86_64                                autoconf-2.69-39.el9.noarch                         
+  avahi-libs-0.8-21.el9.x86_64                                 basesystem-11-13.el9.0.1.noarch                     
+  bash-5.1.8-9.el9.x86_64                                      bash-completion-1:2.11-5.el9.noarch                 
+  bind-libs-32:9.16.23-24.el9_5.3.x86_64                       bind-license-32:9.16.23-24.el9_5.3.noarch           
+  bind-utils-32:9.16.23-24.el9_5.3.x86_64                      binutils-2.35.2-54.el9.x86_64                       
+  binutils-gold-2.35.2-54.el9.x86_64                           bzip2-1.0.8-10.el9_5.x86_64                         
+  bzip2-libs-1.0.8-10.el9_5.x86_64                             c-ares-1.19.1-2.el9_4.x86_64                        
+  ca-certificates-2024.2.69_v8.0.303-91.4.el9_4.noarch         chrony-4.5-3.el9.x86_64                             
+  cmake-3.26.5-2.el9.x86_64                                    cmake-data-3.26.5-2.el9.noarch                      
+  cmake-filesystem-3.26.5-2.el9.x86_64                         cmake-rpm-macros-3.26.5-2.el9.noarch                
+  coreutils-8.32-36.el9.x86_64                                 coreutils-common-8.32-36.el9.x86_64                 
+  cpp-11.5.0-5.el9_5.x86_64                                    cronie-1.5.7-12.el9_5.x86_64                        
+  cronie-anacron-1.5.7-12.el9_5.x86_64                         crypto-policies-20240828-2.git626aa59.el9_5.noarch  
+  crypto-policies-scripts-20240828-2.git626aa59.el9_5.noarch   cryptsetup-libs-2.7.2-3.el9_5.x86_64                
+  curl-7.76.1-31.el9.x86_64                                    device-mapper-9:1.02.198-2.el9.x86_64               
+  device-mapper-event-9:1.02.198-2.el9.x86_64                  device-mapper-event-libs-9:1.02.198-2.el9.x86_64    
+  device-mapper-libs-9:1.02.198-2.el9.x86_64                   device-mapper-persistent-data-1.0.9-3.el9_4.x86_64  
+  dmidecode-1:3.6-1.el9.x86_64                                 dnf-4.14.0-17.el9.noarch                            
+  dnf-data-4.14.0-17.el9.noarch                                dnf-plugins-core-4.3.0-16.el9.noarch                
+  dracut-057-70.git20240819.el9.x86_64                         dracut-config-rescue-057-70.git20240819.el9.x86_64  
+  dracut-network-057-70.git20240819.el9.x86_64                 dracut-squash-057-70.git20240819.el9.x86_64         
+  e2fsprogs-1.46.5-5.el9.x86_64                                e2fsprogs-libs-1.46.5-5.el9.x86_64                  
+  elfutils-debuginfod-client-0.191-4.el9.x86_64                elfutils-default-yama-scope-0.191-4.el9.noarch      
+  elfutils-libelf-0.191-4.el9.x86_64                           elfutils-libelf-devel-0.191-4.el9.x86_64            
+  elfutils-libs-0.191-4.el9.x86_64                             emacs-filesystem-1:27.2-11.el9_5.1.noarch           
+  expat-2.5.0-3.el9_5.1.x86_64                                 file-5.39-16.el9.x86_64                             
+  file-libs-5.39-16.el9.x86_64                                 filesystem-3.16-5.el9.x86_64                        
+  findutils-1:4.8.0-7.el9.x86_64                               firewalld-1.3.4-9.el9_5.noarch                      
+  firewalld-filesystem-1.3.4-9.el9_5.noarch                    fuse-libs-2.9.9-16.el9.x86_64                       
+  gcc-11.5.0-5.el9_5.x86_64                                    gcc-c++-11.5.0-5.el9_5.x86_64                       
+  gcc-plugin-annobin-11.5.0-5.el9_5.x86_64                     gdbm-libs-1:1.23-1.el9.x86_64                       
+  glib2-2.68.4-14.el9_4.1.x86_64                               glibc-2.34-125.el9_5.3.x86_64                       
+  glibc-common-2.34-125.el9_5.3.x86_64                         glibc-devel-2.34-125.el9_5.3.x86_64                 
+  glibc-gconv-extra-2.34-125.el9_5.3.x86_64                    glibc-headers-2.34-125.el9_5.3.x86_64               
+  glibc-langpack-en-2.34-125.el9_5.3.x86_64                    gnutls-3.8.3-4.el9_4.x86_64                         
+  go-srpm-macros-3.6.0-3.el9.noarch                            grub2-common-1:2.06-93.el9_5.noarch                 
+  grub2-pc-1:2.06-93.el9_5.x86_64                              grub2-pc-modules-1:2.06-93.el9_5.noarch             
+  grub2-tools-1:2.06-93.el9_5.x86_64                           grub2-tools-minimal-1:2.06-93.el9_5.x86_64          
+  grubby-8.40-64.el9.x86_64                                    hwdata-0.348-9.15.el9.noarch                        
+  ima-evm-utils-1.5-2.el9.0.1.x86_64                           initscripts-rename-device-10.11.7-1.el9.x86_64      
+  initscripts-service-10.11.7-1.el9.noarch                     iproute-6.2.0-6.el9_4.x86_64                        
+  iproute-tc-6.2.0-6.el9_4.x86_64                              ipset-7.11-11.el9_5.x86_64                          
+  ipset-libs-7.11-11.el9_5.x86_64                              iptables-libs-1.8.10-11.el9_5.x86_64                
+  iptables-nft-1.8.10-11.el9_5.x86_64                          iputils-20210202-10.el9_5.x86_64                    
+  irqbalance-2:1.9.4-1.el9.x86_64                              kbd-2.4.0-10.el9.x86_64                             
+  kbd-legacy-2.4.0-10.el9.noarch                               kbd-misc-2.4.0-10.el9.noarch                        
+  kernel-headers-5.14.0-503.31.1.el9_5.x86_64                  kernel-tools-5.14.0-503.31.1.el9_5.x86_64           
+  kernel-tools-libs-5.14.0-503.31.1.el9_5.x86_64               kexec-tools-2.0.27-16.el9_5.1.x86_64                
+  kmod-28-10.el9.x86_64                                        kmod-libs-28-10.el9.x86_64                          
+  kpartx-0.8.7-32.el9.x86_64                                   krb5-libs-1.21.1-4.el9_5.x86_64                     
+  less-590-5.el9.x86_64                                        libX11-1.7.0-9.el9.x86_64                           
+  libX11-common-1.7.0-9.el9.noarch                             libacl-2.3.1-4.el9.x86_64                           
+  libarchive-3.5.3-4.el9.0.1.x86_64                            libblkid-2.37.4-20.el9.x86_64                       
+  libbpf-2:1.4.0-1.el9.x86_64                                  libbrotli-1.0.9-7.el9_5.x86_64                      
+  libcom_err-1.46.5-5.el9.x86_64                               libcurl-7.76.1-31.el9.x86_64                        
+  libdb-5.3.28-54.el9.x86_64                                   libdnf-0.69.0-12.el9.x86_64                         
+  libeconf-0.4.1-4.el9.x86_64                                  libevent-2.1.12-8.el9_4.x86_64                      
+  libfdisk-2.37.4-20.el9.x86_64                                libfido2-1.13.0-2.el9.x86_64                        
+  libgcc-11.5.0-5.el9_5.x86_64                                 libgcrypt-1.10.0-11.el9.x86_64                      
+  libgomp-11.5.0-5.el9_5.x86_64                                libibverbs-51.0-1.el9.x86_64                        
+  libkcapi-1.4.0-2.el9.x86_64                                  libkcapi-hmaccalc-1.4.0-2.el9.x86_64                
+  libksba-1.5.1-7.el9.x86_64                                   libldb-2.9.1-2.el9.x86_64                           
+  libmaxminddb-1.5.2-4.el9.x86_64                              libmnl-1.0.4-16.el9_4.x86_64                        
+  libmount-2.37.4-20.el9.x86_64                                libndp-1.9-1.el9.x86_64                             
+  libnfnetlink-1.0.1-23.el9_5.x86_64                           libnftnl-1.2.6-4.el9_4.x86_64                       
+  libnghttp2-1.43.0-6.el9.x86_64                               libnl3-3.9.0-1.el9.x86_64                           
+  libnl3-cli-3.9.0-1.el9.x86_64                                librepo-1.14.5-2.el9.x86_64                         
+  libselinux-3.6-1.el9.x86_64                                  libselinux-utils-3.6-1.el9.x86_64                   
+  libsemanage-3.6-2.1.el9_5.x86_64                             libsepol-3.6-1.el9.x86_64                           
+  libsmartcols-2.37.4-20.el9.x86_64                            libsolv-0.7.24-3.el9.x86_64                         
+  libss-1.46.5-5.el9.x86_64                                    libssh-0.10.4-13.el9.x86_64                         
+  libssh-config-0.10.4-13.el9.noarch                           libsss_certmap-2.9.5-4.el9_5.4.x86_64               
+  libsss_idmap-2.9.5-4.el9_5.4.x86_64                          libsss_nss_idmap-2.9.5-4.el9_5.4.x86_64             
+  libsss_sudo-2.9.5-4.el9_5.4.x86_64                           libstdc++-11.5.0-5.el9_5.x86_64                     
+  libstdc++-devel-11.5.0-5.el9_5.x86_64                        libtalloc-2.4.2-1.el9.x86_64                        
+  libtdb-1.4.10-1.el9.x86_64                                   libtevent-0.16.1-1.el9.x86_64                       
+  libtirpc-1.3.3-9.el9.x86_64                                  libtool-2.4.6-46.el9.x86_64                         
+  libuser-0.63-15.el9.x86_64                                   libuuid-2.37.4-20.el9.x86_64                        
+  libuv-1:1.42.0-2.el9_4.x86_64                                libxml2-2.9.13-6.el9_5.2.x86_64                     
+  linux-firmware-20250114-146.3.el9_5.noarch                   linux-firmware-whence-20250114-146.3.el9_5.noarch   
+  llvm-libs-18.1.8-3.el9.x86_64                                lvm2-9:2.03.24-2.el9.x86_64                         
+  lvm2-libs-9:2.03.24-2.el9.x86_64                             make-1:4.3-8.el9.x86_64                             
+  net-tools-2.0-0.64.20160912git.el9.x86_64                    nettle-3.9.1-1.el9.x86_64                           
+  nftables-1:1.0.9-3.el9.x86_64                                numactl-libs-2.0.18-2.el9.x86_64                    
+  openldap-2.6.6-3.el9.x86_64                                  openssh-8.7p1-43.el9.x86_64                         
+  openssh-clients-8.7p1-43.el9.x86_64                          openssh-server-8.7p1-43.el9.x86_64                  
+  openssl-1:3.2.2-6.el9_5.1.x86_64                             openssl-devel-1:3.2.2-6.el9_5.1.x86_64              
+  openssl-libs-1:3.2.2-6.el9_5.1.x86_64                        os-prober-1.77-12.el9_5.x86_64                      
+  p11-kit-0.25.3-3.el9_5.x86_64                                p11-kit-trust-0.25.3-3.el9_5.x86_64                 
+  pam-1.5.1-22.el9_5.x86_64                                    pcp-conf-6.2.2-7.el9_5.x86_64                       
+  pcp-libs-6.2.2-7.el9_5.x86_64                                pcre-8.44-4.el9.x86_64                              
+  pcre2-10.40-6.el9.x86_64                                     pcre2-syntax-10.40-6.el9.noarch                     
+  perl-4:5.32.1-481.el9.x86_64                                 perl-Attribute-Handlers-1.01-481.el9.noarch         
+  perl-AutoLoader-5.74-481.el9.noarch                          perl-AutoSplit-5.74-481.el9.noarch                  
+  perl-B-1.80-481.el9.x86_64                                   perl-Benchmark-1.23-481.el9.noarch                  
+  perl-Class-Struct-0.66-481.el9.noarch                        perl-Config-Extensions-0.03-481.el9.noarch          
+  perl-DBM_Filter-0.06-481.el9.noarch                          perl-Devel-Peek-1.28-481.el9.x86_64                 
+  perl-Devel-SelfStubber-1.06-481.el9.noarch                   perl-DirHandle-1.05-481.el9.noarch                  
+  perl-Dumpvalue-2.27-481.el9.noarch                           perl-DynaLoader-1.47-481.el9.x86_64                 
+  perl-English-1.11-481.el9.noarch                             perl-Errno-1.30-481.el9.x86_64                      
+  perl-ExtUtils-Constant-0.25-481.el9.noarch                   perl-ExtUtils-Embed-1.35-481.el9.noarch             
+  perl-ExtUtils-Miniperl-1.09-481.el9.noarch                   perl-Fcntl-1.13-481.el9.x86_64                      
+  perl-File-Basename-2.85-481.el9.noarch                       perl-File-Compare-1.100.600-481.el9.noarch          
+  perl-File-Copy-2.34-481.el9.noarch                           perl-File-DosGlob-1.12-481.el9.x86_64               
+  perl-File-Find-1.37-481.el9.noarch                           perl-File-stat-1.09-481.el9.noarch                  
+  perl-FileCache-1.10-481.el9.noarch                           perl-FileHandle-2.03-481.el9.noarch                 
+  perl-FindBin-1.51-481.el9.noarch                             perl-GDBM_File-1.18-481.el9.x86_64                  
+  perl-Getopt-Std-1.12-481.el9.noarch                          perl-HTTP-Tiny-0.076-462.el9.noarch                 
+  perl-Hash-Util-0.23-481.el9.x86_64                           perl-Hash-Util-FieldHash-1.20-481.el9.x86_64        
+  perl-I18N-Collate-1.02-481.el9.noarch                        perl-I18N-LangTags-0.44-481.el9.noarch              
+  perl-I18N-Langinfo-0.19-481.el9.x86_64                       perl-IO-1.43-481.el9.x86_64                         
+  perl-IO-Socket-SSL-2.073-2.el9.noarch                        perl-IPC-Open3-1.21-481.el9.noarch                  
+  perl-Locale-Maketext-Simple-1:0.21-481.el9.noarch            perl-Math-Complex-1.59-481.el9.noarch               
+  perl-Memoize-1.03-481.el9.noarch                             perl-Module-Loaded-1:0.08-481.el9.noarch            
+  perl-NDBM_File-1.15-481.el9.x86_64                           perl-NEXT-0.67-481.el9.noarch                       
+  perl-Net-1.02-481.el9.noarch                                 perl-Net-SSLeay-1.94-1.el9.x86_64                   
+  perl-ODBM_File-1.16-481.el9.x86_64                           perl-Opcode-1.48-481.el9.x86_64                     
+  perl-POSIX-1.94-481.el9.x86_64                               perl-Pod-Functions-1.13-481.el9.noarch              
+  perl-Pod-Html-1.25-481.el9.noarch                            perl-Safe-2.41-481.el9.noarch                       
+  perl-Scalar-List-Utils-4:1.56-462.el9.x86_64                 perl-Search-Dict-1.07-481.el9.noarch                
+  perl-SelectSaver-1.02-481.el9.noarch                         perl-SelfLoader-1.26-481.el9.noarch                 
+  perl-Symbol-1.08-481.el9.noarch                              perl-Sys-Hostname-1.23-481.el9.x86_64               
+  perl-Term-Complete-1.403-481.el9.noarch                      perl-Term-ReadLine-1.17-481.el9.noarch              
+  perl-Test-1.31-481.el9.noarch                                perl-Text-Abbrev-1.02-481.el9.noarch                
+  perl-Thread-3.05-481.el9.noarch                              perl-Thread-Semaphore-2.13-481.el9.noarch           
+  perl-Tie-4.6-481.el9.noarch                                  perl-Tie-File-1.06-481.el9.noarch                   
+  perl-Tie-Memoize-1.1-481.el9.noarch                          perl-Time-1.03-481.el9.noarch                       
+  perl-Time-Piece-1.3401-481.el9.x86_64                        perl-Unicode-UCD-0.75-481.el9.noarch                
+  perl-User-pwent-1.03-481.el9.noarch                          perl-autouse-1.11-481.el9.noarch                    
+  perl-base-2.27-481.el9.noarch                                perl-blib-1.07-481.el9.noarch                       
+  perl-debugger-1.56-481.el9.noarch                            perl-deprecate-0.04-481.el9.noarch                  
+  perl-devel-4:5.32.1-481.el9.x86_64                           perl-diagnostics-1.37-481.el9.noarch                
+  perl-doc-5.32.1-481.el9.noarch                               perl-encoding-warnings-0.13-481.el9.noarch          
+  perl-fields-2.27-481.el9.noarch                              perl-filetest-1.03-481.el9.noarch                   
+  perl-if-0.60.800-481.el9.noarch                              perl-interpreter-4:5.32.1-481.el9.x86_64            
+  perl-less-0.03-481.el9.noarch                                perl-lib-0.65-481.el9.x86_64                        
+  perl-libnetcfg-4:5.32.1-481.el9.noarch                       perl-libs-4:5.32.1-481.el9.x86_64                   
+  perl-locale-1.09-481.el9.noarch                              perl-macros-4:5.32.1-481.el9.noarch                 
+  perl-meta-notation-5.32.1-481.el9.noarch                     perl-mro-1.23-481.el9.x86_64                        
+  perl-open-1.12-481.el9.noarch                                perl-overload-1.31-481.el9.noarch                   
+  perl-overloading-0.02-481.el9.noarch                         perl-ph-5.32.1-481.el9.x86_64                       
+  perl-sigtrap-1.09-481.el9.noarch                             perl-sort-2.04-481.el9.noarch                       
+  perl-subs-1.03-481.el9.noarch                                perl-utils-5.32.1-481.el9.noarch                    
+  perl-vars-1.05-481.el9.noarch                                perl-vmsish-1.04-481.el9.noarch                     
+  policycoreutils-3.6-2.1.el9.x86_64                           polkit-0.117-13.el9.x86_64                          
+  polkit-libs-0.117-13.el9.x86_64                              procps-ng-3.3.17-14.el9.x86_64                      
+  pyproject-srpm-macros-1.12.0-1.el9.noarch                    python-srpm-macros-3.9-54.el9.noarch                
+  python-unversioned-command-3.9.21-1.el9_5.noarch             python3-3.9.21-1.el9_5.x86_64                       
+  python3-dbus-1.2.18-2.el9.0.1.x86_64                         python3-dnf-4.14.0-17.el9.noarch                    
+  python3-dnf-plugins-core-4.3.0-16.el9.noarch                 python3-firewall-1.3.4-9.el9_5.noarch               
+  python3-hawkey-0.69.0-12.el9.x86_64                          python3-libdnf-0.69.0-12.el9.x86_64                 
+  python3-libs-3.9.21-1.el9_5.x86_64                           python3-libselinux-3.6-1.el9.x86_64                 
+  python3-linux-procfs-0.7.3-1.el9.noarch                      python3-nftables-1:1.0.9-3.el9.x86_64               
+  python3-perf-5.14.0-503.31.1.el9_5.x86_64                    python3-pip-wheel-21.3.1-1.el9.noarch               
+  python3-rpm-4.16.1.3-34.el9.0.1.x86_64                       python3-setuptools-wheel-53.0.0-13.el9.noarch       
+  python3-systemd-234-19.el9.x86_64                            redhat-rpm-config-208-1.el9.noarch                  
+  rocky-gpg-keys-9.5-1.2.el9.noarch                            rocky-release-9.5-1.2.el9.noarch                    
+  rocky-repos-9.5-1.2.el9.noarch                               rpm-4.16.1.3-34.el9.0.1.x86_64                      
+  rpm-build-libs-4.16.1.3-34.el9.0.1.x86_64                    rpm-libs-4.16.1.3-34.el9.0.1.x86_64                 
+  rpm-plugin-audit-4.16.1.3-34.el9.0.1.x86_64                  rpm-plugin-selinux-4.16.1.3-34.el9.0.1.x86_64       
+  rpm-plugin-systemd-inhibit-4.16.1.3-34.el9.0.1.x86_64        rpm-sign-libs-4.16.1.3-34.el9.0.1.x86_64            
+  rsync-3.2.3-20.el9_5.1.x86_64                                rsyslog-8.2310.0-4.el9.x86_64                       
+  rsyslog-logrotate-8.2310.0-4.el9.x86_64                      selinux-policy-38.1.45-3.el9_5.noarch               
+  selinux-policy-targeted-38.1.45-3.el9_5.noarch               setup-2.13.7-10.el9.noarch                          
+  shadow-utils-2:4.9-10.el9_5.x86_64                           snappy-1.1.8-8.el9.0.1.x86_64                       
+  sqlite-libs-3.34.1-7.el9_3.x86_64                            squashfs-tools-4.4-10.git1.el9.x86_64               
+  sssd-client-2.9.5-4.el9_5.4.x86_64                           sssd-common-2.9.5-4.el9_5.4.x86_64                  
+  sssd-kcm-2.9.5-4.el9_5.4.x86_64                              sudo-1.9.5p2-10.el9_3.x86_64                        
+  sysstat-12.5.4-9.el9.x86_64                                  systemd-252-46.el9_5.2.0.1.x86_64                   
+  systemd-libs-252-46.el9_5.2.0.1.x86_64                       systemd-pam-252-46.el9_5.2.0.1.x86_64               
+  systemd-rpm-macros-252-46.el9_5.2.0.1.noarch                 systemd-udev-252-46.el9_5.2.0.1.x86_64              
+  systemtap-sdt-devel-5.1-4.el9_5.x86_64                       tar-2:1.34-7.el9.x86_64                             
+  tpm2-tss-3.2.3-1.el9.x86_64                                  tuned-2.24.0-2.el9_5.noarch                         
+  tzdata-2025a-1.el9.noarch                                    unzip-6.0-57.el9.x86_64                             
+  util-linux-2.37.4-20.el9.x86_64                              util-linux-core-2.37.4-20.el9.x86_64                
+  vim-common-2:8.2.2637-21.el9.x86_64                          vim-enhanced-2:8.2.2637-21.el9.x86_64               
+  vim-filesystem-2:8.2.2637-21.el9.noarch                      vim-minimal-2:8.2.2637-21.el9.x86_64                
+  virt-what-1.25-10.el9.x86_64                                 wget-1.21.1-8.el9_4.x86_64                          
+  xfsprogs-6.4.0-4.el9.x86_64                                  yum-4.14.0-17.el9.noarch                            
+  yum-utils-4.3.0-16.el9.noarch                               
+Installed:
+  attr-2.5.1-3.el9.x86_64                                freetype-2.10.4-9.el9.x86_64                               
+  graphite2-1.3.14-9.el9.x86_64                          grub2-tools-efi-1:2.06-93.el9_5.x86_64                     
+  grub2-tools-extra-1:2.06-93.el9_5.x86_64               harfbuzz-2.7.4-10.el9.x86_64                               
+  jq-1.6-17.el9.x86_64                                   kernel-5.14.0-503.31.1.el9_5.x86_64                        
+  kernel-core-5.14.0-503.31.1.el9_5.x86_64               kernel-devel-5.14.0-503.31.1.el9_5.x86_64                  
+  kernel-modules-5.14.0-503.31.1.el9_5.x86_64            kernel-modules-core-5.14.0-503.31.1.el9_5.x86_64           
+  keyutils-1.6.3-1.el9.x86_64                            libpng-2:1.6.37-12.el9.x86_64                              
+  oniguruma-6.9.6-1.el9.6.x86_64                        
+
+Complete!
+[vagrant@rocky ~]$ sudo dnf install -y python3 python3-pip
+Last metadata expiration check: 0:10:51 ago on Mon 17 Mar 2025 02:34:38 PM UTC.
+Package python3-3.9.21-1.el9_5.x86_64 is already installed.
+Dependencies resolved.
+====================================================================================================================
+ Package                          Architecture         Version                        Repository               Size
+====================================================================================================================
+Installing:
+ python3-pip                      noarch               21.3.1-1.el9                   appstream               1.7 M
+Installing weak dependencies:
+ python3-setuptools               noarch               53.0.0-13.el9                  baseos                  838 k
+
+Transaction Summary
+====================================================================================================================
+Install  2 Packages
+
+Total download size: 2.6 M
+Installed size: 13 M
+Downloading Packages:
+(1/2): python3-setuptools-53.0.0-13.el9.noarch.rpm                                  4.1 MB/s | 838 kB     00:00    
+(2/2): python3-pip-21.3.1-1.el9.noarch.rpm                                          4.8 MB/s | 1.7 MB     00:00    
+--------------------------------------------------------------------------------------------------------------------
+Total                                                                               2.8 MB/s | 2.6 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                            1/1 
+  Installing       : python3-setuptools-53.0.0-13.el9.noarch                                                    1/2 
+  Installing       : python3-pip-21.3.1-1.el9.noarch                                                            2/2 
+  Running scriptlet: python3-pip-21.3.1-1.el9.noarch                                                            2/2 
+  Verifying        : python3-setuptools-53.0.0-13.el9.noarch                                                    1/2 
+  Verifying        : python3-pip-21.3.1-1.el9.noarch                                                            2/2 
+
+Installed:
+  python3-pip-21.3.1-1.el9.noarch                      python3-setuptools-53.0.0-13.el9.noarch                     
+
+Complete!
+[vagrant@rocky ~]$ mkdir ~/ansible_env && cd ~/ansible_env
+[vagrant@rocky ansible_env]$ python3 -m venv venv
+[vagrant@rocky ansible_env]$ source venv/bin/activate
+(venv) [vagrant@rocky ansible_env]$ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.9/site-packages (21.3.1)
+Collecting pip
+  Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+     |████████████████████████████████| 1.8 MB 1.9 MB/s            
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 21.3.1
+    Uninstalling pip-21.3.1:
+      Successfully uninstalled pip-21.3.1
+Successfully installed pip-25.0.1
+(venv) [vagrant@rocky ansible_env]$ pip install ansible
+Collecting ansible
+  Downloading ansible-8.7.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting ansible-core~=2.15.7 (from ansible)
+  Downloading ansible_core-2.15.13-py3-none-any.whl.metadata (7.0 kB)
+Collecting jinja2>=3.0.0 (from ansible-core~=2.15.7->ansible)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting PyYAML>=5.1 (from ansible-core~=2.15.7->ansible)
+  Downloading PyYAML-6.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting cryptography (from ansible-core~=2.15.7->ansible)
+  Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+Collecting packaging (from ansible-core~=2.15.7->ansible)
+  Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting resolvelib<1.1.0,>=0.5.3 (from ansible-core~=2.15.7->ansible)
+  Downloading resolvelib-1.0.1-py2.py3-none-any.whl.metadata (4.0 kB)
+Collecting importlib-resources<5.1,>=5.0 (from ansible-core~=2.15.7->ansible)
+  Downloading importlib_resources-5.0.7-py3-none-any.whl.metadata (2.8 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=3.0.0->ansible-core~=2.15.7->ansible)
+  Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting cffi>=1.12 (from cryptography->ansible-core~=2.15.7->ansible)
+  Downloading cffi-1.17.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting pycparser (from cffi>=1.12->cryptography->ansible-core~=2.15.7->ansible)
+  Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Downloading ansible-8.7.0-py3-none-any.whl (48.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.4/48.4 MB 4.5 MB/s eta 0:00:00
+Downloading ansible_core-2.15.13-py3-none-any.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 3.1 MB/s eta 0:00:00
+Downloading importlib_resources-5.0.7-py3-none-any.whl (24 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading PyYAML-6.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (737 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 737.4/737.4 kB 3.4 MB/s eta 0:00:00
+Downloading resolvelib-1.0.1-py2.py3-none-any.whl (17 kB)
+Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 3.9 MB/s eta 0:00:00
+Downloading packaging-24.2-py3-none-any.whl (65 kB)
+Downloading cffi-1.17.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (445 kB)
+Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+Installing collected packages: resolvelib, PyYAML, pycparser, packaging, MarkupSafe, importlib-resources, jinja2, cffi, cryptography, ansible-core, ansible
+Successfully installed MarkupSafe-3.0.2 PyYAML-6.0.2 ansible-8.7.0 ansible-core-2.15.13 cffi-1.17.1 cryptography-44.0.2 importlib-resources-5.0.7 jinja2-3.1.6 packaging-24.2 pycparser-2.22 resolvelib-1.0.1
+(venv) [vagrant@rocky ansible_env]$ ansible --version
+ansible [core 2.15.13]
+  config file = None
+  configured module search path = ['/home/vagrant/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/vagrant/ansible_env/venv/lib64/python3.9/site-packages/ansible
+  ansible collection location = /home/vagrant/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/vagrant/ansible_env/venv/bin/ansible
+  python version = 3.9.21 (main, Dec  5 2024, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-2)] (/home/vagrant/ansible_env/venv/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+(venv) [vagrant@rocky ansible_env]$ ^C
+(venv) [vagrant@rocky ansible_env]$ deactivate
+[vagrant@rocky ansible_env]$ exit
+logout
+Connection to 127.0.0.1 closed.
+[ema@testlab:atelier-01] $ vagrant destroy -f rocky
+==> rocky: Forcing shutdown of VM...
+==> rocky: Destroying VM and associated drives...
+[ema@testlab:atelier-01] $ 

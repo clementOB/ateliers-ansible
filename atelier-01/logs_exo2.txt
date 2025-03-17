@@ -1,0 +1,237 @@
+[ema@testlab:atelier-01] $ vagrant up ubuntu
+Bringing machine 'ubuntu' up with 'virtualbox' provider...
+==> ubuntu: Importing base box 'bento/ubuntu-22.04'...
+==> ubuntu: Matching MAC address for NAT networking...
+==> ubuntu: Checking if box 'bento/ubuntu-22.04' version '202502.21.0' is up to date...
+==> ubuntu: Setting the name of the VM: atelier-01_ubuntu_1742221167895_62399
+==> ubuntu: Clearing any previously set network interfaces...
+==> ubuntu: Preparing network interfaces based on configuration...
+    ubuntu: Adapter 1: nat
+    ubuntu: Adapter 2: hostonly
+==> ubuntu: Forwarding ports...
+    ubuntu: 22 (guest) => 2222 (host) (adapter 1)
+==> ubuntu: Running 'pre-boot' VM customizations...
+==> ubuntu: Booting VM...
+==> ubuntu: Waiting for machine to boot. This may take a few minutes...
+    ubuntu: SSH address: 127.0.0.1:2222
+    ubuntu: SSH username: vagrant
+    ubuntu: SSH auth method: private key
+    ubuntu: Warning: Connection reset. Retrying...
+    ubuntu: Warning: Remote connection disconnect. Retrying...
+    ubuntu: 
+    ubuntu: Vagrant insecure key detected. Vagrant will automatically replace
+    ubuntu: this with a newly generated keypair for better security.
+    ubuntu: 
+    ubuntu: Inserting generated public key within guest...
+    ubuntu: Removing insecure key from the guest if it's present...
+    ubuntu: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> ubuntu: Machine booted and ready!
+==> ubuntu: Setting hostname...
+==> ubuntu: Configuring and enabling network interfaces...
+==> ubuntu: Mounting shared folders...
+    ubuntu: /home/ema/formation-ansible/atelier-01 => /vagrant
+[ema@testlab:atelier-01] $ vagrant ssh ubuntu
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-133-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Mar 17 02:20:15 PM UTC 2025
+
+  System load:           1.89
+  Usage of /:            15.1% of 30.34GB
+  Memory usage:          24%
+  Swap usage:            0%
+  Processes:             162
+  Users logged in:       0
+  IPv4 address for eth0: 10.0.2.15
+  IPv6 address for eth0: fd00::a00:27ff:febb:5920
+
+
+This system is built by the Bento project by Chef Software
+More information can be found at https://github.com/chef/bento
+
+Use of this system is acceptance of the OS vendor EULA and License Agreements.
+vagrant@ubuntu:~$ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Hit:2 http://us.archive.ubuntu.com/ubuntu jammy InRelease                                      
+Get:3 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2,145 kB]
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [333 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2,986 kB]    
+Get:7 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]           
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [527 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [966 kB]    
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [207 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [46.6 kB] 
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [10.7 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2,388 kB]     
+Get:14 http://us.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [396 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3,108 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [548 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,193 kB]
+Get:18 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [293 kB]
+Get:19 http://us.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [53.3 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [13.6 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [30.0 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.6 kB]
+Fetched 15.6 MB in 4s (3,911 kB/s)                                 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+42 packages can be upgraded. Run 'apt list --upgradable' to see them.
+vagrant@ubuntu:~$ sudo apt-add-repository ppa:ansible/ansible -y
+Repository: 'deb https://ppa.launchpadcontent.net/ansible/ansible/ubuntu/ jammy main'
+Description:
+Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
+
+http://ansible.com/
+
+If you face any issues while installing Ansible PPA, file an issue here:
+https://github.com/ansible-community/ppa/issues
+More info: https://launchpad.net/~ansible/+archive/ubuntu/ansible
+Adding repository.
+Adding deb entry to /etc/apt/sources.list.d/ansible-ubuntu-ansible-jammy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/ansible-ubuntu-ansible-jammy.list
+Adding key to /etc/apt/trusted.gpg.d/ansible-ubuntu-ansible.gpg with fingerprint 6125E2A8C77F2818FB7BD15B93C4A3FD7BB9C367
+Hit:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Get:2 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy InRelease [18.0 kB]
+Hit:3 http://us.archive.ubuntu.com/ubuntu jammy InRelease 
+Hit:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:6 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 Packages [1,120 B]
+Get:7 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main Translation-en [752 B]
+Fetched 19.9 kB in 1s (20.3 kB/s)     
+Reading package lists... Done
+vagrant@ubuntu:~$ sudo apt update
+Hit:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:2 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy InRelease                                      
+Hit:3 http://us.archive.ubuntu.com/ubuntu jammy InRelease                                                          
+Hit:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+42 packages can be upgraded. Run 'apt list --upgradable' to see them.
+vagrant@ubuntu:~$ apt-cache policy ansible
+ansible:
+  Installed: (none)
+  Candidate: 10.7.0-1ppa~jammy
+  Version table:
+     10.7.0-1ppa~jammy 500
+        500 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 Packages
+     2.10.7+merged+base+2.10.8+dfsg-1 500
+        500 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+vagrant@ubuntu:~$ sudo apt install -y ansible
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  ansible-core python3-jmespath python3-kerberos python3-nacl python3-ntlm-auth python3-paramiko
+  python3-requests-kerberos python3-requests-ntlm python3-resolvelib python3-winrm python3-xmltodict sshpass
+Suggested packages:
+  python-nacl-doc python3-gssapi python3-invoke
+The following NEW packages will be installed:
+  ansible ansible-core python3-jmespath python3-kerberos python3-nacl python3-ntlm-auth python3-paramiko
+  python3-requests-kerberos python3-requests-ntlm python3-resolvelib python3-winrm python3-xmltodict sshpass
+0 upgraded, 13 newly installed, 0 to remove and 42 not upgraded.
+Need to get 19.2 MB of archives.
+After this operation, 213 MB of additional disk space will be used.
+Get:1 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 ansible-core all 2.17.9-1ppa~jammy [1,017 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-resolvelib all 0.8.1-1 [23.6 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-jmespath all 0.10.0-1 [21.7 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-kerberos amd64 1.1.14-3.1build5 [23.0 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-nacl amd64 1.5.0-2 [63.1 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ntlm-auth all 1.4.0-1 [20.4 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-paramiko all 2.9.3-0ubuntu1.3 [134 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-requests-kerberos all 0.12.0-2 [11.9 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-requests-ntlm all 1.1.0-1.1 [6,160 B]
+Get:10 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-xmltodict all 0.12.0-2 [12.6 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-winrm all 0.3.0-2 [21.7 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 sshpass amd64 1.09-1 [11.7 kB]
+Get:13 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 ansible all 10.7.0-1ppa~jammy [17.9 MB]
+Fetched 19.2 MB in 13s (1,520 kB/s)                                                                                
+Selecting previously unselected package python3-resolvelib.
+(Reading database ... 45118 files and directories currently installed.)
+Preparing to unpack .../00-python3-resolvelib_0.8.1-1_all.deb ...
+Unpacking python3-resolvelib (0.8.1-1) ...
+Selecting previously unselected package ansible-core.
+Preparing to unpack .../01-ansible-core_2.17.9-1ppa~jammy_all.deb ...
+Unpacking ansible-core (2.17.9-1ppa~jammy) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../02-ansible_10.7.0-1ppa~jammy_all.deb ...
+Unpacking ansible (10.7.0-1ppa~jammy) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../03-python3-jmespath_0.10.0-1_all.deb ...
+Unpacking python3-jmespath (0.10.0-1) ...
+Selecting previously unselected package python3-kerberos.
+Preparing to unpack .../04-python3-kerberos_1.1.14-3.1build5_amd64.deb ...
+Unpacking python3-kerberos (1.1.14-3.1build5) ...
+Selecting previously unselected package python3-nacl.
+Preparing to unpack .../05-python3-nacl_1.5.0-2_amd64.deb ...
+Unpacking python3-nacl (1.5.0-2) ...
+Selecting previously unselected package python3-ntlm-auth.
+Preparing to unpack .../06-python3-ntlm-auth_1.4.0-1_all.deb ...
+Unpacking python3-ntlm-auth (1.4.0-1) ...
+Selecting previously unselected package python3-paramiko.
+Preparing to unpack .../07-python3-paramiko_2.9.3-0ubuntu1.3_all.deb ...
+Unpacking python3-paramiko (2.9.3-0ubuntu1.3) ...
+Selecting previously unselected package python3-requests-kerberos.
+Preparing to unpack .../08-python3-requests-kerberos_0.12.0-2_all.deb ...
+Unpacking python3-requests-kerberos (0.12.0-2) ...
+Selecting previously unselected package python3-requests-ntlm.
+Preparing to unpack .../09-python3-requests-ntlm_1.1.0-1.1_all.deb ...
+Unpacking python3-requests-ntlm (1.1.0-1.1) ...
+Selecting previously unselected package python3-xmltodict.
+Preparing to unpack .../10-python3-xmltodict_0.12.0-2_all.deb ...
+Unpacking python3-xmltodict (0.12.0-2) ...
+Selecting previously unselected package python3-winrm.
+Preparing to unpack .../11-python3-winrm_0.3.0-2_all.deb ...
+Unpacking python3-winrm (0.3.0-2) ...
+Selecting previously unselected package sshpass.
+Preparing to unpack .../12-sshpass_1.09-1_amd64.deb ...
+Unpacking sshpass (1.09-1) ...
+Setting up python3-ntlm-auth (1.4.0-1) ...
+Setting up python3-resolvelib (0.8.1-1) ...
+Setting up python3-kerberos (1.1.14-3.1build5) ...
+Setting up ansible-core (2.17.9-1ppa~jammy) ...
+Setting up sshpass (1.09-1) ...
+Setting up python3-xmltodict (0.12.0-2) ...
+Setting up python3-jmespath (0.10.0-1) ...
+Setting up python3-requests-kerberos (0.12.0-2) ...
+Setting up ansible (10.7.0-1ppa~jammy) ...
+Setting up python3-nacl (1.5.0-2) ...
+Setting up python3-requests-ntlm (1.1.0-1.1) ...
+Setting up python3-winrm (0.3.0-2) ...
+Setting up python3-paramiko (2.9.3-0ubuntu1.3) ...
+Processing triggers for man-db (2.10.2-1) ...
+Scanning processes...                                                                                               
+Scanning linux images...                                                                                            
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+vagrant@ubuntu:~$ ansible --version
+ansible [core 2.17.9]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/vagrant/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/vagrant/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible
+  python version = 3.10.12 (main, Jan 17 2025, 14:35:34) [GCC 11.4.0] (/usr/bin/python3)
+  jinja version = 3.0.3
+  libyaml = True
+vagrant@ubuntu:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+[ema@testlab:atelier-01] $ vagrant destroy -f ubuntu
+==> ubuntu: Forcing shutdown of VM...
+==> ubuntu: Destroying VM and associated drives...
+[ema@testlab:atelier-01] $ 
