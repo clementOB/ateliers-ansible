@@ -192,8 +192,6 @@ vagrant destroy -f rocky
 - **L’installation via le PPA** permet d’obtenir une version plus récente, mais non officiellement maintenue par Ubuntu.
 - **L’installation via PIP et Virtualenv** permet d’obtenir la dernière version d’Ansible sans affecter le système.
 
-📌 *Choisir la méthode adaptée aux besoins.* 🚀
-
 ---
 
 🚀 **Atelier terminé.** 🎯
