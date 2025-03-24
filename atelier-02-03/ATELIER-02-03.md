@@ -136,7 +136,7 @@ target01 | SUCCESS => {
 
 ---
 
-## 🧼 Nettoyage (optionnel)
+## 🧼 Nettoyage
 
 ```bash
 exit
