@@ -1,0 +1,504 @@
+[ema@testlab:atelier-06] $ vagrant up
+Bringing machine 'control' up with 'virtualbox' provider...
+Bringing machine 'target01' up with 'virtualbox' provider...
+Bringing machine 'target02' up with 'virtualbox' provider...
+Bringing machine 'target03' up with 'virtualbox' provider...
+==> control: Importing base box 'bento/ubuntu-22.04'...
+==> control: Matching MAC address for NAT networking...
+==> control: Checking if box 'bento/ubuntu-22.04' version '202502.21.0' is up to date...
+==> control: Setting the name of the VM: atelier-06_control_1742810208046_18730
+==> control: Clearing any previously set network interfaces...
+==> control: Preparing network interfaces based on configuration...
+    control: Adapter 1: nat
+    control: Adapter 2: hostonly
+==> control: Forwarding ports...
+    control: 22 (guest) => 2222 (host) (adapter 1)
+==> control: Running 'pre-boot' VM customizations...
+==> control: Booting VM...
+==> control: Waiting for machine to boot. This may take a few minutes...
+    control: SSH address: 127.0.0.1:2222
+    control: SSH username: vagrant
+    control: SSH auth method: private key
+    control: 
+    control: Vagrant insecure key detected. Vagrant will automatically replace
+    control: this with a newly generated keypair for better security.
+    control: 
+    control: Inserting generated public key within guest...
+    control: Removing insecure key from the guest if it's present...
+    control: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> control: Machine booted and ready!
+==> control: Setting hostname...
+==> control: Configuring and enabling network interfaces...
+==> control: Mounting shared folders...
+    control: /home/ema/formation-ansible/atelier-06 => /vagrant
+==> target01: Importing base box 'bento/ubuntu-22.04'...
+==> target01: Matching MAC address for NAT networking...
+==> target01: Checking if box 'bento/ubuntu-22.04' version '202502.21.0' is up to date...
+==> target01: Setting the name of the VM: atelier-06_target01_1742810251339_22325
+==> target01: Fixed port collision for 22 => 2222. Now on port 2200.
+==> target01: Clearing any previously set network interfaces...
+==> target01: Preparing network interfaces based on configuration...
+    target01: Adapter 1: nat
+    target01: Adapter 2: hostonly
+==> target01: Forwarding ports...
+    target01: 22 (guest) => 2200 (host) (adapter 1)
+==> target01: Running 'pre-boot' VM customizations...
+==> target01: Booting VM...
+==> target01: Waiting for machine to boot. This may take a few minutes...
+    target01: SSH address: 127.0.0.1:2200
+    target01: SSH username: vagrant
+    target01: SSH auth method: private key
+    target01: 
+    target01: Vagrant insecure key detected. Vagrant will automatically replace
+    target01: this with a newly generated keypair for better security.
+    target01: 
+    target01: Inserting generated public key within guest...
+    target01: Removing insecure key from the guest if it's present...
+    target01: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> target01: Machine booted and ready!
+==> target01: Setting hostname...
+==> target01: Configuring and enabling network interfaces...
+==> target01: Mounting shared folders...
+    target01: /home/ema/formation-ansible/atelier-06 => /vagrant
+==> target02: Importing base box 'bento/ubuntu-22.04'...
+==> target02: Matching MAC address for NAT networking...
+==> target02: Checking if box 'bento/ubuntu-22.04' version '202502.21.0' is up to date...
+==> target02: Setting the name of the VM: atelier-06_target02_1742810295723_98150
+==> target02: Fixed port collision for 22 => 2222. Now on port 2201.
+==> target02: Clearing any previously set network interfaces...
+==> target02: Preparing network interfaces based on configuration...
+    target02: Adapter 1: nat
+    target02: Adapter 2: hostonly
+==> target02: Forwarding ports...
+    target02: 22 (guest) => 2201 (host) (adapter 1)
+==> target02: Running 'pre-boot' VM customizations...
+==> target02: Booting VM...
+==> target02: Waiting for machine to boot. This may take a few minutes...
+    target02: SSH address: 127.0.0.1:2201
+    target02: SSH username: vagrant
+    target02: SSH auth method: private key
+    target02: Warning: Connection reset. Retrying...
+    target02: Warning: Remote connection disconnect. Retrying...
+    target02: 
+    target02: Vagrant insecure key detected. Vagrant will automatically replace
+    target02: this with a newly generated keypair for better security.
+    target02: 
+    target02: Inserting generated public key within guest...
+    target02: Removing insecure key from the guest if it's present...
+    target02: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> target02: Machine booted and ready!
+==> target02: Setting hostname...
+==> target02: Configuring and enabling network interfaces...
+==> target02: Mounting shared folders...
+    target02: /home/ema/formation-ansible/atelier-06 => /vagrant
+==> target03: Importing base box 'bento/ubuntu-22.04'...
+==> target03: Matching MAC address for NAT networking...
+==> target03: Checking if box 'bento/ubuntu-22.04' version '202502.21.0' is up to date...
+==> target03: Setting the name of the VM: atelier-06_target03_1742810352598_51194
+==> target03: Fixed port collision for 22 => 2222. Now on port 2202.
+==> target03: Clearing any previously set network interfaces...
+==> target03: Preparing network interfaces based on configuration...
+    target03: Adapter 1: nat
+    target03: Adapter 2: hostonly
+==> target03: Forwarding ports...
+    target03: 22 (guest) => 2202 (host) (adapter 1)
+==> target03: Running 'pre-boot' VM customizations...
+==> target03: Booting VM...
+==> target03: Waiting for machine to boot. This may take a few minutes...
+    target03: SSH address: 127.0.0.1:2202
+    target03: SSH username: vagrant
+    target03: SSH auth method: private key
+    target03: 
+    target03: Vagrant insecure key detected. Vagrant will automatically replace
+    target03: this with a newly generated keypair for better security.
+    target03: 
+    target03: Inserting generated public key within guest...
+    target03: Removing insecure key from the guest if it's present...
+    target03: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> target03: Machine booted and ready!
+==> target03: Setting hostname...
+==> target03: Configuring and enabling network interfaces...
+==> target03: Mounting shared folders...
+    target03: /home/ema/formation-ansible/atelier-06 => /vagrant
+[ema@testlab:atelier-06] $ vagrant ssh control
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-133-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Mar 24 10:00:36 AM UTC 2025
+
+  System load:           0.02
+  Usage of /:            15.1% of 30.34GB
+  Memory usage:          22%
+  Swap usage:            0%
+  Processes:             169
+  Users logged in:       0
+  IPv4 address for eth0: 10.0.2.15
+  IPv6 address for eth0: fd00::a00:27ff:febb:5920
+
+
+This system is built by the Bento project by Chef Software
+More information can be found at https://github.com/chef/bento
+
+Use of this system is acceptance of the OS vendor EULA and License Agreements.
+vagrant@control:~$ sudo nano /etc/hosts
+vagrant@control:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/vagrant/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/vagrant/.ssh/id_rsa
+Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:0BAVvq5d00OAFalH8qMX850JCvRRGD+HDDkcEb29uTk vagrant@control
+The key's randomart image is:
++---[RSA 3072]----+
+|      ooooO%.    |
+|       +ooO+..   |
+|      ..+*.o=o.  |
+|       .o.B.oo.  |
+|        S+ *.o = |
+|       .. oo. *  |
+|        ..o o  o |
+|       o . . .E  |
+|      . .      . |
++----[SHA256]-----+
+vagrant@control:~$ ssh-copy-id vagrant@target01
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+The authenticity of host 'target01 (192.168.56.20)' can't be established.
+ED25519 key fingerprint is SHA256:o3rwzW9/1oN+lFdLhUe8HozKBdgStQN/+R1ZuxQ48lk.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+vagrant@target01's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'vagrant@target01'"
+and check to make sure that only the key(s) you wanted were added.
+
+vagrant@control:~$ ssh-copy-id vagrant@target02
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+The authenticity of host 'target02 (192.168.56.30)' can't be established.
+ED25519 key fingerprint is SHA256:o3rwzW9/1oN+lFdLhUe8HozKBdgStQN/+R1ZuxQ48lk.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+vagrant@target02's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'vagrant@target02'"
+and check to make sure that only the key(s) you wanted were added.
+
+vagrant@control:~$ ssh-copy-id vagrant@target03
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+The authenticity of host 'target03 (192.168.56.40)' can't be established.
+ED25519 key fingerprint is SHA256:o3rwzW9/1oN+lFdLhUe8HozKBdgStQN/+R1ZuxQ48lk.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+    ~/.ssh/known_hosts:4: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+vagrant@target03's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'vagrant@target03'"
+and check to make sure that only the key(s) you wanted were added.
+
+vagrant@control:~$ ssh vagrant@target01
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-133-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Mar 24 10:01:12 AM UTC 2025
+
+  System load:           0.08
+  Usage of /:            15.1% of 30.34GB
+  Memory usage:          23%
+  Swap usage:            0%
+  Processes:             156
+  Users logged in:       0
+  IPv4 address for eth0: 10.0.2.15
+  IPv6 address for eth0: fd00::a00:27ff:febb:5920
+
+
+This system is built by the Bento project by Chef Software
+More information can be found at https://github.com/chef/bento
+
+Use of this system is acceptance of the OS vendor EULA and License Agreements.
+vagrant@target01:~$ exit
+logout
+Connection to target01 closed.
+vagrant@control:~$ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Hit:2 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2,145 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2,390 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [333 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [396 kB]              
+Get:9 http://us.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3,114 kB]         
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2,986 kB]    
+Get:11 http://us.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [548 kB]       
+Get:12 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,194 kB]          
+Get:13 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [294 kB]                  
+Get:14 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [527 kB]            
+Get:15 http://us.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [53.3 kB]                       
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [967 kB]                           
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [207 kB]                           
+Get:18 http://us.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [13.6 kB]                       
+Get:19 http://us.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [68.4 kB]                           
+Get:20 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [46.6 kB]                        
+Get:21 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [10.7 kB]                        
+Get:22 http://us.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.1 kB]                           
+Get:23 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [30.1 kB]                       
+Get:24 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.6 kB]                       
+Fetched 15.7 MB in 8s (2,080 kB/s)                                                                                 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+43 packages can be upgraded. Run 'apt list --upgradable' to see them.
+vagrant@control:~$ sudo apt install -y ansible
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  ieee-data python3-argcomplete python3-dnspython python3-jmespath python3-kerberos python3-libcloud
+  python3-lockfile python3-netaddr python3-ntlm-auth python3-pycryptodome python3-requests-kerberos
+  python3-requests-ntlm python3-requests-toolbelt python3-selinux python3-simplejson python3-winrm
+  python3-xmltodict
+Suggested packages:
+  cowsay sshpass python3-sniffio python3-trio python-lockfile-doc ipython3 python-netaddr-docs
+The following NEW packages will be installed:
+  ansible ieee-data python3-argcomplete python3-dnspython python3-jmespath python3-kerberos python3-libcloud
+  python3-lockfile python3-netaddr python3-ntlm-auth python3-pycryptodome python3-requests-kerberos
+  python3-requests-ntlm python3-requests-toolbelt python3-selinux python3-simplejson python3-winrm
+  python3-xmltodict
+0 upgraded, 18 newly installed, 0 to remove and 43 not upgraded.
+Need to get 22.8 MB of archives.
+After this operation, 243 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-pycryptodome amd64 3.11.0+dfsg1-3ubuntu0.1 [1,029 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-dnspython all 2.1.0-1ubuntu1 [123 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 ieee-data all 20210605.1 [1,887 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-netaddr all 0.8.0-2 [309 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 ansible all 2.10.7+merged+base+2.10.8+dfsg-1 [17.5 MB]
+Get:6 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-argcomplete all 1.8.1-1.5 [27.2 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-jmespath all 0.10.0-1 [21.7 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-kerberos amd64 1.1.14-3.1build5 [23.0 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-lockfile all 1:0.12.2-2.2 [14.6 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-simplejson amd64 3.17.6-1build1 [54.7 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-libcloud all 3.2.0-2 [1,554 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ntlm-auth all 1.4.0-1 [20.4 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-requests-kerberos all 0.12.0-2 [11.9 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-requests-ntlm all 1.1.0-1.1 [6,160 B]
+Get:15 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-requests-toolbelt all 0.9.1-1 [38.0 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-selinux amd64 3.3-1build2 [159 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-xmltodict all 0.12.0-2 [12.6 kB]
+Get:18 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-winrm all 0.3.0-2 [21.7 kB]
+Fetched 22.8 MB in 2s (9,297 kB/s)        
+Selecting previously unselected package python3-pycryptodome.
+(Reading database ... 45118 files and directories currently installed.)
+Preparing to unpack .../00-python3-pycryptodome_3.11.0+dfsg1-3ubuntu0.1_amd64.deb ...
+Unpacking python3-pycryptodome (3.11.0+dfsg1-3ubuntu0.1) ...
+Selecting previously unselected package python3-dnspython.
+Preparing to unpack .../01-python3-dnspython_2.1.0-1ubuntu1_all.deb ...
+Unpacking python3-dnspython (2.1.0-1ubuntu1) ...
+Selecting previously unselected package ieee-data.
+Preparing to unpack .../02-ieee-data_20210605.1_all.deb ...
+Unpacking ieee-data (20210605.1) ...
+Selecting previously unselected package python3-netaddr.
+Preparing to unpack .../03-python3-netaddr_0.8.0-2_all.deb ...
+Unpacking python3-netaddr (0.8.0-2) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../04-ansible_2.10.7+merged+base+2.10.8+dfsg-1_all.deb ...
+Unpacking ansible (2.10.7+merged+base+2.10.8+dfsg-1) ...
+Selecting previously unselected package python3-argcomplete.
+Preparing to unpack .../05-python3-argcomplete_1.8.1-1.5_all.deb ...
+Unpacking python3-argcomplete (1.8.1-1.5) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../06-python3-jmespath_0.10.0-1_all.deb ...
+Unpacking python3-jmespath (0.10.0-1) ...
+Selecting previously unselected package python3-kerberos.
+Preparing to unpack .../07-python3-kerberos_1.1.14-3.1build5_amd64.deb ...
+Unpacking python3-kerberos (1.1.14-3.1build5) ...
+Selecting previously unselected package python3-lockfile.
+Preparing to unpack .../08-python3-lockfile_1%3a0.12.2-2.2_all.deb ...
+Unpacking python3-lockfile (1:0.12.2-2.2) ...
+Selecting previously unselected package python3-simplejson.
+Preparing to unpack .../09-python3-simplejson_3.17.6-1build1_amd64.deb ...
+Unpacking python3-simplejson (3.17.6-1build1) ...
+Selecting previously unselected package python3-libcloud.
+Preparing to unpack .../10-python3-libcloud_3.2.0-2_all.deb ...
+Unpacking python3-libcloud (3.2.0-2) ...
+Selecting previously unselected package python3-ntlm-auth.
+Preparing to unpack .../11-python3-ntlm-auth_1.4.0-1_all.deb ...
+Unpacking python3-ntlm-auth (1.4.0-1) ...
+Selecting previously unselected package python3-requests-kerberos.
+Preparing to unpack .../12-python3-requests-kerberos_0.12.0-2_all.deb ...
+Unpacking python3-requests-kerberos (0.12.0-2) ...
+Selecting previously unselected package python3-requests-ntlm.
+Preparing to unpack .../13-python3-requests-ntlm_1.1.0-1.1_all.deb ...
+Unpacking python3-requests-ntlm (1.1.0-1.1) ...
+Selecting previously unselected package python3-requests-toolbelt.
+Preparing to unpack .../14-python3-requests-toolbelt_0.9.1-1_all.deb ...
+Unpacking python3-requests-toolbelt (0.9.1-1) ...
+Selecting previously unselected package python3-selinux.
+Preparing to unpack .../15-python3-selinux_3.3-1build2_amd64.deb ...
+Unpacking python3-selinux (3.3-1build2) ...
+Selecting previously unselected package python3-xmltodict.
+Preparing to unpack .../16-python3-xmltodict_0.12.0-2_all.deb ...
+Unpacking python3-xmltodict (0.12.0-2) ...
+Selecting previously unselected package python3-winrm.
+Preparing to unpack .../17-python3-winrm_0.3.0-2_all.deb ...
+Unpacking python3-winrm (0.3.0-2) ...
+Setting up python3-lockfile (1:0.12.2-2.2) ...
+Setting up python3-requests-toolbelt (0.9.1-1) ...
+Setting up python3-ntlm-auth (1.4.0-1) ...
+Setting up python3-pycryptodome (3.11.0+dfsg1-3ubuntu0.1) ...
+Setting up python3-kerberos (1.1.14-3.1build5) ...
+Setting up python3-simplejson (3.17.6-1build1) ...
+Setting up python3-xmltodict (0.12.0-2) ...
+Setting up python3-jmespath (0.10.0-1) ...
+Setting up python3-requests-kerberos (0.12.0-2) ...
+Setting up ieee-data (20210605.1) ...
+Setting up python3-dnspython (2.1.0-1ubuntu1) ...
+Setting up python3-selinux (3.3-1build2) ...
+Setting up python3-argcomplete (1.8.1-1.5) ...
+Setting up python3-requests-ntlm (1.1.0-1.1) ...
+Setting up python3-libcloud (3.2.0-2) ...
+Setting up python3-netaddr (0.8.0-2) ...
+Setting up python3-winrm (0.3.0-2) ...
+Setting up ansible (2.10.7+merged+base+2.10.8+dfsg-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Scanning processes...                                                                                               
+Scanning linux images...                                                                                            
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+vagrant@control:~$ ansible all -i target01,target02,target03 -m ping
+target03 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+target01 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+target02 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+vagrant@control:~$ mkdir -p ~/monprojet
+vagrant@control:~$ cd ~/monprojet/
+vagrant@control:~/monprojet$ touch ansible.cfg
+vagrant@control:~/monprojet$ ansible --version | head -n 2
+ansible 2.10.8
+  config file = /home/vagrant/monprojet/ansible.cfg
+vagrant@control:~/monprojet$ nano ansible.cfg 
+vagrant@control:~/monprojet$ mkdir -p ~/journal
+vagrant@control:~/monprojet$ ansible all -i target01,target02,target03 -m ping
+target01 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+target02 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+target03 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+vagrant@control:~/monprojet$ cat ~/journal/ansible.log
+2025-03-24 10:06:23,041 p=2689 u=vagrant n=ansible | target01 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-03-24 10:06:23,056 p=2689 u=vagrant n=ansible | target02 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-03-24 10:06:23,070 p=2689 u=vagrant n=ansible | target03 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+vagrant@control:~/monprojet$ nano hosts
+vagrant@control:~/monprojet$ ansible all -m ping
+target01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+target03 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+target02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+vagrant@control:~/monprojet$ nano hosts 
+vagrant@control:~/monprojet$ ansible all -a "head -n 1 /etc/shadow"
+target01 | CHANGED | rc=0 >>
+root:*:19977:0:99999:7:::
+target02 | CHANGED | rc=0 >>
+root:*:19977:0:99999:7:::
+target03 | CHANGED | rc=0 >>
+root:*:19977:0:99999:7:::
+vagrant@control:~/monprojet$ exit
+logout
+Connection to 127.0.0.1 closed.
+[ema@testlab:atelier-06] $ vagrant destroy -f
+==> target03: Forcing shutdown of VM...
+==> target03: Destroying VM and associated drives...
+==> target02: Forcing shutdown of VM...
+==> target02: Destroying VM and associated drives...
+==> target01: Forcing shutdown of VM...
+==> target01: Destroying VM and associated drives...
+==> control: Forcing shutdown of VM...
+==> control: Destroying VM and associated drives...
+[ema@testlab:atelier-06] $ 
