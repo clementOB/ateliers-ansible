@@ -1,0 +1,140 @@
+[ema@testlab:atelier-15] $ vagrant ssh ansible 
+[vagrant@ansible ~]$ cd 
+ansible/ .local/  logs/    .ssh/    
+[vagrant@ansible ~]$ cd ansible/projets/ema/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible ema]$ cd playbooks/
+[vagrant@ansible playbooks]$ ls
+command1.yml  command2.yml  command3.yml  command4.yml  command5.yml
+[vagrant@ansible playbooks]$ ansible-playbook command1.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Report root partition space usage] **************************************************************************
+changed: [debian]
+changed: [rocky]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook command2.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Report root partition space usage] **************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook command3.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Report root partition space usage] **************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+
+TASK [debug] ******************************************************************************************************
+ok: [rocky] => {
+    "msg": [
+        "Filesystem                  Size  Used Avail Use% Mounted on",
+        "/dev/mapper/rl_rocky9-root   70G  2.2G   68G   4% /"
+    ]
+}
+ok: [debian] => {
+    "msg": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "/dev/sda3       124G  2.3G  115G   2% /"
+    ]
+}
+ok: [suse] => {
+    "msg": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "/dev/sda3       124G  2.7G  118G   3% /"
+    ]
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook command4.yml 
+
+PLAY [debian] *****************************************************************************************************
+
+TASK [Report root partition space usage] **************************************************************************
+ok: [debian]
+
+TASK [debug] ******************************************************************************************************
+ok: [debian] => {
+    "msg": {
+        "changed": false,
+        "cmd": [
+            "df",
+            "-h",
+            "/"
+        ],
+        "delta": "0:00:00.003826",
+        "end": "2025-03-25 10:39:57.740906",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-03-25 10:39:57.737080",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda3       124G  2.3G  115G   2% /",
+        "stdout_lines": [
+            "Filesystem      Size  Used Avail Use% Mounted on",
+            "/dev/sda3       124G  2.3G  115G   2% /"
+        ]
+    }
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook command5.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Report root partition space usage] **************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+
+TASK [debug] ******************************************************************************************************
+ok: [rocky] => {
+    "df_cmd.stdout_lines": [
+        "Filesystem                  Size  Used Avail Use% Mounted on",
+        "/dev/mapper/rl_rocky9-root   70G  2.2G   68G   4% /"
+    ]
+}
+ok: [debian] => {
+    "df_cmd.stdout_lines": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "/dev/sda3       124G  2.3G  115G   2% /"
+    ]
+}
+ok: [suse] => {
+    "df_cmd.stdout_lines": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "/dev/sda3       124G  2.7G  118G   3% /"
+    ]
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
