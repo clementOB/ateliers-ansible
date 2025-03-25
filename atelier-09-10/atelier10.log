@@ -1,0 +1,113 @@
+[vagrant@ansible ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible playbooks]$ nano apache-debian.yml
+[vagrant@ansible playbooks]$ nano apache-rocky.yml
+[vagrant@ansible playbooks]$ nano apache-suse.yml
+[vagrant@ansible playbooks]$ yamllint apache-debian.yml 
+apache-debian.yml
+  1:5       warning  too few spaces before comment  (comments)
+
+[vagrant@ansible playbooks]$ nano apache-debian.yml 
+[vagrant@ansible playbooks]$ yamllint apache-debian.yml 
+apache-debian.yml
+  1:5       warning  too few spaces before comment  (comments)
+
+[vagrant@ansible playbooks]$ nano apache-debian.yml 
+[vagrant@ansible playbooks]$ yamllint apache-debian.yml 
+apache-debian.yml
+  1:5       warning  too few spaces before comment  (comments)
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-debian.yml 
+
+PLAY [debian] ******************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************
+ok: [debian]
+
+TASK [Update package info and install Apache] **********************************************************************
+changed: [debian]
+
+TASK [Start and enable Apache service] *****************************************************************************
+ok: [debian]
+
+TASK [Deploy custom index.html] ************************************************************************************
+changed: [debian]
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-rocky.yml 
+
+PLAY [rocky] *******************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************
+ok: [rocky]
+
+TASK [Install Apache with dnf] *************************************************************************************
+changed: [rocky]
+
+TASK [Start and enable Apache service] *****************************************************************************
+changed: [rocky]
+
+TASK [Deploy custom index.html] ************************************************************************************
+changed: [rocky]
+
+PLAY RECAP *********************************************************************************************************
+rocky                      : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-suse.yml 
+
+PLAY [suse] ********************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************
+ok: [suse]
+
+TASK [Install Apache with zypper] **********************************************************************************
+changed: [suse]
+
+TASK [Start and enable Apache service] *****************************************************************************
+changed: [suse]
+
+TASK [Deploy custom index.html] ************************************************************************************
+changed: [suse]
+
+PLAY RECAP *********************************************************************************************************
+suse                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ curl target01
+curl: (6) Could not resolve host: target01
+[vagrant@ansible playbooks]$ curl 192.168.56.20
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rocky Apache</title>
+  </head>
+  <body>
+    <h1>Apache web server running on Rocky Linux</h1>
+  </body>
+</html>
+[vagrant@ansible playbooks]$ curl 192.168.56.30
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Debian Apache</title>
+  </head>
+  <body>
+    <h1>Apache web server running on Debian Linux</h1>
+  </body>
+</html>
+[vagrant@ansible playbooks]$ curl 192.168.56.40
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SUSE Apache</title>
+  </head>
+  <body>
+    <h1>Apache web server running on SUSE Linux</h1>
+  </body>
+</html>
+[vagrant@ansible playbooks]$ 
