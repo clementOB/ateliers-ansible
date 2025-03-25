@@ -1,0 +1,121 @@
+[vagrant@control ~]$ cd ansible/projets/ema/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@control ema]$ cat playbooks/
+cat: playbooks/: Is a directory
+[vagrant@control ema]$ ls playbooks/
+[vagrant@control ema]$ cd playbooks/
+[vagrant@control playbooks]$ nano myvars1.yml
+[vagrant@control playbooks]$ ansible-playbook playbooks/myvars1.yml -e mycar=Toyota
+ERROR! the playbook: playbooks/myvars1.yml could not be found
+[vagrant@control playbooks]$ ansible-playbook myvars1.yml -e mycar=Toyota
+
+PLAY [all] *********************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [target01] => {
+    "msg": "Car: Toyota, Bike: Ducati"
+}
+ok: [target02] => {
+    "msg": "Car: Toyota, Bike: Ducati"
+}
+ok: [target03] => {
+    "msg": "Car: Toyota, Bike: Ducati"
+}
+
+PLAY RECAP *********************************************************************************************************
+target01                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  [vagrant@control ~]$ cd 
+.ansible/ ansible/  .local/   logs/     .ssh/     
+[vagrant@control ~]$ cd 
+.ansible/ ansible/  .local/   logs/     .ssh/     
+[vagrant@control ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@control playbooks]$ nano myvars2.yml
+[vagrant@control playbooks]$ ls
+myvars1.yml  myvars2.yml
+[vagrant@control playbooks]$ ansible-playbook playbooks/myvars2.yml -e mycar=Renault -e mybike=BMW
+ERROR! the playbook: playbooks/myvars2.yml could not be found
+[vagrant@control playbooks]$ ansible-playbook myvars2.yml -e mycar=Renault -e mybike=BMW
+
+PLAY [all] *********************************************************************************************************
+
+TASK [set_fact] ****************************************************************************************************
+ok: [target01]
+ok: [target02]
+ok: [target03]
+
+TASK [debug] *******************************************************************************************************
+ok: [target01] => {
+    "msg": "Car: Renault, Bike: BMW"
+}
+ok: [target02] => {
+    "msg": "Car: Renault, Bike: BMW"
+}
+ok: [target03] => {
+    "msg": "Car: Renault, Bike: BMW"
+}
+
+PLAY RECAP *********************************************************************************************************
+target01                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target02                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target03                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@control playbooks]$ nano myvars3.yml
+[vagrant@control playbooks]$ mkdir ../group_vars
+[vagrant@control playbooks]$ nano group_vars/all.yml
+[vagrant@control playbooks]$ cd ..
+[vagrant@control ema]$ ls
+ansible.cfg  group_vars  inventory  playbooks
+[vagrant@control ema]$ rm -rf group_vars/
+[vagrant@control ema]$ mkdir -v group_vars
+mkdir: created directory 'group_vars'
+[vagrant@control ema]$ cd group_vars/
+[vagrant@control group_vars]$ nano all.yml
+[vagrant@control group_vars]$ cd ..
+[vagrant@control ema]$ mkdir host_vars
+[vagrant@control ema]$ cd host_vars/
+[vagrant@control host_vars]$ nano target02.yml
+[vagrant@control host_vars]$ cd ..
+[vagrant@control ema]$ cd playbooks/
+[vagrant@control playbooks]$ ls
+myvars1.yml  myvars2.yml  myvars3.yml
+[vagrant@control playbooks]$ ansible-playbook myvars3.yml 
+
+PLAY [all] *********************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [target01] => {
+    "msg": "Car: VW, Bike: BMW"
+}
+ok: [target02] => {
+    "msg": "Car: Mercedes, Bike: Honda"
+}
+ok: [target03] => {
+    "msg": "Car: VW, Bike: BMW"
+}
+
+PLAY RECAP *********************************************************************************************************
+target01                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target02                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target03                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@control playbooks]$ nano display_user.yml
+[vagrant@control playbooks]$ nano display_user.yml 
+[vagrant@control playbooks]$ ansible-playbook display_user.yml 
+Enter username [microlinux]: testusername
+Enter password [yatahongaga]: 
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "User: testusername, Password: testpassword"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@control playbooks]$ exit
+logout
+Connection to 127.0.0.1 closed.

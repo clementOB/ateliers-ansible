@@ -1,0 +1,244 @@
+[vagrant@ansible ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible playbooks]$ ls
+assert.yml  prompting.yml  set_fact.yml  vars1.yml  vars2.yml  vars-complex.yml
+[vagrant@ansible playbooks]$ ansible-playbook vars1.yml
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "Color: blue, Number: 42"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook vars1.yml -e color=red
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "Color: red, Number: 42"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook vars1.yml -e color=red -e number=99
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "Color: red, Number: 99"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook set_fact.yml 
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [Define variables] ********************************************************************************************
+ok: [localhost]
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "Color: yellow, Number: 13"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook vars2.yml 
+
+PLAY [all] *********************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+fatal: [rocky]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'mycolor' is undefined. 'mycolor' is undefined\n\nThe error appears to be in '/home/vagrant/ansible/projets/ema/playbooks/vars2.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - debug:\n      ^ here\n"}
+fatal: [debian]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'mycolor' is undefined. 'mycolor' is undefined\n\nThe error appears to be in '/home/vagrant/ansible/projets/ema/playbooks/vars2.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - debug:\n      ^ here\n"}
+fatal: [suse]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'mycolor' is undefined. 'mycolor' is undefined\n\nThe error appears to be in '/home/vagrant/ansible/projets/ema/playbooks/vars2.yml': line 7, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - debug:\n      ^ here\n"}
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+suse                       : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ mkdir -v ~/ansible/projets/ema/group_vars
+mkdir: created directory '/home/vagrant/ansible/projets/ema/group_vars'
+[vagrant@ansible playbooks]$ cd ..
+[vagrant@ansible ema]$ nano group_vars/all.yml
+[vagrant@ansible ema]$ ansible-playbook vars2.yml 
+ERROR! the playbook: vars2.yml could not be found
+[vagrant@ansible ema]$ ansible-playbook playbooks/vars2.yml 
+
+PLAY [all] *********************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [rocky] => {
+    "msg": "Color: white, Number: 97"
+}
+ok: [debian] => {
+    "msg": "Color: white, Number: 97"
+}
+ok: [suse] => {
+    "msg": "Color: white, Number: 97"
+}
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible ema]$ cat inventory 
+[testing]
+rocky
+debian
+suse
+
+[redhat_hosts]
+rocky
+
+[testing:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=vagrant
+ansible_become=yes
+[vagrant@ansible ema]$ nano group_vars/redhat_hosts.yml
+[vagrant@ansible ema]$ nano group_vars/redhat_hosts.yml
+[vagrant@ansible ema]$ ansible-playbook playbooks/vars2.yml 
+
+PLAY [all] *********************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [rocky] => {
+    "msg": "Color: red, Number: 97"
+}
+ok: [debian] => {
+    "msg": "Color: white, Number: 97"
+}
+ok: [suse] => {
+    "msg": "Color: white, Number: 97"
+}
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible ema]$ mkdir -v ~/ansible/projets/ema/host_vars
+mkdir: created directory '/home/vagrant/ansible/projets/ema/host_vars'
+[vagrant@ansible ema]$ nano host_vars/suse.yml
+[vagrant@ansible ema]$ ansible-playbook playbooks/vars2.yml 
+
+PLAY [all] *********************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [rocky] => {
+    "msg": "Color: red, Number: 97"
+}
+ok: [debian] => {
+    "msg": "Color: white, Number: 97"
+}
+ok: [suse] => {
+    "msg": "Color: green, Number: 97"
+}
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible ema]$ cd playbooks/
+[vagrant@ansible playbooks]$ nano prompting.yml
+[vagrant@ansible playbooks]$ ansible-playbook prompting.yml
+Please select a value for var1 [42]: 99
+And now for var2 (secret): 
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "var1 is 99, var2 is yatahongaga"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook prompting.yml -e var1=38 -e var2=zamooche
+
+PLAY [localhost] ***************************************************************************************************
+
+TASK [debug] *******************************************************************************************************
+ok: [localhost] => {
+    "msg": "var1 is 38, var2 is zamooche"
+}
+
+PLAY RECAP *********************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook vars-complex.yml 
+
+PLAY [suse] ********************************************************************************************************
+
+TASK [Upload /etc/motd] ********************************************************************************************
+changed: [suse]
+
+PLAY RECAP *********************************************************************************************************
+suse                       : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ssh suse
+Last login: Tue Mar 25 10:13:12 2025 from 192.168.56.10
+Bonjour cher visiteur !
+
+Citation du jour: Chassez le naturiste, il revient au bungalow.
+
+Les numéros du loto: 2, 8, 17, 33, 34, 42
+vagrant@suse:~> exit
+logout
+Connection to suse closed.
+[vagrant@ansible playbooks]$ ls
+assert.yml  prompting.yml  set_fact.yml  vars1.yml  vars2.yml  vars-complex.yml
+[vagrant@ansible playbooks]$ ansible-playbook assert.yml 
+
+PLAY [debian] ******************************************************************************************************
+
+TASK [assert] ******************************************************************************************************
+fatal: [debian]: FAILED! => {
+    "assertion": "hostname is defined and hostname != ''",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "The hostname variable is undefined or empty."
+}
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook assert.yml -e hostname=sandbox
+
+PLAY [debian] ******************************************************************************************************
+
+TASK [assert] ******************************************************************************************************
+ok: [debian] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Set hostname] ************************************************************************************************
+changed: [debian]
+
+TASK [debug] *******************************************************************************************************
+ok: [debian] => {
+    "msg": "Let's check if we see this."
+}
+
+PLAY RECAP *********************************************************************************************************
+debian                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ exit
+logout
+Connection to 127.0.0.1 closed.
+[ema@testlab:atelier-13] $ 
