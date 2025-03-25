@@ -1,0 +1,80 @@
+[vagrant@ansible playbooks]$ nano pkg-info.yml
+[vagrant@ansible playbooks]$ nano python-info.yml
+[vagrant@ansible playbooks]$ nano python-info.yml
+[vagrant@ansible playbooks]$ nano dns-info.yml
+[vagrant@ansible playbooks]$ ansible-playbook pkg-info.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [rocky]
+ok: [suse]
+
+TASK [Display package manager] ************************************************************************************
+ok: [rocky] => {
+    "msg": "rocky uses dnf as its package manager."
+}
+ok: [debian] => {
+    "msg": "debian uses apt as its package manager."
+}
+ok: [suse] => {
+    "msg": "suse uses zypper as its package manager."
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook python-info.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+
+TASK [Display Python version] *************************************************************************************
+ok: [rocky] => {
+    "msg": "rocky has Python version: 3.9.18"
+}
+ok: [debian] => {
+    "msg": "debian has Python version: 3.11.2"
+}
+ok: [suse] => {
+    "msg": "suse has Python version: 3.6.15"
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook dns-info.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [rocky]
+ok: [suse]
+
+TASK [Display DNS servers] ****************************************************************************************
+ok: [rocky] => {
+    "msg": "rocky uses DNS servers: ['10.0.2.3']"
+}
+ok: [debian] => {
+    "msg": "debian uses DNS servers: ['4.2.2.1', '4.2.2.2', '208.67.220.220']"
+}
+ok: [suse] => {
+    "msg": "suse uses DNS servers: ['10.0.2.3']"
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ 
