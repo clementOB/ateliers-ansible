@@ -1,4 +1,4 @@
-# ATELIER-10 : Serveur web simple avec Ansible
+# Serveur web simple avec Ansible
 
 ## 🌟 Objectif
 Réaliser l'installation d'Apache sur trois distributions différentes (Debian, Rocky, SUSE) avec une page web personnalisée sur chaque hôte, à l'aide de trois playbooks Ansible distincts.

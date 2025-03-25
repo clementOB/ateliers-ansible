@@ -1,0 +1,73 @@
+[vagrant@control ~]$ cd ansible/projets/ema/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@control ema]$ cd playbooks/
+[vagrant@control playbooks]$ nano chrony.yml
+[vagrant@control playbooks]$ y
+yamllint            ypdomainname        yum-builddep        yum-debug-dump      yumdownloader
+yes                 yum                 yum-config-manager  yum-debug-restore   yum-groups-manager
+[vagrant@control playbooks]$ yamllint chrony.yml 
+[vagrant@control playbooks]$ ansible-playbook chrony.yml 
+
+PLAY [redhat] ******************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************
+ok: [target02]
+ok: [target03]
+ok: [target01]
+
+TASK [Install chrony package] **************************************************************************************
+changed: [target03]
+changed: [target01]
+changed: [target02]
+
+TASK [Enable and start chronyd service] ****************************************************************************
+changed: [target02]
+changed: [target01]
+changed: [target03]
+
+TASK [Deploy custom chrony.conf] ***********************************************************************************
+changed: [target03]
+changed: [target01]
+changed: [target02]
+
+RUNNING HANDLER [Restart chronyd] **********************************************************************************
+changed: [target01]
+changed: [target02]
+changed: [target03]
+
+PLAY RECAP *********************************************************************************************************
+target01                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target02                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target03                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@control playbooks]$ ansible-playbook chrony.yml 
+
+PLAY [redhat] ******************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************
+ok: [target03]
+ok: [target02]
+ok: [target01]
+
+TASK [Install chrony package] **************************************************************************************
+ok: [target03]
+ok: [target02]
+ok: [target01]
+
+TASK [Enable and start chronyd service] ****************************************************************************
+ok: [target01]
+ok: [target02]
+ok: [target03]
+
+TASK [Deploy custom chrony.conf] ***********************************************************************************
+ok: [target02]
+ok: [target03]
+ok: [target01]
+
+PLAY RECAP *********************************************************************************************************
+target01                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target02                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+target03                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@control playbooks]$ 
