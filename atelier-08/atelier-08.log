@@ -1,0 +1,684 @@
+[ema@testlab:atelier-08] $ vagrant up
+Bringing machine 'rocky' up with 'virtualbox' provider...
+Bringing machine 'debian' up with 'virtualbox' provider...
+Bringing machine 'suse' up with 'virtualbox' provider...
+Bringing machine 'ansible' up with 'virtualbox' provider...
+==> rocky: Importing base box 'generic/rocky9'...
+==> rocky: Matching MAC address for NAT networking...
+==> rocky: Checking if box 'generic/rocky9' version '4.3.12' is up to date...
+==> rocky: Setting the name of the VM: atelier-08_rocky_1742890066115_67627
+==> rocky: Clearing any previously set network interfaces...
+==> rocky: Preparing network interfaces based on configuration...
+    rocky: Adapter 1: nat
+    rocky: Adapter 2: hostonly
+==> rocky: Forwarding ports...
+    rocky: 22 (guest) => 2222 (host) (adapter 1)
+==> rocky: Running 'pre-boot' VM customizations...
+==> rocky: Booting VM...
+==> rocky: Waiting for machine to boot. This may take a few minutes...
+    rocky: SSH address: 127.0.0.1:2222
+    rocky: SSH username: vagrant
+    rocky: SSH auth method: private key
+    rocky: 
+    rocky: Vagrant insecure key detected. Vagrant will automatically replace
+    rocky: this with a newly generated keypair for better security.
+    rocky: 
+    rocky: Inserting generated public key within guest...
+    rocky: Removing insecure key from the guest if it's present...
+    rocky: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> rocky: Machine booted and ready!
+==> rocky: Setting hostname...
+==> rocky: Configuring and enabling network interfaces...
+==> rocky: Mounting shared folders...
+    rocky: /home/ema/formation-ansible/atelier-08 => /vagrant
+==> rocky: Running provisioner: shell...
+    rocky: Running: /tmp/vagrant-shell20250325-27887-afhxw6.sh
+==> debian: Importing base box 'generic/debian12'...
+==> debian: Matching MAC address for NAT networking...
+==> debian: Checking if box 'generic/debian12' version '4.3.12' is up to date...
+==> debian: Setting the name of the VM: atelier-08_debian_1742890111178_93746
+==> debian: Fixed port collision for 22 => 2222. Now on port 2200.
+==> debian: Clearing any previously set network interfaces...
+==> debian: Preparing network interfaces based on configuration...
+    debian: Adapter 1: nat
+    debian: Adapter 2: hostonly
+==> debian: Forwarding ports...
+    debian: 22 (guest) => 2200 (host) (adapter 1)
+==> debian: Running 'pre-boot' VM customizations...
+==> debian: Booting VM...
+==> debian: Waiting for machine to boot. This may take a few minutes...
+    debian: SSH address: 127.0.0.1:2200
+    debian: SSH username: vagrant
+    debian: SSH auth method: private key
+    debian: 
+    debian: Vagrant insecure key detected. Vagrant will automatically replace
+    debian: this with a newly generated keypair for better security.
+    debian: 
+    debian: Inserting generated public key within guest...
+    debian: Removing insecure key from the guest if it's present...
+    debian: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> debian: Machine booted and ready!
+==> debian: Setting hostname...
+==> debian: Configuring and enabling network interfaces...
+==> debian: Mounting shared folders...
+    debian: /home/ema/formation-ansible/atelier-08 => /vagrant
+==> suse: Importing base box 'generic/opensuse15'...
+==> suse: Matching MAC address for NAT networking...
+==> suse: Checking if box 'generic/opensuse15' version '4.3.12' is up to date...
+==> suse: Setting the name of the VM: atelier-08_suse_1742890168824_63099
+==> suse: Fixed port collision for 22 => 2222. Now on port 2201.
+==> suse: Clearing any previously set network interfaces...
+==> suse: Preparing network interfaces based on configuration...
+    suse: Adapter 1: nat
+    suse: Adapter 2: hostonly
+==> suse: Forwarding ports...
+    suse: 22 (guest) => 2201 (host) (adapter 1)
+==> suse: Running 'pre-boot' VM customizations...
+==> suse: Booting VM...
+==> suse: Waiting for machine to boot. This may take a few minutes...
+    suse: SSH address: 127.0.0.1:2201
+    suse: SSH username: vagrant
+    suse: SSH auth method: private key
+    suse: 
+    suse: Vagrant insecure key detected. Vagrant will automatically replace
+    suse: this with a newly generated keypair for better security.
+    suse: 
+    suse: Inserting generated public key within guest...
+    suse: Removing insecure key from the guest if it's present...
+    suse: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> suse: Machine booted and ready!
+==> suse: Setting hostname...
+==> suse: Configuring and enabling network interfaces...
+==> suse: Mounting shared folders...
+    suse: /home/ema/formation-ansible/atelier-08 => /vagrant
+==> ansible: Importing base box 'generic/rocky9'...
+==> ansible: Matching MAC address for NAT networking...
+==> ansible: Checking if box 'generic/rocky9' version '4.3.12' is up to date...
+==> ansible: Setting the name of the VM: atelier-08_ansible_1742890250538_71774
+==> ansible: Fixed port collision for 22 => 2222. Now on port 2202.
+==> ansible: Clearing any previously set network interfaces...
+==> ansible: Preparing network interfaces based on configuration...
+    ansible: Adapter 1: nat
+    ansible: Adapter 2: hostonly
+==> ansible: Forwarding ports...
+    ansible: 22 (guest) => 2202 (host) (adapter 1)
+==> ansible: Running 'pre-boot' VM customizations...
+==> ansible: Booting VM...
+==> ansible: Waiting for machine to boot. This may take a few minutes...
+    ansible: SSH address: 127.0.0.1:2202
+    ansible: SSH username: vagrant
+    ansible: SSH auth method: private key
+    ansible: 
+    ansible: Vagrant insecure key detected. Vagrant will automatically replace
+    ansible: this with a newly generated keypair for better security.
+    ansible: 
+    ansible: Inserting generated public key within guest...
+    ansible: Removing insecure key from the guest if it's present...
+    ansible: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> ansible: Machine booted and ready!
+==> ansible: Setting hostname...
+==> ansible: Configuring and enabling network interfaces...
+==> ansible: Mounting shared folders...
+    ansible: /home/ema/formation-ansible/atelier-08 => /vagrant
+==> ansible: Running provisioner: shell...
+    ansible: Running: /tmp/vagrant-shell20250325-27887-5bpyit.sh
+    ansible: '/vagrant/hosts' -> '/etc/hosts'
+    ansible: Extra Packages for Enterprise Linux 9 - x86_64  6.3 MB/s |  23 MB     00:03
+    ansible: Extra Packages for Enterprise Linux 9 openh264  1.6 kB/s | 2.5 kB     00:01
+    ansible: Rocky Linux 9 - BaseOS                          1.9 MB/s | 2.3 MB     00:01
+    ansible: Rocky Linux 9 - AppStream                       5.6 MB/s | 8.6 MB     00:01
+    ansible: Rocky Linux 9 - Extras                           16 kB/s |  16 kB     00:01
+    ansible: Package epel-release-9-7.el9.noarch is already installed.
+    ansible: Dependencies resolved.
+    ansible: ================================================================================
+    ansible:  Package                Architecture     Version           Repository      Size
+    ansible: ================================================================================
+    ansible: Upgrading:
+    ansible:  epel-release           noarch           9-9.el9           epel            19 k
+    ansible: 
+    ansible: Transaction Summary
+    ansible: ================================================================================
+    ansible: Upgrade  1 Package
+    ansible: 
+    ansible: Total download size: 19 k
+    ansible: Downloading Packages:
+    ansible: epel-release-9-9.el9.noarch.rpm                  55 kB/s |  19 kB     00:00
+    ansible: --------------------------------------------------------------------------------
+    ansible: Total                                            31 kB/s |  19 kB     00:00
+    ansible: Running transaction check
+    ansible: Transaction check succeeded.
+    ansible: Running transaction test
+    ansible: Transaction test succeeded.
+    ansible: Running transaction
+    ansible:   Preparing        :                                                        1/1
+    ansible:   Upgrading        : epel-release-9-9.el9.noarch                            1/2
+    ansible: warning: /etc/yum.repos.d/epel-testing.repo created as /etc/yum.repos.d/epel-testing.repo.rpmnew
+    ansible: warning: /etc/yum.repos.d/epel.repo created as /etc/yum.repos.d/epel.repo.rpmnew
+    ansible: 
+    ansible:   Running scriptlet: epel-release-9-9.el9.noarch                            1/2
+    ansible:   Cleanup          : epel-release-9-7.el9.noarch                            2/2
+    ansible:   Running scriptlet: epel-release-9-7.el9.noarch                            2/2
+    ansible:   Verifying        : epel-release-9-9.el9.noarch                            1/2
+    ansible:   Verifying        : epel-release-9-7.el9.noarch                            2/2
+    ansible: 
+    ansible: Upgraded:
+    ansible:   epel-release-9-9.el9.noarch
+    ansible: 
+    ansible: Complete!
+    ansible: Last metadata expiration check: 0:00:05 ago on Tue 25 Mar 2025 08:11:35 AM UTC.
+    ansible: Package vim-enhanced-2:8.2.2637-20.el9_1.x86_64 is already installed.
+    ansible: Dependencies resolved.
+    ansible: ================================================================================
+    ansible:  Package                  Arch       Version                Repository     Size
+    ansible: ================================================================================
+    ansible: Installing:
+    ansible:  ansible                  noarch     1:7.7.0-1.el9          epel           34 M
+    ansible:  nano                     x86_64     5.6.1-6.el9            baseos        691 k
+    ansible:  sshpass                  x86_64     1.09-4.el9             appstream      27 k
+    ansible: Upgrading:
+    ansible:  vim-common               x86_64     2:8.2.2637-21.el9      appstream     6.6 M
+    ansible:  vim-enhanced             x86_64     2:8.2.2637-21.el9      appstream     1.7 M
+    ansible: Installing dependencies:
+    ansible:  ansible-core             x86_64     1:2.14.17-1.el9        appstream     2.2 M
+    ansible:  git-core                 x86_64     2.43.5-2.el9_5         appstream     4.4 M
+    ansible:  python3-cffi             x86_64     1.14.5-5.el9           baseos        241 k
+    ansible:  python3-cryptography     x86_64     36.0.1-4.el9           baseos        1.2 M
+    ansible:  python3-packaging        noarch     20.9-5.el9             appstream      69 k
+    ansible:  python3-ply              noarch     3.11-14.el9.0.1        baseos        103 k
+    ansible:  python3-pycparser        noarch     2.20-6.el9             baseos        124 k
+    ansible:  python3-pyyaml           x86_64     5.4.1-6.el9            baseos        191 k
+    ansible:  python3-resolvelib       noarch     0.5.4-5.el9            appstream      29 k
+    ansible:  python3-setuptools       noarch     53.0.0-13.el9          baseos        838 k
+    ansible: 
+    ansible: Transaction Summary
+    ansible: ================================================================================
+    ansible: Install  13 Packages
+    ansible: Upgrade   2 Packages
+    ansible: 
+    ansible: Total download size: 53 M
+    ansible: Downloading Packages:
+    ansible: (1/15): python3-pyyaml-5.4.1-6.el9.x86_64.rpm   391 kB/s | 191 kB     00:00
+    ansible: (2/15): python3-setuptools-53.0.0-13.el9.noarch 1.2 MB/s | 838 kB     00:00
+    ansible: (3/15): nano-5.6.1-6.el9.x86_64.rpm             3.8 MB/s | 691 kB     00:00
+    ansible: (4/15): python3-cffi-1.14.5-5.el9.x86_64.rpm    1.0 MB/s | 241 kB     00:00
+    ansible: (5/15): python3-ply-3.11-14.el9.0.1.noarch.rpm   72 kB/s | 103 kB     00:01
+    ansible: (6/15): python3-pycparser-2.20-6.el9.noarch.rpm 695 kB/s | 124 kB     00:00
+    ansible: (7/15): python3-packaging-20.9-5.el9.noarch.rpm 153 kB/s |  69 kB     00:00
+    ansible: (8/15): python3-resolvelib-0.5.4-5.el9.noarch.r 267 kB/s |  29 kB     00:00
+    ansible: (9/15): sshpass-1.09-4.el9.x86_64.rpm           303 kB/s |  27 kB     00:00
+    ansible: (10/15): git-core-2.43.5-2.el9_5.x86_64.rpm      10 MB/s | 4.4 MB     00:00
+    ansible: (11/15): python3-cryptography-36.0.1-4.el9.x86_ 396 kB/s | 1.2 MB     00:02
+    ansible: (12/15): ansible-core-2.14.17-1.el9.x86_64.rpm   14 MB/s | 2.2 MB     00:00
+    ansible: (13/15): vim-enhanced-8.2.2637-21.el9.x86_64.rp 5.6 MB/s | 1.7 MB     00:00
+    ansible: (14/15): vim-common-8.2.2637-21.el9.x86_64.rpm   12 MB/s | 6.6 MB     00:00
+    ansible: (15/15): ansible-7.7.0-1.el9.noarch.rpm         3.8 MB/s |  34 MB     00:08
+    ansible: --------------------------------------------------------------------------------
+    ansible: Total                                           5.0 MB/s |  53 MB     00:10
+    ansible: Running transaction check
+    ansible: Transaction check succeeded.
+    ansible: Running transaction test
+    ansible: Transaction test succeeded.
+    ansible: Running transaction
+    ansible:   Preparing        :                                                        1/1
+    ansible:   Upgrading        : vim-common-2:8.2.2637-21.el9.x86_64                   1/17
+    ansible:   Installing       : git-core-2.43.5-2.el9_5.x86_64                        2/17
+    ansible:   Installing       : sshpass-1.09-4.el9.x86_64                             3/17
+    ansible:   Installing       : python3-resolvelib-0.5.4-5.el9.noarch                 4/17
+    ansible:   Installing       : python3-packaging-20.9-5.el9.noarch                   5/17
+    ansible:   Installing       : python3-ply-3.11-14.el9.0.1.noarch                    6/17
+    ansible:   Installing       : python3-pycparser-2.20-6.el9.noarch                   7/17
+    ansible:   Installing       : python3-cffi-1.14.5-5.el9.x86_64                      8/17
+    ansible:   Installing       : python3-cryptography-36.0.1-4.el9.x86_64              9/17
+    ansible:   Installing       : python3-setuptools-53.0.0-13.el9.noarch              10/17
+    ansible:   Installing       : python3-pyyaml-5.4.1-6.el9.x86_64                    11/17
+    ansible:   Installing       : ansible-core-1:2.14.17-1.el9.x86_64                  12/17
+    ansible:   Installing       : ansible-1:7.7.0-1.el9.noarch                         13/17
+    ansible:   Upgrading        : vim-enhanced-2:8.2.2637-21.el9.x86_64                14/17
+    ansible:   Installing       : nano-5.6.1-6.el9.x86_64                              15/17
+    ansible:   Cleanup          : vim-enhanced-2:8.2.2637-20.el9_1.x86_64              16/17
+    ansible:   Cleanup          : vim-common-2:8.2.2637-20.el9_1.x86_64                17/17
+    ansible:   Running scriptlet: vim-common-2:8.2.2637-20.el9_1.x86_64                17/17
+    ansible:   Verifying        : ansible-1:7.7.0-1.el9.noarch                          1/17
+    ansible:   Verifying        : python3-pyyaml-5.4.1-6.el9.x86_64                     2/17
+    ansible:   Verifying        : python3-setuptools-53.0.0-13.el9.noarch               3/17
+    ansible:   Verifying        : nano-5.6.1-6.el9.x86_64                               4/17
+    ansible:   Verifying        : python3-cryptography-36.0.1-4.el9.x86_64              5/17
+    ansible:   Verifying        : python3-cffi-1.14.5-5.el9.x86_64                      6/17
+    ansible:   Verifying        : python3-ply-3.11-14.el9.0.1.noarch                    7/17
+    ansible:   Verifying        : python3-pycparser-2.20-6.el9.noarch                   8/17
+    ansible:   Verifying        : python3-packaging-20.9-5.el9.noarch                   9/17
+    ansible:   Verifying        : python3-resolvelib-0.5.4-5.el9.noarch                10/17
+    ansible:   Verifying        : sshpass-1.09-4.el9.x86_64                            11/17
+    ansible:   Verifying        : git-core-2.43.5-2.el9_5.x86_64                       12/17
+    ansible:   Verifying        : ansible-core-1:2.14.17-1.el9.x86_64                  13/17
+    ansible:   Verifying        : vim-enhanced-2:8.2.2637-21.el9.x86_64                14/17
+    ansible:   Verifying        : vim-enhanced-2:8.2.2637-20.el9_1.x86_64              15/17
+    ansible:   Verifying        : vim-common-2:8.2.2637-21.el9.x86_64                  16/17
+    ansible:   Verifying        : vim-common-2:8.2.2637-20.el9_1.x86_64                17/17
+    ansible: 
+    ansible: Upgraded:
+    ansible:   vim-common-2:8.2.2637-21.el9.x86_64   vim-enhanced-2:8.2.2637-21.el9.x86_64
+    ansible: Installed:
+    ansible:   ansible-1:7.7.0-1.el9.noarch
+    ansible:   ansible-core-1:2.14.17-1.el9.x86_64
+    ansible:   git-core-2.43.5-2.el9_5.x86_64
+    ansible:   nano-5.6.1-6.el9.x86_64
+    ansible:   python3-cffi-1.14.5-5.el9.x86_64
+    ansible:   python3-cryptography-36.0.1-4.el9.x86_64
+    ansible:   python3-packaging-20.9-5.el9.noarch
+    ansible:   python3-ply-3.11-14.el9.0.1.noarch
+    ansible:   python3-pycparser-2.20-6.el9.noarch
+    ansible:   python3-pyyaml-5.4.1-6.el9.x86_64
+    ansible:   python3-resolvelib-0.5.4-5.el9.noarch
+    ansible:   python3-setuptools-53.0.0-13.el9.noarch
+    ansible:   sshpass-1.09-4.el9.x86_64
+    ansible: 
+    ansible: Complete!
+    ansible: Generating public/private rsa key pair.
+    ansible: Enter file in which to save the key (/home/vagrant/.ssh/id_rsa): Your identification has been saved in /home/vagrant/.ssh/id_rsa
+    ansible: Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub
+    ansible: The key fingerprint is:
+    ansible: SHA256:vp5aKTpDlM6aYHcLuLjeFt4WBZi9GLIr/howB3sl8aI vagrant@ansible
+    ansible: The key's randomart image is:
+    ansible: +---[RSA 4096]----+
+    ansible: |  . +            |
+    ansible: | . * o           |
+    ansible: |. = =.o          |
+    ansible: | = =o. .         |
+    ansible: |E =+  . S        |
+    ansible: |+B ++o . .       |
+    ansible: |=o++= + +        |
+    ansible: |.o=oo= o o       |
+    ansible: |o++ooo.o+        |
+    ansible: +----[SHA256]-----+
+    ansible: Enter passphrase (empty for no passphrase): Enter same passphrase again: # rocky:22 SSH-2.0-OpenSSH_8.7
+    ansible: # rocky.sandbox.lan:22 SSH-2.0-OpenSSH_8.7
+    ansible: /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+    ansible: /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+    ansible: /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+    ansible: 
+    ansible: Number of key(s) added: 1
+    ansible: 
+    ansible: Now try logging into the machine, with:   "ssh 'vagrant@rocky'"
+    ansible: and check to make sure that only the key(s) you wanted were added.
+    ansible: 
+    ansible: # debian:22 SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+    ansible: # debian.sandbox.lan:22 SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+    ansible: /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+    ansible: /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+    ansible: /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+    ansible: 
+    ansible: Number of key(s) added: 1
+    ansible: 
+    ansible: Now try logging into the machine, with:   "ssh 'vagrant@debian'"
+    ansible: and check to make sure that only the key(s) you wanted were added.
+    ansible: 
+    ansible: # suse:22 SSH-2.0-OpenSSH_8.4
+    ansible: # suse.sandbox.lan:22 SSH-2.0-OpenSSH_8.4
+    ansible: /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+    ansible: /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+    ansible: /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+    ansible: 
+    ansible: Number of key(s) added: 1
+    ansible: 
+    ansible: Now try logging into the machine, with:   "ssh 'vagrant@suse'"
+    ansible: and check to make sure that only the key(s) you wanted were added.
+    ansible: 
+    ansible: --2025-03-25 08:12:13--  https://github.com/direnv/direnv/releases/download/v2.35.0/direnv.linux-amd64
+    ansible: Resolving github.com (github.com)... 140.82.121.4
+    ansible: Connecting to github.com (github.com)|140.82.121.4|:443... connected.
+    ansible: HTTP request sent, awaiting response... 302 Found
+    ansible: Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/1219305/a26ae894-37af-4662-b55b-aef71ac375ad?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250325%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250325T081213Z&X-Amz-Expires=300&X-Amz-Signature=6df680cc1a178fc824b78fb44b289f03df7ad6ff90d061619c9f3cdb87c6fe4e&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Ddirenv.linux-amd64&response-content-type=application%2Foctet-stream [following]
+    ansible: --2025-03-25 08:12:14--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/1219305/a26ae894-37af-4662-b55b-aef71ac375ad?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250325%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250325T081213Z&X-Amz-Expires=300&X-Amz-Signature=6df680cc1a178fc824b78fb44b289f03df7ad6ff90d061619c9f3cdb87c6fe4e&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Ddirenv.linux-amd64&response-content-type=application%2Foctet-stream
+    ansible: Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+    ansible: Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
+    ansible: HTTP request sent, awaiting response... 200 OK
+    ansible: Length: 6934528 (6.6M) [application/octet-stream]
+    ansible: Saving to: ‘/usr/local/bin/direnv’
+    ansible: 
+    ansible:      0K .......... .......... .......... .......... ..........  0%  704K 10s
+    ansible:     50K .......... .......... .......... .......... ..........  1% 1.40M 7s
+    ansible:    100K .......... .......... .......... .......... ..........  2% 1.60M 6s
+    ansible:    150K .......... .......... .......... .......... ..........  2% 6.35M 5s
+    ansible:    200K .......... .......... .......... .......... ..........  3% 5.24M 4s
+    ansible:    250K .......... .......... .......... .......... ..........  4% 5.44M 4s
+    ansible:    300K .......... .......... .......... .......... ..........  5% 2.69M 3s
+    ansible:    350K .......... .......... .......... .......... ..........  5% 10.6M 3s
+    ansible:    400K .......... .......... .......... .......... ..........  6% 11.9M 3s
+    ansible:    450K .......... .......... .......... .......... ..........  7% 14.5M 2s
+    ansible:    500K .......... .......... .......... .......... ..........  8% 9.02M 2s
+    ansible:    550K .......... .......... .......... .......... ..........  8% 26.1M 2s
+    ansible:    600K .......... .......... .......... .......... ..........  9% 7.43M 2s
+    ansible:    650K .......... .......... .......... .......... .......... 10% 12.2M 2s
+    ansible:    700K .......... .......... .......... .......... .......... 11% 10.8M 2s
+    ansible:    750K .......... .......... .......... .......... .......... 11% 14.6M 2s
+    ansible:    800K .......... .......... .......... .......... .......... 12% 15.3M 2s
+    ansible:    850K .......... .......... .......... .......... .......... 13% 8.63M 1s
+    ansible:    900K .......... .......... .......... .......... .......... 14% 49.4M 1s
+    ansible:    950K .......... .......... .......... .......... .......... 14% 18.3M 1s
+    ansible:   1000K .......... .......... .......... .......... .......... 15% 25.1M 1s
+    ansible:   1050K .......... .......... .......... .......... .......... 16% 7.48M 1s
+    ansible:   1100K .......... .......... .......... .......... .......... 16% 29.5M 1s
+    ansible:   1150K .......... .......... .......... .......... .......... 17% 43.5M 1s
+    ansible:   1200K .......... .......... .......... .......... .......... 18% 21.8M 1s
+    ansible:   1250K .......... .......... .......... .......... .......... 19% 43.4M 1s
+    ansible:   1300K .......... .......... .......... .......... .......... 19% 25.3M 1s
+    ansible:   1350K .......... .......... .......... .......... .......... 20% 23.7M 1s
+    ansible:   1400K .......... .......... .......... .......... .......... 21% 23.2M 1s
+    ansible:   1450K .......... .......... .......... .......... .......... 22% 47.1M 1s
+    ansible:   1500K .......... .......... .......... .......... .......... 22% 32.4M 1s
+    ansible:   1550K .......... .......... .......... .......... .......... 23% 20.4M 1s
+    ansible:   1600K .......... .......... .......... .......... .......... 24% 66.0M 1s
+    ansible:   1650K .......... .......... .......... .......... .......... 25% 44.0M 1s
+    ansible:   1700K .......... .......... .......... .......... .......... 25% 23.5M 1s
+    ansible:   1750K .......... .......... .......... .......... .......... 26% 20.1M 1s
+    ansible:   1800K .......... .......... .......... .......... .......... 27% 20.4M 1s
+    ansible:   1850K .......... .......... .......... .......... .......... 28% 26.2M 1s
+    ansible:   1900K .......... .......... .......... .......... .......... 28% 15.3M 1s
+    ansible:   1950K .......... .......... .......... .......... .......... 29% 23.7M 1s
+    ansible:   2000K .......... .......... .......... .......... .......... 30% 17.7M 1s
+    ansible:   2050K .......... .......... .......... .......... .......... 31% 28.4M 1s
+    ansible:   2100K .......... .......... .......... .......... .......... 31% 18.3M 1s
+    ansible:   2150K .......... .......... .......... .......... .......... 32% 55.1M 1s
+    ansible:   2200K .......... .......... .......... .......... .......... 33% 25.5M 1s
+    ansible:   2250K .......... .......... .......... .......... .......... 33% 18.0M 1s
+    ansible:   2300K .......... .......... .......... .......... .......... 34% 26.1M 1s
+    ansible:   2350K .......... .......... .......... .......... .......... 35% 43.4M 1s
+    ansible:   2400K .......... .......... .......... .......... .......... 36% 27.2M 1s
+    ansible:   2450K .......... .......... .......... .......... .......... 36% 25.3M 0s
+    ansible:   2500K .......... .......... .......... .......... .......... 37% 44.4M 0s
+    ansible:   2550K .......... .......... .......... .......... .......... 38% 27.0M 0s
+    ansible:   2600K .......... .......... .......... .......... .......... 39% 44.7M 0s
+    ansible:   2650K .......... .......... .......... .......... .......... 39% 25.9M 0s
+    ansible:   2700K .......... .......... .......... .......... .......... 40% 18.8M 0s
+    ansible:   2750K .......... .......... .......... .......... .......... 41% 43.6M 0s
+    ansible:   2800K .......... .......... .......... .......... .......... 42% 33.9M 0s
+    ansible:   2850K .......... .......... .......... .......... .......... 42% 25.7M 0s
+    ansible:   2900K .......... .......... .......... .......... .......... 43% 44.6M 0s
+    ansible:   2950K .......... .......... .......... .......... .......... 44% 33.1M 0s
+    ansible:   3000K .......... .......... .......... .......... .......... 45% 44.1M 0s
+    ansible:   3050K .......... .......... .......... .......... .......... 45% 24.3M 0s
+    ansible:   3100K .......... .......... .......... .......... .......... 46% 26.2M 0s
+    ansible:   3150K .......... .......... .......... .......... .......... 47% 46.8M 0s
+    ansible:   3200K .......... .......... .......... .......... .......... 47% 24.9M 0s
+    ansible:   3250K .......... .......... .......... .......... .......... 48% 25.9M 0s
+    ansible:   3300K .......... .......... .......... .......... .......... 49% 36.8M 0s
+    ansible:   3350K .......... .......... .......... .......... .......... 50% 39.3M 0s
+    ansible:   3400K .......... .......... .......... .......... .......... 50% 43.8M 0s
+    ansible:   3450K .......... .......... .......... .......... .......... 51% 22.9M 0s
+    ansible:   3500K .......... .......... .......... .......... .......... 52% 19.5M 0s
+    ansible:   3550K .......... .......... .......... .......... .......... 53% 45.1M 0s
+    ansible:   3600K .......... .......... .......... .......... .......... 53% 21.7M 0s
+    ansible:   3650K .......... .......... .......... .......... .......... 54% 22.6M 0s
+    ansible:   3700K .......... .......... .......... .......... .......... 55% 36.7M 0s
+    ansible:   3750K .......... .......... .......... .......... .......... 56% 28.9M 0s
+    ansible:   3800K .......... .......... .......... .......... .......... 56% 44.1M 0s
+    ansible:   3850K .......... .......... .......... .......... .......... 57% 8.40M 0s
+    ansible:   3900K .......... .......... .......... .......... .......... 58% 26.1M 0s
+    ansible:   3950K .......... .......... .......... .......... .......... 59% 43.4M 0s
+    ansible:   4000K .......... .......... .......... .......... .......... 59% 10.5M 0s
+    ansible:   4050K .......... .......... .......... .......... .......... 60% 18.6M 0s
+    ansible:   4100K .......... .......... .......... .......... .......... 61% 42.6M 0s
+    ansible:   4150K .......... .......... .......... .......... .......... 62% 26.8M 0s
+    ansible:   4200K .......... .......... .......... .......... .......... 62% 28.7M 0s
+    ansible:   4250K .......... .......... .......... .......... .......... 63% 35.8M 0s
+    ansible:   4300K .......... .......... .......... .......... .......... 64% 22.1M 0s
+    ansible:   4350K .......... .......... .......... .......... .......... 64% 42.8M 0s
+    ansible:   4400K .......... .......... .......... .......... .......... 65% 28.1M 0s
+    ansible:   4450K .......... .......... .......... .......... .......... 66% 44.0M 0s
+    ansible:   4500K .......... .......... .......... .......... .......... 67%  671K 0s
+    ansible:   4550K .......... .......... .......... .......... .......... 67%  238M 0s
+    ansible:   4600K .......... .......... .......... .......... .......... 68%  205M 0s
+    ansible:   4650K .......... .......... .......... .......... .......... 69%  252M 0s
+    ansible:   4700K .......... .......... .......... .......... .......... 70%  242M 0s
+    ansible:   4750K .......... .......... .......... .......... .......... 70%  333M 0s
+    ansible:   4800K .......... .......... .......... .......... .......... 71%  356M 0s
+    ansible:   4850K .......... .......... .......... .......... .......... 72%  263M 0s
+    ansible:   4900K .......... .......... .......... .......... .......... 73%  274M 0s
+    ansible:   4950K .......... .......... .......... .......... .......... 73%  319M 0s
+    ansible:   5000K .......... .......... .......... .......... .......... 74%  325M 0s
+    ansible:   5050K .......... .......... .......... .......... .......... 75%  345M 0s
+    ansible:   5100K .......... .......... .......... .......... .......... 76%  282M 0s
+    ansible:   5150K .......... .......... .......... .......... .......... 76%  280M 0s
+    ansible:   5200K .......... .......... .......... .......... .......... 77%  336M 0s
+    ansible:   5250K .......... .......... .......... .......... .......... 78%  355M 0s
+    ansible:   5300K .......... .......... .......... .......... .......... 79%  353M 0s
+    ansible:   5350K .......... .......... .......... .......... .......... 79%  411M 0s
+    ansible:   5400K .......... .......... .......... .......... .......... 80%  407M 0s
+    ansible:   5450K .......... .......... .......... .......... .......... 81%  393M 0s
+    ansible:   5500K .......... .......... .......... .......... .......... 81%  231M 0s
+    ansible:   5550K .......... .......... .......... .......... .......... 82%  358M 0s
+    ansible:   5600K .......... .......... .......... .......... .......... 83%  365M 0s
+    ansible:   5650K .......... .......... .......... .......... .......... 84% 11.8M 0s
+    ansible:   5700K .......... .......... .......... .......... .......... 84%  265M 0s
+    ansible:   5750K .......... .......... .......... .......... .......... 85%  344M 0s
+    ansible:   5800K .......... .......... .......... .......... .......... 86%  393M 0s
+    ansible:   5850K .......... .......... .......... .......... .......... 87%  143M 0s
+    ansible:   5900K .......... .......... .......... .......... .......... 87% 20.3M 0s
+    ansible:   5950K .......... .......... .......... .......... .......... 88% 77.2M 0s
+    ansible:   6000K .......... .......... .......... .......... .......... 89%  380M 0s
+    ansible:   6050K .......... .......... .......... .......... .......... 90% 65.9M 0s
+    ansible:   6100K .......... .......... .......... .......... .......... 90% 77.2M 0s
+    ansible:   6150K .......... .......... .......... .......... .......... 91%  312M 0s
+    ansible:   6200K .......... .......... .......... .......... .......... 92% 11.6M 0s
+    ansible:   6250K .......... .......... .......... .......... .......... 93%  277M 0s
+    ansible:   6300K .......... .......... .......... .......... .......... 93% 32.9M 0s
+    ansible:   6350K .......... .......... .......... .......... .......... 94% 13.1M 0s
+    ansible:   6400K .......... .......... .......... .......... .......... 95% 26.5M 0s
+    ansible:   6450K .......... .......... .......... .......... .......... 95% 54.8M 0s
+    ansible:   6500K .......... .......... .......... .......... .......... 96%  301M 0s
+    ansible:   6550K .......... .......... .......... .......... .......... 97% 28.8M 0s
+    ansible:   6600K .......... .......... .......... .......... .......... 98%  329M 0s
+    ansible:   6650K .......... .......... .......... .......... .......... 98% 84.0M 0s
+    ansible:   6700K .......... .......... .......... .......... .......... 99% 10.9M 0s
+    ansible:   6750K .......... .......... ..                              100%  823K=0.5s
+    ansible: 
+    ansible: 2025-03-25 08:12:15 (13.3 MB/s) - ‘/usr/local/bin/direnv’ saved [6934528/6934528]
+    ansible: 
+    ansible: mkdir: created directory '/home/vagrant/ansible'
+    ansible: mkdir: created directory '/home/vagrant/ansible/projets'
+    ansible: mkdir: created directory '/home/vagrant/ansible/projets/ema'
+    ansible: mkdir: created directory '/home/vagrant/logs'
+    ansible: '/vagrant/ansible.cfg' -> '/home/vagrant/ansible/projets/ema/ansible.cfg'
+    ansible: '/vagrant/inventory' -> '/home/vagrant/ansible/projets/ema/inventory'
+[ema@testlab:atelier-08] $ 
+[vagrant@ansible ema]$ yamllint hello-ansible.yml 
+[vagrant@ansible ema]$ mkdir -v playbooks
+mkdir: created directory 'playbooks'
+[vagrant@ansible ema]$ mv -v hello-ansible.yml playbooks/
+renamed 'hello-ansible.yml' -> 'playbooks/hello-ansible.yml'
+[vagrant@ansible ema]$ ansible --version | head -n 2
+ansible [core 2.14.17]
+  config file = /home/vagrant/ansible/projets/ema/ansible.cfg
+[vagrant@ansible ema]$ cd playbooks/
+[vagrant@ansible playbooks]$ pwd
+/home/vagrant/ansible/projets/ema/playbooks
+[vagrant@ansible playbooks]$ ansible --version | head -n 2
+ansible [core 2.14.17]
+  config file = /etc/ansible/ansible.cfg
+[vagrant@ansible playbooks]$ cd ..
+[vagrant@ansible ema]$ pwd
+/home/vagrant/ansible/projets/ema
+[vagrant@ansible ema]$ echo 'export ANSIBLE_CONFIG=$(expand_path ansible.cfg)' > .envrc 
+direnv: error /home/vagrant/ansible/projets/ema/.envrc is blocked. Run `direnv allow` to approve its content
+[vagrant@ansible ema]$ direnv allow
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible ema]$ pwd
+/home/vagrant/ansible/projets/ema
+[vagrant@ansible ema]$ ansible --version | head -n 2
+ansible [core 2.14.17]
+  config file = /home/vagrant/ansible/projets/ema/ansible.cfg
+[vagrant@ansible ema]$ cd playbooks/
+[vagrant@ansible playbooks]$ ansible --version | head -n 2^C
+[vagrant@ansible playbooks]$ pwd
+/home/vagrant/ansible/projets/ema/playbooks
+[vagrant@ansible playbooks]$ ansible --version | head -n 2
+ansible [core 2.14.17]
+  config file = /home/vagrant/ansible/projets/ema/ansible.cfg
+[vagrant@ansible playbooks]$ ansible-playbook hello-ansible.yml 
+
+PLAY [localhost] *****************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************
+ok: [localhost]
+
+TASK [debug] *********************************************************************************************************
+ok: [localhost] => {
+    "msg": "Hello Ansible!"
+}
+
+PLAY RECAP ***********************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ nano hello-all.yml
+[vagrant@ansible playbooks]$ ansible-playbook hello-all.yml 
+
+PLAY [all] ***********************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************
+ok: [debian]
+ok: [rocky]
+ok: [suse]
+
+TASK [debug] *********************************************************************************************************
+ok: [rocky] => {
+    "msg": "Hello Ansible!"
+}
+ok: [debian] => {
+    "msg": "Hello Ansible!"
+}
+ok: [suse] => {
+    "msg": "Hello Ansible!"
+}
+
+PLAY RECAP ***********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ exit
+logout
+Connection to 127.0.0.1 closed.
+[ema@testlab:atelier-08] $ vagrant halt suse
+==> suse: Attempting graceful shutdown of VM...
+[ema@testlab:atelier-08] $ vagrant ssh ansible
+Last login: Tue Mar 25 08:12:40 2025 from 10.0.2.2
+[vagrant@ansible ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible playbooks]$ ansible-playbook hello-a
+hello-all.yml      hello-ansible.yml  
+[vagrant@ansible playbooks]$ ansible-playbook hello-all.yml 
+
+PLAY [all] ***********************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************
+ok: [debian]
+ok: [rocky]
+fatal: [suse]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host suse port 22: Connection timed out", "unreachable": true}
+
+TASK [debug] *********************************************************************************************************
+ok: [rocky] => {
+    "msg": "Hello Ansible!"
+}
+ok: [debian] => {
+    "msg": "Hello Ansible!"
+}
+
+PLAY RECAP ***********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ exit
+logout
+Connection to 127.0.0.1 closed.
+[ema@testlab:atelier-08] $ vagrant up suse
+Bringing machine 'suse' up with 'virtualbox' provider...
+==> suse: Checking if box 'generic/opensuse15' version '4.3.12' is up to date...
+==> suse: Clearing any previously set forwarded ports...
+==> suse: Fixed port collision for 22 => 2222. Now on port 2201.
+==> suse: Clearing any previously set network interfaces...
+==> suse: Preparing network interfaces based on configuration...
+    suse: Adapter 1: nat
+    suse: Adapter 2: hostonly
+==> suse: Forwarding ports...
+    suse: 22 (guest) => 2201 (host) (adapter 1)
+==> suse: Running 'pre-boot' VM customizations...
+==> suse: Booting VM...
+==> suse: Waiting for machine to boot. This may take a few minutes...
+    suse: SSH address: 127.0.0.1:2201
+    suse: SSH username: vagrant
+    suse: SSH auth method: private key
+==> suse: Machine booted and ready!
+==> suse: Setting hostname...
+==> suse: Configuring and enabling network interfaces...
+==> suse: Mounting shared folders...
+    suse: /home/ema/formation-ansible/atelier-08 => /vagrant
+==> suse: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> suse: flag to force provisioning. Provisioners marked to run always will still run.
+[ema@testlab:atelier-08] $ vagrant ssh ansible
+Last login: Tue Mar 25 08:18:59 2025 from 10.0.2.2
+[vagrant@ansible ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible playbooks]$ cd ..
+[vagrant@ansible ema]$ ansible all -m ping
+debian | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+rocky | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+suse | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+[vagrant@ansible ema]$ head -n 4 inventory 
+[testing]
+rocky
+debian
+suse
+[vagrant@ansible ema]$ cd playbooks/
+[vagrant@ansible playbooks]$ ansible all -m ping -f 1
+rocky | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+debian | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+suse | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+[vagrant@ansible playbooks]$ ansible-playbook hello-all.yml -f 1
+
+PLAY [all] ***********************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+
+TASK [debug] *********************************************************************************************************
+ok: [rocky] => {
+    "msg": "Hello Ansible!"
+}
+ok: [debian] => {
+    "msg": "Hello Ansible!"
+}
+ok: [suse] => {
+    "msg": "Hello Ansible!"
+}
+
+PLAY RECAP ***********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ 
