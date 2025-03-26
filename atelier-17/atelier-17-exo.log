@@ -1,0 +1,103 @@
+[vagrant@ansible playbooks]$ nano chrony-01.yml
+[vagrant@ansible playbooks]$ yamllint chrony-01.yml 
+[vagrant@ansible playbooks]$ ansible-playbook chrony-01.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Install chrony on Debian/Ubuntu] ****************************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+changed: [ubuntu]
+
+TASK [Install chrony on Rocky Linux] ******************************************************************************
+skipping: [debian]
+skipping: [suse]
+skipping: [ubuntu]
+ok: [rocky]
+
+TASK [Install chrony on SUSE Linux] *******************************************************************************
+skipping: [rocky]
+skipping: [debian]
+skipping: [ubuntu]
+changed: [suse]
+
+TASK [Enable and start chrony on all systems] *********************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+changed: [suse]
+
+TASK [Deploy custom chrony.conf on Debian/Ubuntu] *****************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+changed: [ubuntu]
+
+TASK [Deploy custom chrony.conf on Rocky] *************************************************************************
+skipping: [debian]
+skipping: [suse]
+skipping: [ubuntu]
+changed: [rocky]
+
+TASK [Deploy custom chrony.conf on SUSE] **************************************************************************
+skipping: [rocky]
+skipping: [debian]
+skipping: [ubuntu]
+changed: [suse]
+
+RUNNING HANDLER [Restart chronyd] *********************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=5    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+rocky                      : ok=5    changed=2    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+suse                       : ok=5    changed=4    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+ubuntu                     : ok=5    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ nano chrony-02.yml
+[vagrant@ansible playbooks]$ yamllint chrony-02.yml 
+[vagrant@ansible playbooks]$ ansible-playbook chrony-02.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [rocky]
+ok: [ubuntu]
+ok: [suse]
+
+TASK [Install chrony] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Enable and start chrony] ************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Deploy custom chrony.conf] **********************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ 

@@ -1,0 +1,442 @@
+[ema@testlab:atelier-17] $ vagrant ssh ansible 
+[vagrant@ansible ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible playbooks]$ ansible-playbook hello-debian.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Check if target host is a Debian-based system] **************************************************************
+skipping: [rocky]
+ok: [debian] => {
+    "msg": "This is a Debian-based system."
+}
+skipping: [suse]
+ok: [ubuntu] => {
+    "msg": "This is a Debian-based system."
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+suse                       : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+ubuntu                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook hello-non-debian.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Check if target host is not a Debian-based system] **********************************************************
+ok: [rocky] => {
+    "msg": "This is not a Debian-based system."
+}
+skipping: [debian]
+ok: [suse] => {
+    "msg": "This is not a Debian-based system."
+}
+skipping: [ubuntu]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu                     : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook hello-others.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Check if target host is running Rocky or SUSE] **************************************************************
+ok: [rocky] => {
+    "msg": "This is either Rocky or SUSE."
+}
+skipping: [debian]
+ok: [suse] => {
+    "msg": "This is either Rocky or SUSE."
+}
+skipping: [ubuntu]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+rocky                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu                     : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook system-check.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Check if we're running Ubuntu 22.04 or higher] **************************************************************
+skipping: [rocky]
+skipping: [debian]
+skipping: [suse]
+ok: [ubuntu] => {
+    "msg": "We're running Ubuntu 22.04 or higher"
+}
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+rocky                      : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+suse                       : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+ubuntu                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-01.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache on Debian/Ubuntu] ****************************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+changed: [ubuntu]
+
+TASK [Install Apache on Rocky Linux] ******************************************************************************
+skipping: [debian]
+skipping: [suse]
+skipping: [ubuntu]
+changed: [rocky]
+
+TASK [Install Apache on SUSE Linux] *******************************************************************************
+skipping: [rocky]
+skipping: [debian]
+skipping: [ubuntu]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+rocky                      : ok=2    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+suse                       : ok=2    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+ubuntu                     : ok=3    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-02.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+ok: [ubuntu]
+
+TASK [Parameters for Debian/Ubuntu] *******************************************************************************
+skipping: [rocky]
+ok: [debian]
+skipping: [suse]
+ok: [ubuntu]
+
+TASK [Parameters for Rocky Linux] *********************************************************************************
+ok: [rocky]
+skipping: [debian]
+skipping: [suse]
+skipping: [ubuntu]
+
+TASK [Parameters for SUSE Linux] **********************************************************************************
+skipping: [rocky]
+skipping: [debian]
+ok: [suse]
+skipping: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+rocky                      : ok=3    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+suse                       : ok=3    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+ubuntu                     : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-03.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Parameters for Debian/Ubuntu] *******************************************************************************
+skipping: [rocky]
+ok: [debian]
+skipping: [suse]
+ok: [ubuntu]
+
+TASK [Parameters for Rocky Linux] *********************************************************************************
+ok: [rocky]
+skipping: [debian]
+skipping: [suse]
+skipping: [ubuntu]
+
+TASK [Parameters for SUSE Linux] **********************************************************************************
+skipping: [rocky]
+skipping: [debian]
+ok: [suse]
+skipping: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [debian]
+ok: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+rocky                      : ok=4    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+suse                       : ok=4    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+ubuntu                     : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-04.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+suse                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+ubuntu                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ansible-playbook apache-05.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [include_vars] ***********************************************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+suse                       : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+ubuntu                     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ cat ../
+ansible.cfg  .envrc       inventory    playbooks/   
+[vagrant@ansible playbooks]$ cat vars/apache0* 
+---  # vars/apache01_debian.yml
+
+apache_package_name: apache2
+apache_service_name: apache2
+
+...
+---  # vars/apache01_opensuse-leap.yml
+
+apache_package_name: apache2
+apache_service_name: apache2
+
+...
+---  # vars/apache01_rocky.yml
+
+apache_package_name: httpd
+apache_service_name: httpd
+
+...
+---  # vars/apache01_ubuntu.yml
+
+apache_package_name: apache2
+apache_service_name: apache2
+
+...
+---  # vars/apache02_debian.yml
+
+apache_package_name: apache2
+apache_service_name: apache2
+apache_document_root: /var/www/html
+apache_config_directory: /etc/apache2/conf-available
+
+...
+---  # vars/apache02_opensuse-leap.yml
+
+apache_package_name: apache2
+apache_service_name: apache2
+apache_document_root: /srv/www/htdocs
+apache_config_directory: /etc/apache2/conf.d
+
+...
+---  # vars/apache02_rocky.yml
+
+apache_package_name: httpd
+apache_service_name: httpd
+apache_document_root: /var/www/html
+apache_config_directory: /etc/httpd/conf.d
+
+...
+---  # vars/apache02_ubuntu.yml
+
+apache_package_name: apache2
+apache_service_name: apache2
+apache_document_root: /var/www/html
+apache_config_directory: /etc/apache2/conf-available
+
+...
+[vagrant@ansible playbooks]$ ansible-playbook apache-06.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Load distribution-specific parameters] **********************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [ubuntu]
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+
+TASK [Install custom web page] ************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [suse]
+changed: [rocky]
+
+TASK [Configure redirect] *****************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+TASK [Activate redirect on Debian/Ubuntu] *************************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+changed: [ubuntu]
+
+RUNNING HANDLER [Reload Apache] ***********************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=7    changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+suse                       : ok=7    changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+ubuntu                     : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ 
