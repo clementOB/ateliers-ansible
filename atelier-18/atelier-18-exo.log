@@ -1,0 +1,277 @@
+[vagrant@ansible playbooks]$ nano chrony.yml
+[vagrant@ansible playbooks]$ nano templates/chrony.conf.j2
+[vagrant@ansible playbooks]$ cat chrony.yml 
+---  # chrony.yml
+- hosts: all
+
+  vars:
+    chrony:
+      Debian:
+        config: /etc/chrony/chrony.conf
+      Ubuntu:
+        config: /etc/chrony/chrony.conf
+      Rocky:
+        config: /etc/chrony.conf
+      openSUSE Leap:
+        config: /etc/chrony.conf
+
+  tasks:
+    - name: Install Chrony
+      package:
+        name: chrony
+        state: present
+
+    - name: Enable and start Chrony
+      service:
+        name: chronyd
+        enabled: true
+        state: started
+
+    - name: Deploy chrony configuration with template
+      template:
+        src: chrony.conf.j2
+        dest: "{{ chrony[ansible_distribution].config }}"
+        mode: '0644'
+      notify: Restart Chrony
+
+  handlers:
+    - name: Restart Chrony
+      service:
+        name: chronyd
+        state: restarted
+...
+[vagrant@ansible playbooks]$ cat templates/chrony.conf.j2 
+{# templates/chrony.conf.j2 #}
+# {{ chrony[ansible_distribution].config }}
+server 0.fr.pool.ntp.org iburst
+server 1.fr.pool.ntp.org iburst
+server 2.fr.pool.ntp.org iburst
+server 3.fr.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chrony
+[vagrant@ansible playbooks]$ ansible-playbook chrony.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [rocky]
+ok: [ubuntu]
+ok: [suse]
+
+TASK [Install Chrony] *********************************************************************************************
+ok: [rocky]
+changed: [debian]
+changed: [ubuntu]
+changed: [suse]
+
+TASK [Enable and start Chrony] ************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+changed: [suse]
+
+TASK [Deploy chrony configuration with template] ******************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+RUNNING HANDLER [Restart Chrony] **********************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+suse                       : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ ssh debian
+Last login: Wed Mar 26 08:26:25 2025 from 192.168.56.10
+vagrant@debian:~$ cat /var/lo
+local/ lock/  log/   
+vagrant@debian:~$ cat /var/log/chrony/
+cat: /var/log/chrony/: Permission denied
+vagrant@debian:~$ sudo cat /var/log/chrony/
+cat: /var/log/chrony/: Is a directory
+vagrant@debian:~$ exit
+logout
+Connection to debian closed.
+[vagrant@ansible playbooks]$ ansible all -a "cat {{ chrony[ansible_distribution].config }}"
+rocky | FAILED | rc=-1 >>
+The task includes an option with an undefined variable. The error was: 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined
+debian | FAILED | rc=-1 >>
+The task includes an option with an undefined variable. The error was: 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined
+suse | FAILED | rc=-1 >>
+The task includes an option with an undefined variable. The error was: 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined
+ubuntu | FAILED | rc=-1 >>
+The task includes an option with an undefined variable. The error was: 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined. 'chrony' is undefined
+[vagrant@ansible playbooks]$ ansible all -a "systemctl status chronyd"
+debian | CHANGED | rc=0 >>
+● chrony.service - chrony, an NTP client/server
+     Loaded: loaded (/lib/systemd/system/chrony.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2025-03-26 08:26:26 UTC; 2min 4s ago
+       Docs: man:chronyd(8)
+             man:chronyc(1)
+             man:chrony.conf(5)
+    Process: 5028 ExecStart=/usr/sbin/chronyd $DAEMON_OPTS (code=exited, status=0/SUCCESS)
+   Main PID: 5030 (chronyd)
+      Tasks: 2 (limit: 1099)
+     Memory: 1.2M
+        CPU: 53ms
+     CGroup: /system.slice/chrony.service
+             ├─5030 /usr/sbin/chronyd -F 1
+             └─5031 /usr/sbin/chronyd -F 1
+
+Mar 26 08:26:26 debian systemd[1]: Starting chrony.service - chrony, an NTP client/server...
+Mar 26 08:26:26 debian chronyd[5030]: chronyd version 4.3 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 -DEBUG)
+Mar 26 08:26:26 debian chronyd[5030]: Loaded seccomp filter (level 1)
+Mar 26 08:26:26 debian systemd[1]: Started chrony.service - chrony, an NTP client/server.
+Mar 26 08:26:31 debian chronyd[5030]: Selected source 51.158.153.13 (1.fr.pool.ntp.org)
+Mar 26 08:27:38 debian chronyd[5030]: Selected source 82.64.247.11 (2.fr.pool.ntp.org)
+suse | CHANGED | rc=0 >>
+● chronyd.service - NTP client/server
+     Loaded: loaded (/usr/lib/systemd/system/chronyd.service; enabled; vendor preset: disabled)
+     Active: active (running) since Wed 2025-03-26 08:26:41 UTC; 1min 50s ago
+       Docs: man:chronyd(8)
+             man:chrony.conf(5)
+    Process: 27307 ExecStart=/usr/sbin/chronyd $OPTIONS (code=exited, status=0/SUCCESS)
+    Process: 27311 ExecStartPost=/usr/lib/chrony/helper update-daemon (code=exited, status=0/SUCCESS)
+   Main PID: 27309 (chronyd)
+      Tasks: 1 (limit: 1123)
+     CGroup: /system.slice/chronyd.service
+             └─ 27309 /usr/sbin/chronyd
+
+Mar 26 08:26:40 suse systemd[1]: Starting NTP client/server...
+Mar 26 08:26:41 suse chronyd[27309]: chronyd version 4.1 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 -DEBUG)
+Mar 26 08:26:41 suse chronyd[27309]: Frequency 0.000 +/- 1000000.000 ppm read from /var/lib/chrony/drift
+Mar 26 08:26:41 suse systemd[1]: Started NTP client/server.
+Mar 26 08:26:46 suse chronyd[27309]: Selected source 95.81.173.8 (1.fr.pool.ntp.org)
+Mar 26 08:26:46 suse chronyd[27309]: System clock wrong by -13.658201 seconds
+Mar 26 08:26:32 suse chronyd[27309]: System clock was stepped by -13.658201 seconds
+rocky | CHANGED | rc=0 >>
+● chronyd.service - NTP client/server
+     Loaded: loaded (/usr/lib/systemd/system/chronyd.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2025-03-26 08:26:27 UTC; 2min 4s ago
+       Docs: man:chronyd(8)
+             man:chrony.conf(5)
+    Process: 9513 ExecStart=/usr/sbin/chronyd $OPTIONS (code=exited, status=0/SUCCESS)
+   Main PID: 9515 (chronyd)
+      Tasks: 1 (limit: 5822)
+     Memory: 2.9M
+        CPU: 78ms
+     CGroup: /system.slice/chronyd.service
+             └─9515 /usr/sbin/chronyd -F 2
+
+Mar 26 08:26:27 rocky systemd[1]: Starting NTP client/server...
+Mar 26 08:26:27 rocky chronyd[9515]: chronyd version 4.3 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 +DEBUG)
+Mar 26 08:26:27 rocky chronyd[9515]: Frequency -474.946 +/- 125.308 ppm read from /var/lib/chrony/drift
+Mar 26 08:26:27 rocky chronyd[9515]: Loaded seccomp filter (level 2)
+Mar 26 08:26:27 rocky systemd[1]: Started NTP client/server.
+Mar 26 08:26:32 rocky chronyd[9515]: Selected source 82.65.248.56 (1.fr.pool.ntp.org)
+ubuntu | CHANGED | rc=0 >>
+● chrony.service - chrony, an NTP client/server
+     Loaded: loaded (/lib/systemd/system/chrony.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2025-03-26 08:26:26 UTC; 2min 4s ago
+       Docs: man:chronyd(8)
+             man:chronyc(1)
+             man:chrony.conf(5)
+    Process: 6118 ExecStart=/usr/lib/systemd/scripts/chronyd-starter.sh $DAEMON_OPTS (code=exited, status=0/SUCCESS)
+   Main PID: 6127 (chronyd)
+      Tasks: 2 (limit: 1015)
+     Memory: 1.2M
+        CPU: 82ms
+     CGroup: /system.slice/chrony.service
+             ├─6127 /usr/sbin/chronyd -F 1
+             └─6128 /usr/sbin/chronyd -F 1
+
+Mar 26 08:26:26 ubuntu systemd[1]: Starting chrony, an NTP client/server...
+Mar 26 08:26:26 ubuntu chronyd[6127]: chronyd version 4.2 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 -DEBUG)
+Mar 26 08:26:26 ubuntu chronyd[6127]: Loaded seccomp filter (level 1)
+Mar 26 08:26:26 ubuntu systemd[1]: Started chrony, an NTP client/server.
+Mar 26 08:26:32 ubuntu chronyd[6127]: Selected source 94.231.206.1 (2.fr.pool.ntp.org)
+Mar 26 08:26:34 ubuntu chronyd[6127]: Selected source 51.68.44.27 (3.fr.pool.ntp.org)
+[vagrant@ansible playbooks]$ ansible all -a "chronyc sources"
+debian | CHANGED | rc=0 >>
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^+ eva.aplu.fr                   2   6    37    61   -405us[+1091us] +/-   61ms
+^+ serveur-sauvegarde.easys>     3   6    37    61   -908us[ +591us] +/-   58ms
+^* freebox-server.groumpf.o>     2   6    37    61  -1766us[ -270us] +/-   41ms
+^+ 82-64-131-93.subs.proxad>     2   6    37    62  +3689us[+5186us] +/-   42ms
+ubuntu | CHANGED | rc=0 >>
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^- ntp3.omdc.pl                  2   6    37    60   -986us[ -986us] +/-   55ms
+^- 82-65-248-56.subs.proxad>     1   6    37    61  -5400us[-5400us] +/-   30ms
+^- public.infogair.fr            2   6    37    61  -2849us[-2849us] +/-   54ms
+^* 27.ip-51-68-44.eu             3   6    37    62   +119us[ -289us] +/-   25ms
+suse | CHANGED | rc=0 >>
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^- time.cloudflare.com           3   6    37    60  -4893us[-4893us] +/-   17ms
+^* ntp-1.arkena.net              2   6    37    62   +451us[  +47ms] +/-   42ms
+^- public.infogair.fr            2   6    37    61  -2253us[-2253us] +/-   54ms
+^- 82-64-81-218.subs.proxad>     2   6    37    61  -2772us[-2772us] +/-   77ms
+rocky | CHANGED | rc=0 >>
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^- 45.132.96.81                  2   6    37    62    +11ms[  +11ms] +/-   29ms
+^* 82-65-248-56.subs.proxad>     1   6    37    62    +46us[  +27ms] +/-   28ms
+^- ntp.altinea.fr                3   6    37    61  +8594us[+8594us] +/-   77ms
+^- ns1.univ-montp3.fr            2   6    37    61  +7085us[+7085us] +/-   66ms
+[vagrant@ansible playbooks]$ ansible all -a "cat /etc/chrony.conf || cat /etc/chrony/chrony.conf"
+debian | FAILED | rc=1 >>
+# /etc/chrony/chrony.conf
+server 0.fr.pool.ntp.org iburst
+server 1.fr.pool.ntp.org iburst
+server 2.fr.pool.ntp.org iburst
+server 3.fr.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chronycat: /etc/chrony.conf: No such file or directory
+cat: '||': No such file or directory
+cat: cat: No such file or directorynon-zero return code
+ubuntu | FAILED | rc=1 >>
+# /etc/chrony/chrony.conf
+server 0.fr.pool.ntp.org iburst
+server 1.fr.pool.ntp.org iburst
+server 2.fr.pool.ntp.org iburst
+server 3.fr.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chronycat: /etc/chrony.conf: No such file or directory
+cat: '||': No such file or directory
+cat: cat: No such file or directorynon-zero return code
+suse | FAILED | rc=1 >>
+# /etc/chrony.conf
+server 0.fr.pool.ntp.org iburst
+server 1.fr.pool.ntp.org iburst
+server 2.fr.pool.ntp.org iburst
+server 3.fr.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chronycat: '||': No such file or directory
+cat: cat: No such file or directory
+cat: /etc/chrony/chrony.conf: No such file or directorynon-zero return code
+rocky | FAILED | rc=1 >>
+# /etc/chrony.conf
+server 0.fr.pool.ntp.org iburst
+server 1.fr.pool.ntp.org iburst
+server 2.fr.pool.ntp.org iburst
+server 3.fr.pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+logdir /var/log/chronycat: '||': No such file or directory
+cat: cat: No such file or directory
+cat: /etc/chrony/chrony.conf: No such file or directorynon-zero return code
+[vagrant@ansible playbooks]$ 

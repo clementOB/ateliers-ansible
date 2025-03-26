@@ -1,0 +1,494 @@
+[ema@testlab:atelier-18] $ vagrant ssh ansible 
+[vagrant@ansible ~]$ cd ansible/projets/ema/playbooks/
+direnv: loading ~/ansible/projets/ema/.envrc
+direnv: export +ANSIBLE_CONFIG
+[vagrant@ansible playbooks]$ cat apache-01.yml 
+---  # apache-01.yml
+
+- hosts: all
+
+  tasks:
+
+    - name: Load distribution-specific parameters
+      include_vars: >
+        apache_{{ansible_distribution|lower|replace(" ", "-") }}.yml
+
+    - name: Update package information on Debian/Ubuntu
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+
+    - name: Install Apache
+      package:
+        name: "{{apache_package_name}}"
+
+    - name: Start Apache & enable it on boot
+      service:
+        name: "{{apache_service_name}}"
+        state: started
+        enabled: true
+
+    - name: Install custom web page
+      copy:
+        dest: "{{apache_document_root}}/index.html"
+        mode: 0644
+        content: |
+          <!doctype html>
+          <html>
+            <head>
+              <meta charset="utf-8">
+              <title>Test</title>
+            </head>
+            <body>
+              <h1>My Ansible-managed website</h1>
+            </body>
+          </html>
+
+    - name: Configure redirect
+      copy:
+        dest: "{{apache_config_directory}}/redirect.conf"
+        content: |
+          Redirect /start http://www.startpage.com
+      notify: Reload Apache
+
+    - name: Activate redirect on Debian/Ubuntu
+      command:
+        cmd: a2enconf redirect
+        creates: /etc/apache2/conf-enabled/redirect.conf
+      when: ansible_os_family == "Debian"
+
+  handlers:
+
+    - name: Reload Apache
+      service:
+        name: "{{apache_service_name}}"
+        state: reloaded
+
+...
+[vagrant@ansible playbooks]$ ansible-playbook apache-01.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [rocky]
+ok: [ubuntu]
+ok: [suse]
+
+TASK [Load distribution-specific parameters] **********************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [debian]
+ok: [ubuntu]
+changed: [suse]
+changed: [rocky]
+
+TASK [Install custom web page] ************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+TASK [Configure redirect] *****************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+TASK [Activate redirect on Debian/Ubuntu] *************************************************************************
+skipping: [rocky]
+skipping: [suse]
+changed: [debian]
+changed: [ubuntu]
+
+RUNNING HANDLER [Reload Apache] ***********************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=9    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=7    changed=5    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+suse                       : ok=7    changed=5    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+ubuntu                     : ok=9    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ cat files/index.html 
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>My Ansible-managed website</h1>
+  </body>
+</html>
+[vagrant@ansible playbooks]$ ansible-playbook apache-02.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Load distribution-specific parameters] **********************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [ubuntu]
+ok: [debian]
+ok: [rocky]
+ok: [suse]
+
+TASK [Install custom web page] ************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Configure redirect] *****************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Activate redirect on Debian/Ubuntu] *************************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=6    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+suse                       : ok=6    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+ubuntu                     : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ cat apache-03.yml 
+---  # apache-03.yml
+
+- hosts: all
+
+  tasks:
+
+    - name: Load distribution-specific parameters
+      include_vars: >
+        apache_{{ansible_distribution|lower|replace(" ", "-") }}.yml
+
+    - name: Update package information on Debian/Ubuntu
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+
+    - name: Install Apache
+      package:
+        name: "{{apache_package_name}}"
+
+    - name: Start Apache & enable it on boot
+      service:
+        name: "{{apache_service_name}}"
+        state: started
+        enabled: true
+
+    - name: Install custom web page
+      template:
+        dest: "{{apache_document_root}}/index.html"
+        mode: 0644
+        src: index-1.html.j2
+
+    - name: Configure redirect
+      copy:
+        dest: "{{apache_config_directory}}/redirect.conf"
+        content: |
+          Redirect /start http://www.startpage.com
+      notify: Reload Apache
+
+    - name: Activate redirect on Debian/Ubuntu
+      command:
+        cmd: a2enconf redirect
+        creates: /etc/apache2/conf-enabled/redirect.conf
+      when: ansible_os_family == "Debian"
+
+  handlers:
+
+    - name: Reload Apache
+      service:
+        name: "{{apache_service_name}}"
+        state: reloaded
+
+...
+[vagrant@ansible playbooks]$ cat templates/index-1.html.j2 
+{# templates/index-1.html.j2 #}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{inventory_hostname}}</title>
+  </head>
+  <body>
+    <h1>Welcome to {{inventory_hostname}}!</h1>
+  </body>
+  </head>
+</html>
+[vagrant@ansible playbooks]$ ansible-playbook apache-03.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Load distribution-specific parameters] **********************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Install custom web page] ************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+TASK [Configure redirect] *****************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Activate redirect on Debian/Ubuntu] *************************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=6    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+suse                       : ok=6    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+ubuntu                     : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ curl suse
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>suse</title>
+  </head>
+  <body>
+    <h1>Welcome to suse!</h1>
+  </body>
+  </head>
+</html>
+[vagrant@ansible playbooks]$ curl rocky
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>rocky</title>
+  </head>
+  <body>
+    <h1>Welcome to rocky!</h1>
+  </body>
+  </head>
+</html>
+[vagrant@ansible playbooks]$ curl debian
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>debian</title>
+  </head>
+  <body>
+    <h1>Welcome to debian!</h1>
+  </body>
+  </head>
+</html>
+[vagrant@ansible playbooks]$ cat templates/index-2.html.j2 
+{# templates/index-2.html.j2 #}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{inventory_hostname}}</title>
+  </head>
+  <body>
+    <h1>Welcome to {{inventory_hostname}}!</h1>
+    <h2>Here's our team:</h2>
+    <ul>
+    {% for host in groups['all'] %}
+      <li>{{host}}</li>
+    {% endfor %}
+    </ul>
+  </body>
+  </head>
+</html>
+[vagrant@ansible playbooks]$ ansible-playbook apache-04.yml 
+
+PLAY [all] ********************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [rocky]
+ok: [suse]
+
+TASK [Load distribution-specific parameters] **********************************************************************
+ok: [rocky]
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+
+TASK [Update package information on Debian/Ubuntu] ****************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+TASK [Install Apache] *********************************************************************************************
+ok: [debian]
+ok: [suse]
+ok: [ubuntu]
+ok: [rocky]
+
+TASK [Start Apache & enable it on boot] ***************************************************************************
+ok: [debian]
+ok: [ubuntu]
+ok: [suse]
+ok: [rocky]
+
+TASK [Install custom web page] ************************************************************************************
+changed: [debian]
+changed: [ubuntu]
+changed: [rocky]
+changed: [suse]
+
+TASK [Configure redirect] *****************************************************************************************
+ok: [ubuntu]
+ok: [debian]
+ok: [suse]
+ok: [rocky]
+
+TASK [Activate redirect on Debian/Ubuntu] *************************************************************************
+skipping: [rocky]
+skipping: [suse]
+ok: [debian]
+ok: [ubuntu]
+
+PLAY RECAP ********************************************************************************************************
+debian                     : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+rocky                      : ok=6    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+suse                       : ok=6    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+ubuntu                     : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[vagrant@ansible playbooks]$ cat apache-04.yml 
+---  # apache-04.yml
+
+- hosts: all
+
+  tasks:
+
+    - name: Load distribution-specific parameters
+      include_vars: >
+        apache_{{ansible_distribution|lower|replace(" ", "-") }}.yml
+
+    - name: Update package information on Debian/Ubuntu
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+
+    - name: Install Apache
+      package:
+        name: "{{apache_package_name}}"
+
+    - name: Start Apache & enable it on boot
+      service:
+        name: "{{apache_service_name}}"
+        state: started
+        enabled: true
+
+    - name: Install custom web page
+      template:
+        dest: "{{apache_document_root}}/index.html"
+        mode: 0644
+        src: index-2.html.j2
+
+    - name: Configure redirect
+      copy:
+        dest: "{{apache_config_directory}}/redirect.conf"
+        content: |
+          Redirect /start http://www.startpage.com
+      notify: Reload Apache
+
+    - name: Activate redirect on Debian/Ubuntu
+      command:
+        cmd: a2enconf redirect
+        creates: /etc/apache2/conf-enabled/redirect.conf
+      when: ansible_os_family == "Debian"
+
+  handlers:
+
+    - name: Reload Apache
+      service:
+        name: "{{apache_service_name}}"
+        state: reloaded
+
+...
+[vagrant@ansible playbooks]$ 
