@@ -141,8 +141,6 @@ sudo dnf update -y
 sudo dnf install -y python3 python3-pip
 
 
-> Contrairement à Debian, `python3-venv` n’est pas nécessaire sur Rocky Linux.
-
 ### **Création et activation d’un environnement virtuel**
 
 mkdir ~/ansible_env && cd ~/ansible_env
